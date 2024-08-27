@@ -22,4 +22,4 @@ Funcionalidades:
       - Visualización y gestión de arriendos individuales
       - Gestión de bienes del arriendo
 
-https://www.figma.com/design/O5MA5nHRAWS47NAaU6dxsF/MyRent?m=auto&t=fY4XaEsq8SGQnZbJ-6
+https://www.figma.com/proto/O5MA5nHRAWS47NAaU6dxsF/MyRent?node-id=137-1896&t=CRUuPlIQ6pXbkQSi-1&scaling=contain&content-scaling=fixed&page-id=0%3A1
