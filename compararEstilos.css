@@ -1,0 +1,195 @@
+
+
+
+.contenido {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    margin: auto;
+    margin-top: 10vh;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+.opciones {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.25vw;
+}
+.opcion {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.313vw;
+}
+
+.opcion__input {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5vw;
+    align-items: center;
+}
+
+table {
+    width: 35vw;
+    border-spacing: 0; /* Separa las celdas para que el border-radius funcione bien */
+    border-collapse: separate;
+    border-radius: 6px; /* Aplica el redondeado en la tabla */
+    overflow: hidden; /* Asegura que las esquinas redondeadas no sean cortadas */
+}
+
+table tr:first-child th:first-child {
+    border-top-left-radius: 6px;
+  }
+  
+  table tr:first-child th:last-child {
+    border-top-right-radius: 6px;
+  }
+  
+  table tr:last-child td:first-child {
+    border-bottom-left-radius: 6px;
+  }
+  
+  table tr:last-child td:last-child {
+    border-bottom-right-radius: 6px;
+  }
+
+
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #666666;
+    user-select: none;
+}
+
+table th {
+    background-color: #a4cecb;
+}
+
+
+table td {
+    background-color: #c5ecea;
+}
+
+.section-header {
+    text-align: center;
+    background-color: #94b1ae;
+}
+
+.gastos {
+    background-color: #e07e7e;
+}
+
+.beneficios {
+    background-color: #9fcf9e;
+}
+
+
+
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3em;
+  height: 1.6em;
+}
+  
+  /* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+  
+  /* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: white;
+  border-radius: 50px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+  
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1em;
+  width: 1em;
+  right: 0.3em;
+  bottom: 0.3em;
+  transform: translateX(150%);
+  background-color: #cccccc;
+  border-radius: inherit;
+  transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+  
+.slider:after {
+  position: absolute;
+  content: "";
+  height: 1em;
+  width: 1em;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: #cccccc;
+  border-radius: inherit;
+  transition: all 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+  
+.switch input:focus + .slider {
+  box-shadow: 0 0 1px #59d102;
+}
+  
+.switch input:checked + .slider:before {
+  transform: translateY(0);
+}
+  
+.switch input:checked + .slider::after {
+  transform: translateX(-150%);
+}
+
+/* <select> styles */
+select {
+  /* Reset */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 12em;
+  height: 3em;
+  padding: 0 4em 0 1em;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg) no-repeat right 0.8em center/1.4em, linear-gradient(to left, rgba(255, 255, 255, 0.3) 3em, rgba(255, 255, 255, 0.2) 3em);
+  color: white;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  /* <option> colors */
+  /* Remove focus outline */
+  /* Remove IE arrow */
+}
+select option {
+  color: inherit;
+  background-color: #0a0e32d5;
+}
+select:focus {
+  outline: none;
+}
+select::-ms-expand {
+  display: none;
+}
+
+
+
+
+  
