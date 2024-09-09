@@ -105,14 +105,14 @@ input::placeholder {
 }
 
 
-.header-nav {
+header {
     width: 100%;
     height: 7.392vh;
     background-color: #B9E4E1;
     display: flex;
 }
 
-.header-nav hr{
+header hr{
     width: 100%;
     margin-top: 7.392vh;
     left: 0;
