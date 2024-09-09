@@ -1,0 +1,41 @@
+.header-contenedor{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu{
+    width: 50px;
+    border-radius: 0;
+    padding: 0;
+    margin-left: 3vh;
+    align-items: center;
+    background-color: transparent;
+}
+
+.menu img{
+    display: flex;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+}
+
+.perfil{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin-right: 3vh;
+    border-radius: 30px;
+    background-color: #2F2F2F;
+}
+
+.perfil img{
+    display: flex;
+    margin: auto;
+    width: 30px;
+    height: 30px;
+}
+
