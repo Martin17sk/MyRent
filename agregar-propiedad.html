@@ -24,228 +24,274 @@
     </header>
 
     <div class="contenido">
-        <div class="info-lugar">
-            <h1>Información del lugar</h1>
-
-            <div class="nombre-form">
-                <h2>Nombre <strong>*</strong></h2>
-                <input type="text" placeholder="ej.: Cabaña 1">
-            </div>
-
-            <div class="direccion-form">
-                <h2>Dirección</h2>
-                <input type="text" placeholder="ej.: Los Sauces #451">
-            </div>
-
-            <div class="capacidad-form">
-                <h2>Capacidad <strong>*</strong></h2>
-                <input type="number" placeholder="ej.: 3">
-            </div>
-
-            <div class="dormitorios-form">
-                <h2>Dormitorios <strong>*</strong></h2>
-                <input type="number" placeholder="ej.: 3">
-            </div>
-
-            <div class="banos-form">
-                <h2>Baños <strong>*</strong></h2>
-                <input type="number" placeholder="ej.: 1">
-            </div>
-
-            <div class="servicios">
-                <div class="servicios__1">
-                    <div class="internet">
-                        <input type="checkbox">
-                        <h3>Internet</h3>
-                    </div>
-        
-                    <div class="tv">
-                        <input type="checkbox">
-                        <h3>TV Cable</h3>
-                    </div>
-        
-                    <div class="microondas">
-                        <input type="checkbox">
-                        <h3>Microondas</h3>
-                    </div>
-        
-                    <div class="refrigerador">
-                        <input type="checkbox">
-                        <h3>Refrigerador</h3>
-                    </div>
-        
-                    <div class="lavadora">
-                        <input type="checkbox">
-                        <h3>Lavadora</h3>
-                    </div>
-        
-                    <div class="secadora">
-                        <input type="checkbox">
-                        <h3>Secadora</h3>
-                    </div>
-        
+        <div class="informaciones-contenedor">
+            <div class="info-lugar">
+                <div class="lugar__titulo">
+                    <h1>Información del lugar</h1>
+                    <img src="recursos/Question.svg" alt="Info">
                 </div>
-        
-                <hr>
-
-                <div class="servicios__2">
-                    <div class="comida">
-                        <input type="checkbox">
-                        <h3>Servicio de comida</h3>
+    
+                <div class="inputs-verticales-sup">
+                    <div class="nombre-form">
+                        <div class="text__row">
+                            <h2>Nombre</h2>
+                            <h2 class="obligatorio">*</h2>
+                        </div>
+                        <input class="input-text" type="text" placeholder="ej.: Cabaña 1">
                     </div>
         
-                    <div class="mascota">
-                        <input type="checkbox">
-                        <h3>Permitir mascotas</h3>
-                    </div>
-        
-                    <div class="limpieza">
-                        <input type="checkbox">
-                        <h3>Servicio de limpieza</h3>
+                    <div class="direccion-form">
+                        <h2>Dirección</h2>
+                        <input class="input-text" type="text" placeholder="ej.: Los Sauces #451">
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <hr>
-
-        <div class="info-otros">
-            <h1>Otros</h1>
-
-            <div class="dimensiones">
-                <h2>Dimensiones <strong>(opcional)</strong></h2>
-                <select>
-                    <option value="1">cm</option>
-                    <option value="2">in</option>
-                    <option value="3" selected>m</option>
-                    <option value="4">ft</option>
-                </select>
-
-                <div class="dimensiones__input">
-                    <div class="input__largo">
-                        <h2>Largo</h2>
-                        <input type="text" placeholder="ej.: 15">
+                <div class="inputs-verticales-inf">
+                    <div class="info-num-input">
+                        <div class="num-input">
+                            <h2>Capacidad <strong>*</strong></h2>
+                            <input class="input-text" type="text" placeholder="ej.: 3">
+                        </div>
+            
+                        <div class="num-input">
+                            <h2>Dormitorios <strong>*</strong></h2>
+                            <input class="input-text" type="text" placeholder="ej.: 3">
+                        </div>
+            
+                        <div class="num-input">
+                            <h2>Baños <strong>*</strong></h2>
+                            <input class="input-text" type="text" placeholder="ej.: 1">
+                        </div>
+                        <div class="num-input">
+                            <h2>Precio de renta <strong>*</strong></h2>
+                            <div class="precio-renta__input">
+                                <input class="input-text" type="text" placeholder="ej.: 50.000">
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="input__ancho">
-                        <h2>Ancho</h2>
-                        <input type="text" placeholder="ej.: 15">
-                    </div>
-
-                    <div class="input__alto">
-                        <h2>Alto</h2>
-                        <input type="text" placeholder="ej.: 6">
+                    <div class="info-medio">
+        
+                        <div class="servicios">
+                            <div class="servicios__1">
+                                <div class="columna">
+                                    <div class="checkbox-text">
+                                        <input type="checkbox">
+                                        <h3>Internet</h3>
+                                    </div>
+                        
+                                    <div class="checkbox-text">
+                                        <input type="checkbox">
+                                        <h3>TV Cable</h3>
+                                    </div>
+                        
+                                    <div class="checkbox-text">
+                                        <input type="checkbox">
+                                        <h3>Microondas</h3>
+                                    </div>
+                                </div>
+                    
+                                <div class="columna">
+                                    <div class="checkbox-text">
+                                        <input type="checkbox">
+                                        <h3>Refrigerador</h3>
+                                    </div>
+                        
+                                    <div class="checkbox-text">
+                                        <input type="checkbox">
+                                        <h3>Lavadora</h3>
+                                    </div>
+                        
+                                    <div class="checkbox-text">
+                                        <input type="checkbox">
+                                        <h3>Secadora</h3>
+                                    </div>
+                                </div>
+                    
+                            </div>
+            
+                            <div class="divisor-servicios"></div>
+            
+                            <div class="servicios__2">
+                                <div class="columna">
+                                    <div class="checkbox-text">
+                                        <input type="checkbox">
+                                        <h3>Servicio de comida</h3>
+                                    </div>
+                        
+                                    <div class="checkbox-text">
+                                        <input type="checkbox">
+                                        <h3>Permitir mascotas</h3>
+                                    </div>
+                                </div>
+                    
+                                <div class="columna">
+                                    <div class="checkbox-text">
+                                        <input type="checkbox">
+                                        <h3>Servicio de limpieza</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="inventario">
-                <h2>Inventario <strong>(opcional)</strong></h2>
-
-                <button class="agregar-objeto-boton">
-                    <img src="recursos/Add.svg" alt="">
-                    <h2>Agregar objeto</h2>
-                </button>
-
-                <ul>
-                    <li>
-                        <h2>Nombre objeto (x3)</h2>
-                        <img src="recursos/Edit.svg" alt="Edit">
-                        <img src="recursos/Trash.svg" alt="Borrar">
-                    </li>
-
-                    <li>
-                        <h2>Nombre objeto (x10)</h2>
-                        <img src="recursos/Edit.svg" alt="Edit">
-                        <img src="recursos/Trash.svg" alt="Borrar">
-                    </li>
-                </ul>
-
-                <div class="agregar-objeto-input">
-                    <div class="nombre-objeto">
-                        <h2>Nombre del objeto <strong>*</strong></h2>
-                        <input type="text" placeholder="ej.: Sartén">
-                    </div>
-
-                    <div class="cantidad-objeto">
-                        <h2>Cantidad <strong>*</strong></h2>
-                        <input type="text" placeholder="ej.: 2">
-                    </div>
-
-                    <div class="confirmar-botones">
-                        <button class="confirmar">
-                            <img src="recursos/Green-check.svg" alt="Confirmar">
-                        </button>
-
-                        <button class="cancelar">
-                            <img src="recursos/Red-cross.svg" alt="Cacnelar">
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="trabajadores">
-                <h2>Trabajadores <strong>(opcional)</strong></h2>
                 
-                <button class="agregar-trabajador-boton">
-                    <img src="recursos/Add.svg" alt="">
-                    <h2>Agregar empleado</h2>
-                </button>
+            </div>
 
-                <ul>
-                    <li>
-                        <h2>Nombre trabajador (Servicio)</h2>
-                        <img src="recursos/Edit.svg" alt="Edit">
-                        <img src="recursos/Trash.svg" alt="Borrar">
-                    </li>
-                </ul>
+            <div class="divisor-informaciones"></div>
 
-                <div class="agregar-empleado-input">
-                    <select >
-                        <option value="" selected disabled hidden>Selecciona un trabajador</option>
-                        <option value="1">Trabajador 1</option>
-                        <option value="2">Trabajador 2</option>
-                    </select>
+            <div class="info-otros">
+                <h1>Otros</h1>
 
-                    <div class="confirmar-botones">
-                        <button class="confirmar">
-                            <img src="recursos/Green-check.svg" alt="Confirmar">
-                        </button>
+                <div class="dimensiones">
+                    <div class="dimensiones__titulo">
+                        <h2>Dimensiones <strong>(opcional)</strong></h2>
+                        <select>
+                            <option value="1">cm</option>
+                            <option value="2">in</option>
+                            <option value="3" selected>m</option>
+                            <option value="4">ft</option>
+                        </select>
+                    </div>
 
-                        <button class="cancelar">
-                            <img src="recursos/Red-cross.svg" alt="Cacnelar">
-                        </button>
+                    <div class="dimensiones__input">
+                        <div class="num-input">
+                            <h2>Largo</h2>
+                            <input class="input-text" type="text" placeholder="ej.: 15">
+                        </div>
+
+                        <div class="num-input">
+                            <h2>Ancho</h2>
+                            <input class="input-text" type="text" placeholder="ej.: 15">
+                        </div>
+
+                        <div class="num-input">
+                            <h2>Alto</h2>
+                            <input class="input-text" type="text" placeholder="ej.: 6">
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="precio-renta">
-                <h2>Precio de renta <strong>*</strong></h2>
-                <div class="precio-renta__input">
-                    <input type="text" placeholder="ej.: 50.000">
-                    <span class="divisa">$</span>
+                <div class="inventario">
+                    <div class="inventario__titulo">
+                        <div class="inventario-titulo__texto">
+                            <h2>Inventario <strong>(opcional)</strong></h2>
+                        </div>
+
+                        <button class="agregar-objeto-boton">
+                            <img src="recursos/Add.svg" alt="">
+                            <h3>Agregar objeto</h3>
+                        </button>
+                    </div>
+
+                    <ul class="inventario__objetos">
+                        <li>
+                            <h3>Nombre objeto (x3)</h3>
+                            <div class="item__iconos">
+                                <img src="recursos/Edit.svg" alt="Edit">
+                                <img src="recursos/Trash.svg" alt="Borrar">
+                            </div>
+                        </li>
+
+                        <li>
+                            <h3>Nombre objeto (x10)</h3>
+                            <div class="item__iconos">
+                                <img src="recursos/Edit.svg" alt="Edit">
+                                <img src="recursos/Trash.svg" alt="Borrar">
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="agregar-objeto-input">
+                        <div class="nombre-cantidad-input">
+                            <div class="num-input">
+                                <h2>Nombre del objeto <strong>*</strong></h2>
+                                <input id="nombre-objeto"class="input-text" type="text" placeholder="ej.: Sartén">
+                            </div>
+    
+                            <div class="num-input">
+                                <h2>Cantidad <strong>*</strong></h2>
+                                <input class="input-text" type="text" placeholder="ej.: 2">
+                            </div>
+                        </div>
+
+                        <div class="confirmar-botones">
+                            
+                            <img src="recursos/Green-check.svg" alt="Confirmar">
+                            
+
+                            
+                            <img src="recursos/Red-cross.svg" alt="Cacnelar">
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trabajadores">
+                    <div class="trabajadores__titulo">
+                        <h2>Trabajadores <strong>(opcional)</strong></h2>
+                    
+                        <button class="agregar-trabajador-boton">
+                            <img src="recursos/Add.svg" alt="">
+                            <h3>Agregar trabajador</h3>
+                        </button>
+                    </div>
+
+                    <ul class="trabajadores__nombres">
+                        <li>
+                            <h3>Nombre trabajador (Servicio)</h3>
+                            <div class="item__iconos">
+                                <img src="recursos/Edit.svg" alt="Edit">
+                                <img src="recursos/Trash.svg" alt="Borrar">
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="agregar-trabajador-input">
+                        <select >
+                            <option value="" selected disabled hidden>Selecciona un trabajador</option>
+                            <option value="1">Trabajador 1</option>
+                            <option value="2">Trabajador 2</option>
+                        </select>
+
+                        <div id="selec-confirmar" class="confirmar-botones">
+                            <div class="confirmar">
+                                <img src="recursos/Green-check.svg" alt="Confirmar">
+                            </div>
+
+                            <div class="cancelar">
+                                <img src="recursos/Red-cross.svg" alt="Cacnelar">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <div class="imagenes">
+                    <h2>Imágenes <strong>(opcional)</strong></h2>
+
+                    <button class="subir-imagen">
+                        <div class="subir-imagen__contenido">
+                            <img src="recursos/Upload.svg" alt="">
+                            <h2>Subir imágen</h2>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="guardar-botones">
+                    <button class="boton__guardar">
+                        <h2>Guardar</h2>
+                    </button>
+
+                    <button class="boton__cancelar">
+                        <h2>Cancelar</h2>
+                    </button>
                 </div>
             </div>
-
-            <div class="imagenes">
-                <h2>Imágenes <strong>(opcional)</strong></h2>
-
-                <button class="subir-imagen">
-                    <img src="recursos/Upload.svg" alt="">
-                    <h2>Subir imágen</h2>
-                </button>
-            </div>
-
-            <div class="guardar-botones">
-                <button class="botones__guardar">
-                    <h2>Guardar</h2>
-                </button>
-
-                <button class="botones__cancelar">
-                    <h2>Cacnelar</h2>
-                </button>
-            </div>
         </div>
+
+        
     </div>
 </body>
 </html>
