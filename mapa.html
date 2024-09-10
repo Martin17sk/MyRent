@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyRent</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mapaEstilos.css">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="header-contenedor">
+            <button class="menu">
+                <img src="recursos/Menu.svg" alt="menu">
+            </button>
+
+            <button class="perfil">
+                <img src="recursos/Pin.svg" alt="perfil">
+            </button>
+        </div>
+        <hr>
+    </header>
+    <div class="page">
+        <div class="filtros">
+            <div class="filtros_opcion">
+                <select id="perfil">
+                    <option value="1">Perfil 1</option>
+                    <option value="2">Perfil 2</option>
+                    <option value="3">Perfil 3</option>
+                </select>
+            </div>
+            <div class="filtros_opcion">
+                <select>
+                    <option value="" selected disabled hidden>Choose here</option>
+                    <option value="1">Disponible</option>
+                    <option value="2">Ocupadas</option>
+                </select>
+            </div>
+        </div>
+        <div class="contenido">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    
+
+    <script src="mapaScript.js"></script>
+</body>
+</html>
