@@ -131,16 +131,19 @@ body{
     margin: auto;
 }
 
-
+#perfil-quote{
+    text-align: center;
+    transform: translateY(80px);
+}
 .contenedor-img-perfiles__agregar-perfil{
     opacity: 50%;
 }
 
-.propiedad-boton{
+.perfil-boton{
     position: relative;
 }
 
-.propiedad-boton__alerta{
+.perfil-boton__alerta{
     position: absolute;
     top: 0.5vh;
     right: 0.5vh;
