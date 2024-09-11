@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="mapaEstilos.css">
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
-
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' />
 </head>
 <body>
     <header>
         <div class="header-contenedor">
-            <button class="menu">
+            <button class="menu">   
                 <img src="recursos/Menu.svg" alt="menu">
             </button>
 
@@ -27,6 +28,7 @@
         <div class="filtros">
             <div class="filtros_opcion">
                 <select id="perfil">
+                    <option value="" selected disabled hidden>Perfiles</option>
                     <option value="1">Perfil 1</option>
                     <option value="2">Perfil 2</option>
                     <option value="3">Perfil 3</option>
@@ -34,7 +36,7 @@
             </div>
             <div class="filtros_opcion">
                 <select>
-                    <option value="" selected disabled hidden>Choose here</option>
+                    <option value="" selected disabled hidden>Estado</option>
                     <option value="1">Disponible</option>
                     <option value="2">Ocupadas</option>
                 </select>
