@@ -152,7 +152,7 @@ h4{
     color: #1f1f1f;
     cursor: pointer;
     font-family: 'Roboto', arial, sans-serif;
-    font-size: 19px;
+    font-size: 20px;
     height: 60px;
     letter-spacing: 0.25px;
     outline: none;
@@ -166,7 +166,7 @@ h4{
     white-space: nowrap;
     width: auto;
     max-width: 400px;
-    min-width: min-content;
+    min-width: 200px;
   }
   
   .gsi-material-button .gsi-material-button-icon {
