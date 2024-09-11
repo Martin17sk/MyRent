@@ -1,0 +1,53 @@
+
+
+.contenido {
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+    margin: 10vh auto;
+    align-items: center;
+    justify-content: center;
+}
+
+#comparar {
+    gap: 1vw;
+}
+
+canvas {
+    max-width: 1000px;
+    max-height: 600px;
+    display: block;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+.opciones {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.25vw;
+}
+
+.opciones button {
+    font-size: 1.25rem;
+}
+.opcion {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.35vw;
+}
+
+.opcion__input {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5vw;
+    align-items: center;
+}
