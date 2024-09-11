@@ -1,0 +1,26 @@
+.contenido {
+    margin: 10vh auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: fit-content;
+}
+.botones {
+    width: 580px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+h2 {
+    font-weight: 500;
+}
+
+button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
