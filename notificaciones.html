@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyRent</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="notificaciones.css">
+</head>
+<body>
+    <header>
+        <div class="header-contenedor">
+            <button class="menu">   
+                <img src="recursos/Menu.svg" alt="menu">
+            </button>
+
+            <button class="perfil">
+                <img src="recursos/Pin.svg" alt="perfil">
+            </button>
+        </div>
+        <hr>
+    </header>
+    <div class="page">
+        <div class="contenido">
+            <h1>Notificaciones</h1>
+            <div class="arriendos">
+                <h2>Arriendos</h2>
+                <div class="arriendos__opcion">
+                    <h3 class="gray">Mensuales</h3>
+                    <div class="opcion">
+                        <h3>Dias de anticipación de loas notificacion de caducidad del arriendo</h3>
+                        <input class="input-text" type="text" placeholder="ej:15">
+                    </div>
+                </div>
+                <div class="arriendos__opcion">
+                    <h3 class="gray">Diarios</h3>
+                    <div class="opcion">
+                        <h3>Horas de anticipación de las notificaciones de caducidad del arriendo</h3>
+                        <input class="input-text" type="text" placeholder="ej:24">
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="alertas">
+                <h2>Alertas</h2>
+                <div class="opcion">
+                    <div class="alertas-label">
+                        <h3>Permitir alertas de informacion menor insuficiente</h3>
+                        <img src="recursos/noti_amarilla.svg" alt="">
+                    </div>
+                    
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="opcion">
+                    <div class="alertas-label">
+                        <h3>Permitir alertas de informacion menor insuficiente</h3>
+                        <img src="recursos/noti_roja.svg" alt="">
+                    </div>
+                    
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
