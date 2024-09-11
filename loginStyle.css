@@ -1,0 +1,134 @@
+:root {
+    --font : 'Poppins', sans-serif;
+}
+
+h4{
+   margin: 0;
+}
+
+.header-nav__back{
+    margin-top: 0;
+    margin-left:0;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    padding: 4px;
+}
+
+.header-nav__back img{
+    width: 24px;
+    height: 24px;
+    margin: 24px;
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: fit-content  ;
+    height: fit-content;
+    margin: 72px auto 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    gap: 32px;
+}
+
+.form_info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.email {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contraseña {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contraseña-label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.hide {
+    display: flex;
+    flex-direction: row;
+    color: #666666;
+    gap: 6px;
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.iniciar-sesion {
+    width: fit-content;
+    margin: auto;
+}
+
+.iniciar-sesion button {
+    width: 32vw;
+}
+
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}
+.text__row h4{
+    color: white;
+}
+.continue-with {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.divider {
+    width: 32vw;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+}
+
+.divider hr {
+    width: 186px;
+    color: #66666642;
+}
+
+.google {
+    width: fit-content;
+    background-color: #ffffffbf;
+    padding: 16px 50px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 40px;
+    border-color: #333333;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    font-size: 1.375rem;
+    color: #333333;
+    align-items: center;
+    margin: auto;
+}

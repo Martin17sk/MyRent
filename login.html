@@ -9,6 +9,61 @@
     <link rel="stylesheet" href="loginStyle.css">
 </head>
 <body>
-    
+    <div class="header-nav">
+        <div class="header-nav__back" alt="back">
+            <img src="recursos/vector.svg" alt="back">
+        </div>
+        <hr class="header-nav__divider">
+    </div>
+    <div class="page">
+        <div class="content">
+            <div class="form">
+                <h1>Iniciar sesión</h1>
+                <div class="form_info">
+                    <div class="email">
+                        <label for="email">Correo Electrónico o nombre de usuario</label>
+                        <input  class="input-text" type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico o nombre de usuario">
+                    </div>
+                    <div class="contraseña">
+                        <div class="contraseña-label">
+                            <label for="contraseña">Contraseña</label>
+                            <div class="hide">
+                                <img src="recursos/hide.svg" alt="hide">  
+                                Hide
+                            </div>
+                        </div>
+                        
+                        <input  class="input-text" type="password" id="contraseña" name="contraseña" placeholder="Ingresa tu contraseña">
+                        <div class="checkbox">
+                            <input type="checkbox" name="" id="checkbox">
+                            <label id="checkbox-label" for="checkbox">Recordar contraseña</label>
+                        </div>
+                    </div>
+                    <div class="iniciar-sesion">
+                        <button>Iniciar sesión</button>
+                    </div>
+                </div>
+            </div>
+            <div class="options">
+                <h3 class="underline">¿Olvidaste tu contraseña?</h3>
+                <span class="text__row">
+                    <h4>¿No tienes una cuenta?<h3 class="underline">Registrarse</h3></h4>
+                </span>
+                
+            </div>
+            <div class="continue-with">
+                <div class="divider">
+                    <hr>
+                    <h2>O continuar con</h2>
+                    <hr>
+                </div>
+                <div class="google">
+                    <img src="recursos/google.svg" alt="google">
+                    <span>Google</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
 </body>
 </html>
