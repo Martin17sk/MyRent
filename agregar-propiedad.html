@@ -30,7 +30,19 @@
                     <h1>Información del lugar</h1>
                     <img src="recursos/Question.svg" alt="Info">
                 </div>
-    
+
+                <!--
+                <div class="contenedor-informacion-tooltip">
+                    <span class="informacion-tooltip__text">
+                        Para fines de organización, cada apartado
+                        tiene una clasificación, ya sea importante "*"
+                        o opcional "(opcional)", sin embargo no es
+                        estrictamente necesario que esten todos los 
+                        apartados completos.
+                    </span>
+                </div>
+                -->
+
                 <div class="inputs-verticales-sup">
                     <div class="nombre-form">
                         <div class="text__row">
@@ -49,21 +61,33 @@
                 <div class="inputs-verticales-inf">
                     <div class="info-num-input">
                         <div class="num-input">
-                            <h2>Capacidad <strong>*</strong></h2>
+                            <div class="text__row">
+                                <h2>Capacidad</h2>
+                                <h2 class="obligatorio">*</h2>
+                            </div>
                             <input class="input-text" type="text" placeholder="ej.: 3">
                         </div>
             
                         <div class="num-input">
-                            <h2>Dormitorios <strong>*</strong></h2>
+                            <div class="text__row">
+                                <h2>Dormitorios</h2>
+                                <h2 class="obligatorio">*</h2>
+                            </div>
                             <input class="input-text" type="text" placeholder="ej.: 3">
                         </div>
             
                         <div class="num-input">
-                            <h2>Baños <strong>*</strong></h2>
+                            <div class="text__row">
+                                <h2>Baños</h2>
+                                <h2 class="obligatorio">*</h2>
+                            </div>
                             <input class="input-text" type="text" placeholder="ej.: 1">
                         </div>
                         <div class="num-input">
-                            <h2>Precio de renta <strong>*</strong></h2>
+                            <div class="text__row">
+                                <h2>Precio de renta</h2>
+                                <h2 class="obligatorio">*</h2>
+                            </div>
                             <div class="precio-renta__input">
                                 <input class="input-text" type="text" placeholder="ej.: 50.000">
                             </div>
@@ -145,7 +169,11 @@
 
                 <div class="dimensiones">
                     <div class="dimensiones__titulo">
-                        <h2>Dimensiones <strong>(opcional)</strong></h2>
+                        <div class="text__row">
+                            <h2>Dimensiones</h2>
+                            <h2 class="opcional">(opcional)</h2>
+                        </div>
+
                         <select>
                             <option value="1">cm</option>
                             <option value="2">in</option>
@@ -175,7 +203,10 @@
                 <div class="inventario">
                     <div class="inventario__titulo">
                         <div class="inventario-titulo__texto">
-                            <h2>Inventario <strong>(opcional)</strong></h2>
+                            <div class="text__row">
+                                <h2>Inventario</h2>
+                                <h2 class="opcional">(opcional)</h2>
+                            </div>
                         </div>
 
                         <button class="agregar-objeto-boton">
@@ -229,7 +260,10 @@
 
                 <div class="trabajadores">
                     <div class="trabajadores__titulo">
-                        <h2>Trabajadores <strong>(opcional)</strong></h2>
+                        <div class="text__row">
+                            <h2>Trabajadores</h2>
+                            <h2 class="opcional">(opcional)</h2>
+                        </div>
                     
                         <button class="agregar-trabajador-boton">
                             <img src="recursos/Add.svg" alt="">
@@ -269,7 +303,10 @@
                 
 
                 <div class="imagenes">
-                    <h2>Imágenes <strong>(opcional)</strong></h2>
+                    <div class="text__row">
+                        <h2>Imagenes</h2>
+                        <h2 class="opcional">(opcional)</h2>
+                    </div>
 
                     <button class="subir-imagen">
                         <div class="subir-imagen__contenido">

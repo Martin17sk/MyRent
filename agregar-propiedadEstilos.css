@@ -56,11 +56,38 @@
     flex-direction: row;
     margin: 0 auto;
     user-select: none;
-    gap: 12vh;
+    gap: 8vh;
 }
+
+/* .contenedor-informacion-tooltip{
+    display: inline-block;
+    position: relative;
+}
+
+.informacion-tooltip__text{
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    width: 300px;
+    position: absolute;
+    text-align: justify;
+    border-radius: 5px;
+    z-index: 1;
+    color: #ffffff;
+    background-color: #17171B;
+}
+
+.contenedor-informacion-tooltip:hover .informacion-tooltip__text{
+    visibility: visible;
+} */
 
 .obligatorio{
     color: #FF4409;
+}
+
+.opcional{
+    color: #9c9c9c;
+    font-size: 1rem;
 }
 
 .info-lugar{
@@ -107,10 +134,6 @@
     width: auto;
 }
 
-.nombre-form strong{
-    color: #FF4409;
-}
-
 .nombre-form h2{
     margin-bottom: 0.4vh;
 }
@@ -146,6 +169,12 @@
     gap: 4vh;
 }
 
+.info-num-input{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 .num-input {
     display: flex;
     flex-direction: column;
@@ -162,10 +191,6 @@
     justify-content: center;
     flex-direction: column;
     gap: 0.7vh;
-}
-
-.capacidad-form strong{
-    color: #FF4409;
 }
 
 .capacidad-form input{
@@ -189,10 +214,6 @@
     border-radius: 12px;
 }
 
-.dormitorios-form strong{
-    color: #FF4409;
-}
-
 .banos-form{
     display: flex;
     justify-content: center;
@@ -214,9 +235,6 @@
     border-radius: 12px;
 }
 
-.banos-form strong{
-    color: #FF4409;
-}
 
 .servicios{
     display: flex;
@@ -282,9 +300,6 @@
     margin-top: 4vh;
 }
 
-.precio-renta strong{
-    color: #FF4409;
-}
 
 .divisor-informaciones{
     width: 1px;
@@ -405,7 +420,7 @@
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
-    padding: 10px;
+    padding: 10px 0;
 }
 
 .agregar-objeto-boton{
@@ -465,8 +480,8 @@
     display: flex;
     flex-direction: row;
     margin-top: 40px;
-    margin-right: 15px;
     gap: 5px;
+    cursor: pointer;
 }
 
 .confirmar-botones button{
@@ -545,8 +560,13 @@ h3 {
     align-items: center;
 }
 
+.agregar-trabajador-input select{
+    width: auto;
+}
+
 #selec-confirmar {
     margin: 0;
+    align-items: center;
 }
 
 .imagenes{
@@ -577,6 +597,7 @@ h3 {
     justify-content: right;
     flex-direction: row;
     align-items: center;
+    margin-bottom: 3vh;
     gap: 2.5vh;
 }
 
@@ -588,4 +609,8 @@ h3 {
 
 .boton__guardar{
     background-color: #40BB54;
+}
+
+.boton__guardar:hover{
+    background-color: #74b87f;
 }
