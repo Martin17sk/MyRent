@@ -1,0 +1,68 @@
+.header-contenedor{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* contenido */
+
+.contenido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.contenido__info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 30vh;
+}
+
+.info__textos{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10vh;
+}
+
+.info__titulo{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.titulo__myrent{
+    font-size: 3rem;
+}
+
+.info__beneficios-pag{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+}
+
+.info__beneficios-pag h2{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.boton-contenedor{
+    display: flex;
+    justify-content: center;
+}
+
+.boton__comenzar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vh;
+}
