@@ -1,4 +1,5 @@
 
+
 .contenido {
     width: fit-content;
     display: flex;
@@ -12,6 +13,23 @@
     flex-direction: column;
     gap: 50px;
 }
+
+.sidebar {
+    position: fixed; /* Fijo en la pantalla */
+    top: 0;
+    left: -250px; /* Oculto fuera de la pantalla */
+    z-index: 1;
+    transition: left 0.3s ease-in-out;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.menu {
+
+}
+
 
 .divider {
     width: 100%;
