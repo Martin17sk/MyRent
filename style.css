@@ -31,6 +31,7 @@ h3 {
     margin: 0;
 }
 
+
 button {
     appearance: none;
     padding: 1.69vh 1.25vw;
@@ -55,6 +56,7 @@ button:hover {
 .text__row {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 0.313vw;
 }
 
