@@ -31,6 +31,18 @@ h3 {
     margin: 0;
 }
 
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    z-index: 1;
+    transition: left 0.3s ease-in-out;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
 
 button {
     appearance: none;

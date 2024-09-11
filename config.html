@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="configEstilos.css">
 </head>
 <body>
+    <object class="sidebar" data="sidebar.html" 
+          type="text/html" width="201px" height="100%">
+    </object>
     <header>
         <div class="header-contenedor">
             <button class="menu">
@@ -29,16 +32,17 @@
                     <img src="recursos/User_circle.svg" alt="">
                     <h2>Cuenta</h2>
                 </button>
-                <button>
+                <button onclick="window.location.href='personalizacion.html'">
                     <img src="recursos/Edit_fill.svg" alt="">
                     <h2>Personalización</h2>
                 </button>
-                <button>
+                <button onclick="window.location.href='notificaciones.html'">
                     <img src="recursos/Bell_fill.svg" alt="">
                     <h2>Notificaciones</h2>
                 </button>
             </div>
         </div>
     </div>
+    <script src="sidebar.js"></script>
 </body>
 </html>

@@ -9,6 +9,9 @@
     <title>MyRent</title>
 </head>
 <body>
+    <object class="sidebar" data="sidebar.html" 
+          type="text/html" width="201px" height="100%">
+    </object>
     <header>
         <div class="header-contenedor">
             <button class="menu">
@@ -317,11 +320,11 @@
                 </div>
 
                 <div class="guardar-botones">
-                    <button class="boton__guardar">
+                    <button class="boton__guardar" onclick="window.location.href='propiedades.html'">
                         <h2>Guardar</h2>
                     </button>
 
-                    <button class="boton__cancelar">
+                    <button class="boton__cancelar" onclick="window.location.href='propiedades.html'">
                         <h2>Cancelar</h2>
                     </button>
                 </div>
@@ -330,5 +333,6 @@
 
         
     </div>
+    <script src="sidebar.js"></script>
 </body>
 </html>

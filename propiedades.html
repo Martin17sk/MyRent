@@ -9,6 +9,9 @@
     <title>MyRent</title>
 </head>
 <body>
+    <object class="sidebar" data="sidebar.html" 
+          type="text/html" width="201px" height="100%">
+    </object>
     <header>
         <div class="header-contenedor">
             <button class="menu">
@@ -37,7 +40,7 @@
     
         <div class="contenedor-img-propiedades">
             <div class="contenedor-img-propiedades__img-propiedad">
-                <button class="propiedad-boton">
+                <button class="propiedad-boton" onclick="window.location.href='ver-propiedad.html'">
                     <img src="recursos/Home.svg" alt="">
                     <img class="propiedad-boton__alerta"src="recursos/Alerta-roja.svg" alt="">
                 </button>
@@ -45,14 +48,14 @@
             </div>
     
             <div class="contenedor-img-propiedades__img-propiedad">
-                <button class="propiedad-boton">
+                <button class="propiedad-boton" onclick="window.location.href='ver-propiedad.html'">
                     <img src="recursos/Home.svg" alt="">
                 </button>
                 <h3>Nombre</h3>
             </div>
     
             <div class="contenedor-img-propiedades__img-propiedad">
-                <button class="propiedad-boton">
+                <button class="propiedad-boton" onclick="window.location.href='ver-propiedad.html'">
                     <img src="recursos/Home.svg" alt="">
                     <img class="propiedad-boton__alerta" src="recursos/Alerta-amarilla.svg" alt="">
                 </button>
@@ -60,19 +63,20 @@
             </div>
     
             <div class="contenedor-img-propiedades__img-propiedad">
-                <button class="propiedad-boton">
+                <button class="propiedad-boton" onclick="window.location.href='ver-propiedad.html'">
                     <img src="recursos/Home.svg" alt="">
                 </button>
                 <h3>Nombre</h3>
             </div>
     
             <div class="contenedor-img-propiedades__agregar-propiedad">
-                <button class="agregar-propiedad-boton">
+                <button class="agregar-propiedad-boton" onclick="window.location.href='agregar-propiedad.html'">
                     <img src="recursos/add.svg" alt="">
                 </button>
                 <h3>Nueva propiedad</h3>
             </div>
         </div>
     </div>
+    <script src="sidebar.js"></script>
 </body>
 </html>
