@@ -171,6 +171,14 @@ table th, table td {
     user-select: none;
 }
 
+th{
+    color: white;
+}
+
+td{
+    color: white;
+}
+
 table th {
     background-color: #303036;
 }
