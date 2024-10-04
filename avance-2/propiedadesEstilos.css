@@ -1,0 +1,148 @@
+
+
+/* Header */
+
+
+.header-contenedor{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu{
+    width: 50px;
+    border-radius: 0;
+    padding: 0;
+    margin-left: 3vh;
+    align-items: center;
+    background-color: transparent;
+}
+
+.menu img{
+    display: flex;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+}
+
+.perfil{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    margin-right: 3vh;
+    border-radius: 30px;
+    background-color: #2F2F2F;
+}
+
+.perfil img{
+    display: flex;
+    margin: auto;
+    width: 30px;
+    height: 30px;
+}
+
+
+/* contenido */
+
+
+.contenido{
+    width: 100%;
+    height: fit-content;
+}
+
+.info-contenedor{
+    display: flex;
+    flex-direction: row;
+    gap: 2vh;
+    justify-content: right;
+    margin-top: 4.5vh;
+    margin-right: 6vh;
+}
+
+.info-contenedor__contador-propiedades {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #303036;
+    user-select: none;
+}
+
+.info-contenedor__contador-propiedades h2{
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+.contador-propiedades__num-der{
+    margin-left: 2vh;
+    margin-right: 1.5vh;
+}
+
+.contador-propiedades__num-izq{
+    margin-left: 1.5vh;
+    margin-right: 2vh;
+}
+
+.contador-propiedades__divisor-vertical{
+    display: flex;
+    align-items: center;
+    width: 1px;
+    height: 3vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    background-color: #FFFFFF;
+}
+.info-contenedor__edit-icon{
+    display: flex;
+    cursor: pointer;
+}
+
+
+/* propiedades */
+
+
+.contenedor-img-propiedades{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    margin: 16.5vh 16vh 0;
+    gap: 3vh;
+}
+
+.contenedor-img-propiedades h3{
+    display: flex;
+    justify-content: center;
+    margin-top: 1vh;
+}
+
+.contenedor-img-propiedades button{
+    width: 20vh;
+    height: 20vh;
+    padding: 0px;
+    align-items: center;
+    border-radius: 16px;
+}
+
+.contenedor-img-propiedades img{
+    display: flex;
+    margin: auto;
+}
+
+
+.contenedor-img-propiedades__agregar-propiedad{
+    opacity: 50%;
+}
+
+.propiedad-boton{
+    position: relative;
+}
+
+.propiedad-boton__alerta{
+    position: absolute;
+    top: 0.5vh;
+    right: 0.5vh;
+}
+
