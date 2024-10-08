@@ -1,7 +1,6 @@
 <template>
     <div class="button">
         <img v-if="image" :src="getImage(image)" alt="">
-        <slot></slot>
     </div>
 </template>
 
