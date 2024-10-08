@@ -16,7 +16,12 @@
     });
 
     const getImage = (imageName : string) => {
-        return require(`../assets/images/${imageName}`);
+        try {
+            return require(`../assets/images/${imageName}`);
+        } catch (error) {
+            console.error(`Image ${imageName} not found`);
+            return "";
+        }
     }
 
 </script>
@@ -29,6 +34,10 @@
         border-radius: 5px;
         padding: 5px 10px;
         cursor: pointer;
+        user-select: none;
+        font-family: $font;
+        font-size: 1rem;
+        font-weight: 500;
 
         &:hover {
             background-color: $button-hover-color;
