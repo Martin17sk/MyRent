@@ -28,7 +28,6 @@
         display: flex;
         width: 50px;
         height: 50px;
-        background-color: $button-color;
         color: $button-text-color;
         padding: 0;
         border-radius: 5px;

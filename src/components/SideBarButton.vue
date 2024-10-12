@@ -36,7 +36,7 @@
         cursor: pointer;
         user-select: none;
         font-family: $font;
-        font-size: 1rem;
+        font-size: 14px;
         font-weight: 500;
 
         &:hover {

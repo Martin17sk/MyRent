@@ -82,6 +82,8 @@
     }
 
     .sidebar-container {
+        top: 0;
+        z-index: 100;
         position: fixed;
         padding: 50px 25px; 
         color: white;

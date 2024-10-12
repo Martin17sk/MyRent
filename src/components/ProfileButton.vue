@@ -12,7 +12,6 @@
         display: flex;
         width: 50px;
         height: 50px;
-        margin-right: 3vh;
         border-radius: 30px;
         background-color: $button-color;
         align-items: center;
