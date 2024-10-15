@@ -1,11 +1,9 @@
-<template>
-  <div class="home">
-    <h1>AvanceMyRent</h1>
-  </div>
-</template>
-
-<script lang="ts" setup>
+<script setup>
+import TheWelcome from '../components/TheWelcome.vue'
 </script>
 
-<style lang="scss">
-</style>
+<template>
+  <main>
+    <TheWelcome />
+  </main>
+</template>
