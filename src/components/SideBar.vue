@@ -32,7 +32,7 @@
 
 <script setup>
     import SideBarButton from '@/components/SideBarButton.vue';
-    import { defineProps, defineEmits, watch, ref, Ref} from 'vue';
+    import { watch, ref } from 'vue';
 
     const emit = defineEmits(['close']);
     const props = defineProps({
@@ -65,9 +65,9 @@
     });
 </script>
 
-<style lang="scss" scoped>
-
-    $sidebar-width: 150px;
+<style lang="scss">
+    @use '../scss/_variables' as *;
+    $sidebar-width: 200px;
 
     .slide-enter-active, .slide-leave-active {
         transition: transform 0.3s ease;
@@ -88,7 +88,7 @@
         padding: 50px 25px; 
         color: white;
         width: $sidebar-width;
-        height: 89.44vh;
+        height: 950px;
         background-color: $secondary-color;
         border-right: 1px solid rgba(255, 255, 255, 0.25);
         display: flex;
