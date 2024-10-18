@@ -11,11 +11,13 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "chart.js": "^4.4.5",
     "my_rent": "file:",
     "pinia": "^2.2.4",
     "sass": "^1.80.2",
     "sass-loader": "^16.0.2",
     "vue": "^3.5.12",
+    "vue-chartjs": "^5.3.1",
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
