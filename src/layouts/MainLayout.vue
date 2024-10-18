@@ -8,7 +8,7 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
     import DefaultHeader from '@/components/DefaultHeader.vue';
     import SideBar from '@/components/SideBar.vue';
     import { ref } from 'vue';

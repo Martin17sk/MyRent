@@ -1,0 +1,78 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "email": "",
+            "contrasena": "",
+            "configuraciones": {
+                "personalizacion": {
+                    "tema": 0,
+                    "color_alerta_menor": "#",
+                    "color_alerta_mayor": "#"
+                },
+                "notificaciones": {
+                    "caducidad_mensual": 0,
+                    "caducidad_diaria": 0,
+                    "alerta_menor": true,
+                    "alerta_mayor": true
+                }
+            },
+            "perfiles": [
+                {
+                    "nombre": "",
+                    "empleados": [
+                        {
+                            "nombre": "",
+                            "labor": "",
+                            "sueldo": ""
+                        }
+                    ],
+                    "propiedades": [
+                        {
+                            "informacion_del_lugar": {
+                                "nombre": "Cabaña 1",
+                                "direccion": "Los Sauces #415",
+                                "capacidad": 3,
+                                "dormitorios": 3,
+                                "baños": 3,
+                                "precio_de_renta": 50000,
+                                "servicios": {
+                                    "internet": false,
+                                    "tv_cable": false,
+                                    "microondas": false,
+                                    "servicio_de_comida": false,
+                                    "permitir_mascotas": false,
+                                    "refrigerador": false,
+                                    "lavadora": false,
+                                    "secadora": false,
+                                    "servicio_de_limpieza": false
+                                }
+                            },
+                            "otros": {
+                                "dimensiones": {
+                                    "largo": 15,
+                                    "ancho": 15,
+                                    "alto": 15,
+                                    "unidad": "m"
+                                },
+                                "inventario": [
+                                    {
+                                        "nombre_objeto": "Sartén",
+                                        "cantidad": 2
+                                    }
+                                ],
+                                "trabajadores": [
+                                    {
+                                        "nombre_trabajador": "Limpieza",
+                                        "rol": "Limpieza"
+                                    }
+                                ]
+                            },
+                            "imagenes": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
