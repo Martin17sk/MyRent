@@ -9,7 +9,7 @@
     </header>
 </template>
 
-<script setup lang="ts">
+<script setup>
     import IconButton from './IconButton.vue';
     import ProfileButton from './ProfileButton.vue';
     import { defineEmits } from 'vue';

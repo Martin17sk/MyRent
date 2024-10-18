@@ -30,7 +30,7 @@
     
 </template>
 
-<script setup lang="ts">
+<script setup>
     import SideBarButton from '@/components/SideBarButton.vue';
     import { defineProps, defineEmits, watch, ref, Ref} from 'vue';
 
@@ -42,13 +42,13 @@
         }
     });
 
-    const sidebar : Ref = ref(null);
+    const sidebar = ref(null);
 
     const closeSidebar = () => {
         emit('close');
     }
 
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = (event) => {
         if (sidebar.value && !sidebar.value.contains(event.target)) {
             closeSidebar();
         }

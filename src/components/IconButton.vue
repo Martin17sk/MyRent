@@ -4,7 +4,7 @@
     </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
     import { defineProps } from 'vue';
     defineProps({
         image : {
@@ -13,7 +13,7 @@
         }
     });
 
-    const getImage = (imageName : string) => {
+    const getImage = (imageName) => {
         try {
             return require(`../assets/images/${imageName}`);
         } catch (error) {

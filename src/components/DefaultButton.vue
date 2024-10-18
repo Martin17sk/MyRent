@@ -4,7 +4,7 @@
     </button>
 </template>
 
-<script lang="ts" setup>
+<script setup>
     import { defineProps } from 'vue';
     defineProps({
         widthProp : {
