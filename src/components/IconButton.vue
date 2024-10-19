@@ -4,8 +4,7 @@
     </div>
 </template>
 
-<script lang="ts" setup>
-    import { defineProps } from 'vue';
+<script setup>
     defineProps({
         image : {
             type: String,
@@ -13,17 +12,18 @@
         }
     });
 
-    const getImage = (imageName : string) => {
+    const getImage = (imageName) => {
         try {
-            return require(`../assets/images/${imageName}`);
+            return new URL(`../assets/images/${imageName}`, import.meta.url).href;
         } catch (error) {
             console.error(`Image ${imageName} not found`);
             return "";
         }
-    }
+    };
 </script>
 
 <style lang="scss" scoped>
+    @use '../scss/_variables' as *;
     .button {
         display: flex;
         width: 50px;

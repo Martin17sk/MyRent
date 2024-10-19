@@ -9,10 +9,9 @@
     </header>
 </template>
 
-<script setup lang="ts">
+<script setup>
     import IconButton from './IconButton.vue';
     import ProfileButton from './ProfileButton.vue';
-    import { defineEmits } from 'vue';
     const emit = defineEmits(['openSideBar']);
     const openSideBar = () => {
         emit('openSideBar');
@@ -20,6 +19,7 @@
 </script>
 
 <style lang="scss" scoped>
+    @use '../scss/_variables' as *;
     header {
         background-color: $secondary-color;
         color: $font-color;

@@ -4,8 +4,7 @@
     </button>
 </template>
 
-<script lang="ts" setup>
-    import { defineProps } from 'vue';
+<script setup>
     defineProps({
         widthProp : {
             type: String,
@@ -19,6 +18,7 @@
 </script>
 
 <style lang="scss" scoped>
+    @use '../scss/_variables' as *;
     .button {
         appearance: none;
         display: flex;
