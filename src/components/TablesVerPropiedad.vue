@@ -46,6 +46,5 @@ const workersColumns = ref([
     display: flex;
     flex-direction: row;
     gap: 50px;
-    margin: 20px;
 }
 </style>
