@@ -1,5 +1,4 @@
 <script setup>
-import InputComponent from '@/components/InputComponent.vue';
 import { computed, ref } from 'vue';
 
 const password = ref('')
