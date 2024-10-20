@@ -24,8 +24,6 @@ import { computed } from 'vue';
                 return LineChart;
             case 'Pie':
                 return PieChart;
-            default:
-                return BarChart;
         }
     });
 </script>
