@@ -28,5 +28,6 @@
 <style lang="scss" scoped>
     div {
         width: 500px;
+        height: 300px;
     }
 </style>
