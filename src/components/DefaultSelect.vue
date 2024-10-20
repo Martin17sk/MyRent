@@ -1,20 +1,20 @@
 <template>
     <div class="select-container">
-      <label for="select" class="select-label">Selecciona una opción</label>
+      <label for="select" class="select-label">{{ label }}</label>
       <select v-model="selected" id="select" class="custom-select" >
-        <option v-if="placeholder" value="" disabled hidden>{{ placeholder }}</option>
         <option  v-for="option in options" :key="option.value">{{ option }}</option>
       </select>
     </div>
   </template>
   
   <script setup>
-    import { onMounted, onUnmounted, ref, computed } from 'vue';
-
     const selected = defineModel();
     defineProps({
-      placeholder : String,
-        options : Array,
+      label : {
+        type: String,
+        default: 'Selecciona una opción'
+      },
+      options : Array,
     });
 
   </script>
@@ -27,7 +27,6 @@
         gap: 8px;
         width: 100%;
         max-width: 200px;
-        margin: 0 auto;
     }
     
     .select-label {
