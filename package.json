@@ -11,7 +11,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "axios": "^1.7.7",
     "chart.js": "^4.4.5",
+    "json-server": "^1.0.0-beta.3",
     "my_rent": "file:",
     "pinia": "^2.2.4",
     "sass": "^1.80.2",
