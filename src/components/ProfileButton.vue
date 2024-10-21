@@ -1,34 +1,55 @@
 <template>
-    <div class="button">
-        <img src="../assets/images/perfil_icono.svg" alt="">
+    <div class="button" :style="{ width: widthProp, height: heightProp, border: borderProp }">
+        <img :src="getImage(image)" :style="{ width: widthProp * 0.6, height: heightProp * 0.6 }">
     </div>
 </template>
 
 <script setup>
+defineProps({
+    widthProp: {
+        type: String,
+        default: '50px'
+    },
+    heightProp: {
+        type: String,
+        default: '50px'
+    },
+    image: {
+        type: String,
+        default: ''
+    },
+    borderProp: {
+        type: String,
+        default: 'none'
+    }
+});
+
+const getImage = (imageName) => {
+    try {
+        return new URL(`../assets/images/${imageName}`, import.meta.url).href;
+    } catch (error) {
+        console.error(`Image ${imageName} not found`);
+        return "";
+    }
+};
 </script>
 
 <style lang="scss" scoped>
-    @use '../scss/_variables' as *;
-    .button {
-        display: flex;
-        width: 50px;
-        height: 50px;
-        border-radius: 30px;
-        background-color: $button-color;
-        align-items: center;
-        justify-content: center;
+@use '../scss/_variables' as *;
 
-        &:hover {
-            background-color: $button-hover-color;
-        }
+.button {
+    display: flex;
+    border-radius: 30px;
+    background-color: $button-color;
+    align-items: center;
+    justify-content: center;
 
-        &:active {
-            background-color: $button-active-color;
-        }
-
-        img {
-            width: 30px;
-            height: 30px;
-        }
+    &:hover {
+        background-color: $button-hover-color;
     }
+
+    &:active {
+        background-color: $button-active-color;
+    }
+}
 </style>

@@ -3,7 +3,7 @@
         <div class="header-container">
             <IconButton image="Menu.svg" @click="openSideBar"/>
             <h1>MyRent</h1>
-            <ProfileButton/>
+            <ProfileButton image="perfil_icono.svg"/>
         </div>
         <hr>
     </header>
