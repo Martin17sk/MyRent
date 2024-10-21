@@ -88,7 +88,9 @@ onMounted(() => {
 .contenido-container {
     display: flex;
     flex-direction: column;
-    padding-top: 50px;
+    width: 100%;
+    padding-top: 20px;
+    margin: auto;
 
     .contador-edit-container {
         display: flex;

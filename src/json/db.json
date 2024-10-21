@@ -22,44 +22,19 @@
       "id": 1,
       "usuario_id": 1,
       "nombre": "Perfil 1",
-      "fecha_creacion": "2021-01-01",
-      "empleados": [
-        {
-          "id": 1,
-          "perfil_id": 1,
-          "nombre": "Empleado 1"
-        },
-        {
-          "id": 2,
-          "perfil_id": 1,
-          "nombre": "Empleado 2"
-        }
-      ]
+      "fecha_creacion": "2021-01-01"
     },
     {
       "id": 2,
       "usuario_id": 1,
       "nombre": "Perfil 2",
-      "fecha_creacion": "2021-01-02",
-      "empleados": []
+      "fecha_creacion": "2021-01-02"
     },
     {
       "id": 3,
       "usuario_id": 2,
       "nombre": "Perfil 1",
-      "fecha_creacion": "2021-01-03",
-      "empleados": [
-        {
-          "id": 3,
-          "perfil_id": 3,
-          "nombre": "Empleado 3"
-        },
-        {
-          "id": 4,
-          "perfil_id": 3,
-          "nombre": "Empleado 4"
-        }
-      ]
+      "fecha_creacion": "2021-01-03"
     },
     {
       "id": 4,
@@ -74,6 +49,9 @@
       "perfil_id": 1,
       "nombre": "Propiedad 1",
       "direccion": "Calle 1",
+      "capacidad": 0,
+      "dormitorios": 0,
+      "banos": 0,
       "latitud": 0,
       "longitud": 0,
       "servicios": {
@@ -101,6 +79,9 @@
       "perfil_id": 1,
       "nombre": "Propiedad 2",
       "direccion": "Calle 2",
+      "capacidad": 0,
+      "dormitorios": 0,
+      "banos": 0,
       "latitud": 0,
       "longitud": 0,
       "servicios": {
@@ -128,6 +109,9 @@
       "perfil_id": 2,
       "nombre": "Propiedad 1",
       "direccion": "Calle 3",
+      "capacidad": 0,
+      "dormitorios": 0,
+      "banos": 0,
       "latitud": 0,
       "longitud": 0,
       "servicios": {
@@ -591,6 +575,28 @@
     {
       "propiedad_id": 3,
       "empleado_id": 4
+    }
+  ],
+  "empleados": [
+    {
+      "id": 1,
+      "perfil_id": 1,
+      "nombre": "Sebas"
+    },
+    {
+      "id": 2,
+      "perfil_id": 1,
+      "nombre": "Empleado 2"
+    },
+    {
+      "id": 3,
+      "perfil_id": 3,
+      "nombre": "Empleado 3"
+    },
+    {
+      "id": 4,
+      "perfil_id": 3,
+      "nombre": "Empleado 4"
     }
   ]
 }

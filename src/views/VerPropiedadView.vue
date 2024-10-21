@@ -1,9 +1,9 @@
 <template>
     <MainLayout>
-        <div class="ver-propiedad-container">
+        <div class="ver-propiedad-container" v-if="propiedad">
             <div class="imagenes-container">
                 <div class="nombre-info-container">
-                    <h1>{{ nombrePropiedad }}</h1>
+                    <h1>{{ propiedad.nombre }}</h1>
                     <div class="propiedad-img-container">
                         <img :src="urlImgPropiedad" alt="Imagen de la propiedad">
                     </div>
@@ -11,7 +11,7 @@
                 <div class="mapa-direccion-container">
                     <div class="mapa-img-container">
                         <img :src="urlImgMapa" alt="Imagen del mapa">
-                        <h3>{{ direccionPropiedad }}</h3>
+                        <h3>{{ propiedad.direccion }}</h3>
                     </div>
                 </div>
             </div>
@@ -19,16 +19,16 @@
                 <div class="info-propiedad-container">
                     <h1>Información</h1>
                     <div class="info-propiedad-detalles">
-                        <li>Precio: ${{ precioPropiedad }}</li>
-                        <li v-if="capacidadPropiedad > 1">Capacidad: {{ capacidadPropiedad }} personas</li>
-                        <li v-else>Capacidad: {{ capacidadPropiedad }} persona</li>
-                        <li>Dormitorios: {{ dormitoriosPropiedad }}</li>
-                        <li>Baños: {{ banosPropiedad }}</li>
-                        <li>Dimensiones: {{ dimensionesPropiedad.largo }} x {{ dimensionesPropiedad.ancho }} x
-                            {{ dimensionesPropiedad.alto }} {{ dimensionesPropiedad.unidad }}</li>
+                        <li>Precio: ${{ propiedad.precio }}</li>
+                        <li v-if="propiedad.capacidad > 1">Capacidad: {{ propiedad.capacidad }} personas</li>
+                        <li v-else>Capacidad: {{ propiedad.capacidad }} persona</li>
+                        <li>Dormitorios: {{ propiedad.dormitorios }}</li>
+                        <li>Baños: {{ propiedad.banos }}</li>
+                        <li>Dimensiones: {{ propiedad.largo }} x {{ propiedad.ancho }} x
+                            {{ propiedad.alto }} {{ propiedad.medida }}</li>
                     </div>
                 </div>
-                <TablesVerPropiedad />
+                <TablesVerPropiedad :propiedadId="propiedadId"/>
             </div>
         </div>
     </MainLayout>
@@ -37,22 +37,27 @@
 <script setup>
 import TablesVerPropiedad from '@/components/TablesVerPropiedad.vue';
 import MainLayout from '@/layouts/MainLayout.vue';
-import { ref } from 'vue';
+import PropiedadesService from '@/services/PropiedadesService';
+import { useRoute } from 'vue-router';
+import { onMounted, ref } from 'vue';
 
-const nombrePropiedad = ref('Nombre de la propiedad');
+const route = useRoute();
+const servicio = new PropiedadesService();
+const propiedadId = ref(route.params.id)
+const propiedad = ref()
+
+const getPropiedad = async () => {
+    propiedad.value = await servicio.getPropiedadById(propiedadId.value);
+    
+    console.log(propiedad.value);
+}
+
+onMounted(() => {
+    getPropiedad();
+})
+
 const urlImgPropiedad = ref('https://upload.wikimedia.org/wikipedia/commons/c/ca/Machu_Picchu%2C_Peru_%282018%29.jpg');
 const urlImgMapa = ref('https://www.cervantesvirtual.com/images/portales/constituciones_hispanoamericanas/graf/mapas/06-mexico_mapa_de_los_estados_s.jpg');
-const direccionPropiedad = ref('Dirección de la propiedad');
-const precioPropiedad = 10000
-const capacidadPropiedad = 3
-const dormitoriosPropiedad = 2
-const banosPropiedad = 2
-const dimensionesPropiedad = {
-    largo: 10,
-    ancho: 5,
-    alto: 3,
-    unidad: 'm'
-}
 </script>
 
 <style scoped lang="scss">

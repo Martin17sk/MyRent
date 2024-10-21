@@ -5,18 +5,52 @@
             <DefaultTable :columns="inventoryColumns" :data="inventoryData" :widthProp="'300px'" />
         </div>
 
-        <div>
+        <div v-if="relacionesEmpleadoPropiedad">
             <h2>Trabajadores:</h2>
-            <DefaultTable :columns="workersColumns" :data="workersData" :widthProp="'500px'" />
+            <DefaultTable :columns="workersColumns" :data="empleados" :widthProp="'500px'" />
         </div>
     </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 import DefaultTable from './DefaultTable.vue';
+import EmpleadoService from '@/services/EmpleadoService';
 
-// Example data from db.json for a specific property
+const props = defineProps({
+    propiedadId: String,
+    required: true,
+});
+
+const relacionesEmpleadoPropiedad = ref([]);
+const servicio = new EmpleadoService();
+const empleados = ref([]);
+
+const getEmpleadoPropiedad = async () => {
+    relacionesEmpleadoPropiedad.value = await servicio.getEmpleadosByPropiedadId(props.propiedadId);
+}
+
+const getEmpleados = async () => {
+    empleados.value = await Promise.all(
+        listaIdEmpleados.value.map(async (id) => {
+            return await servicio.getEmpleadoById(id);
+        })
+    );
+};
+
+const listaIdEmpleados = computed(() => {
+    return relacionesEmpleadoPropiedad.value.map(relacion => relacion.empleado_id);
+});
+
+onMounted(() => {
+    getEmpleadoPropiedad();
+});
+
+watch(listaIdEmpleados, () => {
+    getEmpleados();
+});
+
+
 const inventoryData = ref([
     { name: "Sartén", quantity: 2 },
     { name: "Olla", quantity: 1 },
@@ -35,9 +69,8 @@ const inventoryColumns = ref([
 ]);
 
 const workersColumns = ref([
-    { label: 'Nombre', key: 'name' },
-    { label: 'Servicio', key: 'service' },
-    { label: 'Sueldo', key: 'salary' },
+    { label: 'Nombre', key: 'nombre' },
+    { label: 'ID', key: 'id' },
 ]);
 </script>
 
