@@ -31,7 +31,7 @@ const props = defineProps({
     }
 });
 
-const isInitialImage = ref(true);
+const isInitialImage = defineModel(true)
 
 const currentIcon = computed(() => {
     const imageName = isInitialImage.value ? props.initialImage : props.otherImage;
