@@ -1,28 +1,50 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 
 const props = defineProps({
-    widthProp: { Required: true, type: String },
+    modelValue: {
+        required: true,
+        type: [String, Number]  // Dependerá de tu tipo de dato
+    },
+    widthProp: {
+        required: true,
+        type: String
+    },
     labelText: {
-        Required: true,
+        required: true,
         type: String
     },
     placeholder: {
-        Required: true,
+        required: true,
         type: String
     },
     type: {
-        Required: true,
+        required: true,
         type: String
-    },
-})
+    }
+});
+
+const emit = defineEmits(['update:modelValue']);
+const inputText = ref(props.modelValue);  // Define el valor del input inicial
+
+const updateModel = () => {
+    emit('update:modelValue', inputText.value);  // Emitir evento para actualizar el modelo padre
+};
+
+// Actualizar el inputText cuando el valor de props.modelValue cambie
+watch(() => props.modelValue, (newValue) => {
+    inputText.value = newValue;
+});
+
 const widthPropVal = ref(props.widthProp);
 
 </script>
+
 <template>
     <div class="input">
         <label for="thisInput">{{ labelText }}</label>
-        <input :style="{ width: widthPropVal }" class="input-text" :type="type" id="thisInput" name="thisInput" :placeholder="placeholder">
+        <input v-model="inputText" @input="updateModel" :style="{ width: widthPropVal }" class="input-text" :type="type"
+            id="thisInput" name="thisInput" :placeholder="placeholder" />
     </div>
 </template>
 <style lang="scss" scoped>
