@@ -52,8 +52,8 @@
       "capacidad": 0,
       "dormitorios": 0,
       "banos": 0,
-      "latitud": 0,
-      "longitud": 0,
+      "latitud": -38.7562443,
+      "longitud": -72.7489707,
       "servicios": {
         "internet": false,
         "tv_cable": false,
@@ -70,7 +70,7 @@
       "alto": 0,
       "medida": "m",
       "precio": 0,
-      "disponibilidad": true,
+      "disponibilidad": false,
       "fecha_vencimiento": "2021-01-15",
       "fecha_creacion": "2021-01-01"
     },
@@ -82,8 +82,8 @@
       "capacidad": 0,
       "dormitorios": 0,
       "banos": 0,
-      "latitud": 0,
-      "longitud": 0,
+      "latitud": -38.7489032,
+      "longitud": -72.6172695,
       "servicios": {
         "internet": false,
         "tv_cable": false,
@@ -112,8 +112,8 @@
       "capacidad": 0,
       "dormitorios": 0,
       "banos": 0,
-      "latitud": 0,
-      "longitud": 0,
+      "latitud": -38.732346,
+      "longitud": -72.6226806,
       "servicios": {
         "internet": false,
         "tv_cable": false,
