@@ -1,458 +1,596 @@
 {
-    "users": [
+  "users": [
+    {
+      "id": 1,
+      "nombre": "John Doe",
+      "correo": "",
+      "contraseña": "",
+      "fecha_registro": "2021-01-01",
+      "fecha_acceso": "2021-01-01"
+    },
+    {
+      "id": 2,
+      "nombre": "Jane Doe",
+      "correo": "",
+      "contraseña": "",
+      "fecha_registro": "2021-01-01",
+      "fecha_acceso": "2021-01-01"
+    }
+  ],
+  "perfiles": [
+    {
+      "id": 1,
+      "usuario_id": 1,
+      "nombre": "Perfil 1",
+      "fecha_creacion": "2021-01-01",
+      "empleados": [
         {
-            "id": 1,
-            "email": "test.user1@testing.com",
-            "contrasena": "passworduser1",
-            "configuraciones": {
-                "personalizacion": {
-                    "tema": 0,
-                    "color_alerta_menor": "#ff00ff",
-                    "color_alerta_mayor": "#00ff00"
-                },
-                "notificaciones": {
-                    "caducidad_mensual": 15,
-                    "caducidad_diaria": 8,
-                    "alerta_menor": true,
-                    "alerta_mayor": true
-                }
-            },
-            "perfiles": [
-                {
-                    "nombre": "Zona sur",
-                    "empleados": [
-                        {
-                            "nombre": "Sebastian",
-                            "labor": "Limpieza",
-                            "sueldo": 100
-                        },
-                        {
-                            "nombre": "Bastian",
-                            "labor": "Limpieza",
-                            "sueldo": 150
-                        }
-                    ],
-                    "propiedades": [
-                        {
-                            "informacion_del_lugar": {
-                                "nombre": "Prop 1",
-                                "direccion": "Los Sauces #415",
-                                "capacidad": 3,
-                                "dormitorios": 3,
-                                "baños": 3,
-                                "precio_de_renta": 50000,
-                                "servicios": {
-                                    "internet": false,
-                                    "tv_cable": false,
-                                    "microondas": false,
-                                    "servicio_de_comida": false,
-                                    "permitir_mascotas": false,
-                                    "refrigerador": false,
-                                    "lavadora": false,
-                                    "secadora": false,
-                                    "servicio_de_limpieza": false
-                                }
-                            },
-                            "otros": {
-                                "dimensiones": {
-                                    "largo": 15,
-                                    "ancho": 15,
-                                    "alto": 15,
-                                    "unidad": "m"
-                                },
-                                "inventario": [
-                                    {
-                                        "nombre_objeto": "Sartén",
-                                        "cantidad": 2
-                                    },
-                                    {
-                                        "nombre_objeto": "Olla",
-                                        "cantidad": 1
-                                    },
-                                    {
-                                        "nombre_objeto": "Cuchara",
-                                        "cantidad": 3
-                                    },
-                                    {
-                                        "nombre_objeto": "Tenedor",
-                                        "cantidad": 3
-                                    },
-                                    {
-                                        "nombre_objeto": "Plato",
-                                        "cantidad": 3
-                                    }
-                                ],
-                                "empleados_asignados": [
-                                    {
-                                        "nombre": "Sebastian",
-                                        "labor": "Limpieza",
-                                        "sueldo": 100
-                                    }
-                                ]
-                            },
-                            "imagenes": []
-                        },
-                        {
-                            "informacion_del_lugar": {
-                                "nombre": "Prop 2",
-                                "direccion": "Los Robles #227",
-                                "capacidad": 2,
-                                "dormitorios": 1,
-                                "baños": 1,
-                                "precio_de_renta": 70000,
-                                "servicios": {
-                                    "internet": true,
-                                    "tv_cable": true,
-                                    "microondas": false,
-                                    "servicio_de_comida": false,
-                                    "permitir_mascotas": false,
-                                    "refrigerador": false,
-                                    "lavadora": true,
-                                    "secadora": false,
-                                    "servicio_de_limpieza": false
-                                }
-                            },
-                            "otros": {
-                                "dimensiones": {
-                                    "largo": 20,
-                                    "ancho": 13,
-                                    "alto": 8,
-                                    "unidad": "m"
-                                },
-                                "inventario": [
-                                    {
-                                        "nombre_objeto": "Sartén",
-                                        "cantidad": 2
-                                    },
-                                    {
-                                        "nombre_objeto": "Olla",
-                                        "cantidad": 1
-                                    },
-                                    {
-                                        "nombre_objeto": "Cuchara",
-                                        "cantidad": 3
-                                    },
-                                    {
-                                        "nombre_objeto": "Tenedor",
-                                        "cantidad": 3
-                                    },
-                                    {
-                                        "nombre_objeto": "Plato",
-                                        "cantidad": 3
-                                    }
-                                ],
-                                "empleados_asignados": [
-                                    {
-                                        "nombre": "Bastian",
-                                        "labor": "Limpieza",
-                                        "sueldo": 150
-                                    }
-                                ]
-                            },
-                            "imagenes": []
-                        }
-                    ]
-                },
-                {
-                    "nombre": "Zona norte",
-                    "empleados": [
-                        {
-                            "nombre": "Isidora",
-                            "labor": "Limpieza y Entrega de desayuno",
-                            "sueldo": 500
-                        }
-                    ],
-                    "propiedades": [
-                        {
-                            "informacion_del_lugar": {
-                                "nombre": "H1",
-                                "direccion": "Pablo Neruda #667",
-                                "capacidad": 6,
-                                "dormitorios": 3,
-                                "baños": 2,
-                                "precio_de_renta": 100000,
-                                "servicios": {
-                                    "internet": true,
-                                    "tv_cable": true,
-                                    "microondas": true,
-                                    "servicio_de_comida": false,
-                                    "permitir_mascotas": false,
-                                    "refrigerador": true,
-                                    "lavadora": true,
-                                    "secadora": true,
-                                    "servicio_de_limpieza": false
-                                }
-                            },
-                            "otros": {
-                                "dimensiones": {
-                                    "largo": 21,
-                                    "ancho": 18,
-                                    "alto": 10,
-                                    "unidad": "m"
-                                },
-                                "inventario": [
-                                    {
-                                        "nombre_objeto": "Sartén",
-                                        "cantidad": 2
-                                    },
-                                    {
-                                        "nombre_objeto": "Olla",
-                                        "cantidad": 1
-                                    },
-                                    {
-                                        "nombre_objeto": "Cuchara",
-                                        "cantidad": 6
-                                    },
-                                    {
-                                        "nombre_objeto": "Tenedor",
-                                        "cantidad": 6
-                                    },
-                                    {
-                                        "nombre_objeto": "Cuchillo",
-                                        "cantidad": 6
-                                    },
-                                    {
-                                        "nombre_objeto": "Plato",
-                                        "cantidad": 6
-                                    }
-                                ],
-                                "empleados_asignados": [
-                                    {
-                                        "nombre": "Isidora",
-                                        "labor": "Limpieza y Entrega de desayuno",
-                                        "sueldo": 500
-                                    }
-                                ]
-                            },
-                            "imagenes": []
-                        }
-                    ]
-                }
-            ]
+          "id": 1,
+          "perfil_id": 1,
+          "nombre": "Empleado 1"
         },
         {
-            "id": 2,
-            "email": "test.user2@testing.com",
-            "contrasena": "passworduser2",
-            "configuraciones": {
-                "personalizacion": {
-                    "tema": 0,
-                    "color_alerta_menor": "#00ffff",
-                    "color_alerta_mayor": "#ff0000"
-                },
-                "notificaciones": {
-                    "caducidad_mensual": 15,
-                    "caducidad_diaria": 8,
-                    "alerta_menor": true,
-                    "alerta_mayor": true
-                }
-            },
-            "perfiles": [
-                {
-                    "nombre": "Zona oeste",
-                    "empleados": [
-                        {
-                            "nombre": "Marcos",
-                            "labor": "Limpieza",
-                            "sueldo": 10
-                        },
-                        {
-                            "nombre": "Pablo",
-                            "labor": "Chef",
-                            "sueldo": 20
-                        }
-                    ],
-                    "propiedades": [
-                        {
-                            "informacion_del_lugar": {
-                                "nombre": "Casa abandonanda 1",
-                                "direccion": "Sin Nombre KM 1",
-                                "capacidad": 1,
-                                "dormitorios": 1,
-                                "baños": 0,
-                                "precio_de_renta": 1000,
-                                "servicios": {
-                                    "internet": false,
-                                    "tv_cable": false,
-                                    "microondas": false,
-                                    "servicio_de_comida": false,
-                                    "permitir_mascotas": false,
-                                    "refrigerador": false,
-                                    "lavadora": false,
-                                    "secadora": false,
-                                    "servicio_de_limpieza": false
-                                }
-                            },
-                            "otros": {
-                                "dimensiones": {
-                                    "largo": 6,
-                                    "ancho": 7,
-                                    "alto": 4,
-                                    "unidad": "m"
-                                },
-                                "inventario": [
-                                    {
-                                        "nombre_objeto": "Cuchara",
-                                        "cantidad": 1
-                                    },
-                                    {
-                                        "nombre_objeto": "Tenedor",
-                                        "cantidad": 1
-                                    },
-                                    {
-                                        "nombre_objeto": "Cuchillo",
-                                        "cantidad": 1
-                                    },
-                                    {
-                                        "nombre_objeto": "Plato",
-                                        "cantidad": 1
-                                    }
-                                ],
-                                "empleados_asignados": []
-                            },
-                            "imagenes": []
-                        },
-                        {
-                            "informacion_del_lugar": {
-                                "nombre": "Mansion Richville",
-                                "direccion": "Araucarias #009",
-                                "capacidad": 20,
-                                "dormitorios": 10,
-                                "baños": 4,
-                                "precio_de_renta": 100000000,
-                                "servicios": {
-                                    "internet": true,
-                                    "tv_cable": true,
-                                    "microondas": true,
-                                    "servicio_de_comida": true,
-                                    "permitir_mascotas": true,
-                                    "refrigerador": true,
-                                    "lavadora": true,
-                                    "secadora": true,
-                                    "servicio_de_limpieza": true
-                                }
-                            },
-                            "otros": {
-                                "dimensiones": {
-                                    "largo": 400,
-                                    "ancho": 380,
-                                    "alto": 25,
-                                    "unidad": "m"
-                                },
-                                "inventario": [
-                                    {
-                                        "nombre_objeto": "Sartén",
-                                        "cantidad": 4
-                                    },
-                                    {
-                                        "nombre_objeto": "Olla",
-                                        "cantidad": 4
-                                    },
-                                    {
-                                        "nombre_objeto": "Cuchara",
-                                        "cantidad": 25
-                                    },
-                                    {
-                                        "nombre_objeto": "Tenedor",
-                                        "cantidad": 25
-                                    },
-                                    {
-                                        "nombre_objeto": "Cuchillo",
-                                        "cantidad": 25
-                                    },
-                                    {
-                                        "nombre_objeto": "Plato",
-                                        "cantidad": 25
-                                    }
-                                ],
-                                "empleados_asignados": [
-                                    {
-                                        "nombre": "Bastian",
-                                        "labor": "Limpieza",
-                                        "sueldo": 150
-                                    }
-                                ]
-                            },
-                            "imagenes": []
-                        }
-                    ]
-                },
-                {
-                    "nombre": "China",
-                    "empleados": [
-                        {
-                            "nombre": "Hyu Zung",
-                            "labor": "Todos los servicios",
-                            "sueldo": 10
-                        }
-                    ],
-                    "propiedades": [
-                        {
-                            "informacion_del_lugar": {
-                                "nombre": "Kaori yul",
-                                "direccion": "Kyouki #121",
-                                "capacidad": 7,
-                                "dormitorios": 3,
-                                "baños": 2,
-                                "precio_de_renta": 150000,
-                                "servicios": {
-                                    "internet": true,
-                                    "tv_cable": true,
-                                    "microondas": true,
-                                    "servicio_de_comida": true,
-                                    "permitir_mascotas": false,
-                                    "refrigerador": true,
-                                    "lavadora": true,
-                                    "secadora": true,
-                                    "servicio_de_limpieza": true
-                                }
-                            },
-                            "otros": {
-                                "dimensiones": {
-                                    "largo": 23,
-                                    "ancho": 18,
-                                    "alto": 9,
-                                    "unidad": "m"
-                                },
-                                "inventario": [
-                                    {
-                                        "nombre_objeto": "Sartén",
-                                        "cantidad": 2
-                                    },
-                                    {
-                                        "nombre_objeto": "Olla",
-                                        "cantidad": 1
-                                    },
-                                    {
-                                        "nombre_objeto": "Cuchara",
-                                        "cantidad": 7
-                                    },
-                                    {
-                                        "nombre_objeto": "Tenedor",
-                                        "cantidad": 7
-                                    },
-                                    {
-                                        "nombre_objeto": "Cuchillo",
-                                        "cantidad": 7
-                                    },
-                                    {
-                                        "nombre_objeto": "Plato",
-                                        "cantidad": 7
-                                    }
-                                ],
-                                "empleados_asignados": [
-                                    {
-                                        "nombre": "Hyu Zung",
-                                        "labor": "Todos los servicios",
-                                        "sueldo": 10
-                                    }
-                                ]
-                            },
-                            "imagenes": []
-                        }
-                    ]
-                }
-            ]
+          "id": 2,
+          "perfil_id": 1,
+          "nombre": "Empleado 2"
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "usuario_id": 1,
+      "nombre": "Perfil 2",
+      "fecha_creacion": "2021-01-02",
+      "empleados": []
+    },
+    {
+      "id": 3,
+      "usuario_id": 2,
+      "nombre": "Perfil 1",
+      "fecha_creacion": "2021-01-03",
+      "empleados": [
+        {
+          "id": 3,
+          "perfil_id": 3,
+          "nombre": "Empleado 3"
+        },
+        {
+          "id": 4,
+          "perfil_id": 3,
+          "nombre": "Empleado 4"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "usuario_id": 2,
+      "nombre": "Perfil 2",
+      "fecha_creacion": "2021-01-04"
+    }
+  ],
+  "propiedades": [
+    {
+      "id": 1,
+      "perfil_id": 1,
+      "nombre": "Propiedad 1",
+      "direccion": "Calle 1",
+      "latitud": 0,
+      "longitud": 0,
+      "servicios": {
+        "internet": false,
+        "tv_cable": false,
+        "microondas": false,
+        "servicio_de_comida": false,
+        "permitir_mascotas": false,
+        "refrigerador": false,
+        "lavadora": false,
+        "secadora": false,
+        "servicio_de_limpieza": false
+      },
+      "largo": 0,
+      "ancho": 0,
+      "alto": 0,
+      "medida": "m",
+      "precio": 0,
+      "disponibilidad": true,
+      "fecha_vencimiento": "2021-01-15",
+      "fecha_creacion": "2021-01-01"
+    },
+    {
+      "id": 2,
+      "perfil_id": 1,
+      "nombre": "Propiedad 2",
+      "direccion": "Calle 2",
+      "latitud": 0,
+      "longitud": 0,
+      "servicios": {
+        "internet": false,
+        "tv_cable": false,
+        "microondas": false,
+        "servicio_de_comida": false,
+        "permitir_mascotas": false,
+        "refrigerador": false,
+        "lavadora": false,
+        "secadora": false,
+        "servicio_de_limpieza": false
+      },
+      "largo": 0,
+      "ancho": 0,
+      "alto": 0,
+      "medida": "m",
+      "precio": 0,
+      "disponibilidad": true,
+      "fecha_vencimiento": "2021-01-15",
+      "fecha_creacion": "2021-01-02"
+    },
+    {
+      "id": 3,
+      "perfil_id": 2,
+      "nombre": "Propiedad 1",
+      "direccion": "Calle 3",
+      "latitud": 0,
+      "longitud": 0,
+      "servicios": {
+        "internet": false,
+        "tv_cable": false,
+        "microondas": false,
+        "servicio_de_comida": false,
+        "permitir_mascotas": false,
+        "refrigerador": false,
+        "lavadora": false,
+        "secadora": false,
+        "servicio_de_limpieza": false
+      },
+      "largo": 0,
+      "ancho": 0,
+      "alto": 0,
+      "medida": "m",
+      "precio": 0,
+      "disponibilidad": true,
+      "fecha_vencimiento": "2021-01-15",
+      "fecha_creacion": "2021-01-03"
+    }
+  ],
+  "desempenios": [
+    {
+      "id": 1,
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2021-01-28",
+      "ocupacion": 0,
+      "ingresos": 0,
+      "gastos": 0,
+      "costes": 0,
+      "beneficio_neto": 0
+    },
+    {
+      "id": 2,
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2021-02-28",
+      "ocupacion": 0,
+      "ingresos": 0,
+      "gastos": 0,
+      "costes": 0,
+      "beneficio_neto": 0
+    },
+    {
+      "id": 3,
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2021-03-28",
+      "ocupacion": 0,
+      "ingresos": 0,
+      "gastos": 0,
+      "costes": 0,
+      "beneficio_neto": 0
+    },
+    {
+      "id": 4,
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2021-04-28",
+      "ocupacion": 0,
+      "ingresos": 0,
+      "gastos": 0,
+      "costes": 0,
+      "beneficio_neto": 0
+    },
+    {
+      "id": 5,
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2021-05-28",
+      "ocupacion": 0,
+      "ingresos": 0,
+      "gastos": 0,
+      "costes": 0,
+      "beneficio_neto": 0
+    },
+    {
+      "id": 6,
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2021-06-28",
+      "ocupacion": 0,
+      "ingresos": 0,
+      "gastos": 0,
+      "costes": 0,
+      "beneficio_neto": 0
+    },
+    {
+      "id": 7,
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2021-07-28",
+      "ocupacion": 0,
+      "ingresos": 0,
+      "gastos": 0,
+      "costes": 0,
+      "beneficio_neto": 0
+    },
+    {
+      "id": 8,
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2021-08-28",
+      "ocupacion": 0,
+      "ingresos": 0,
+      "gastos": 0,
+      "costes": 0,
+      "beneficio_neto": 0
+    },
+    {
+      "id": 9,
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2021-09-28",
+      "ocupacion": 0,
+      "ingresos": 0,
+      "gastos": 0,
+      "costes": 0,
+      "beneficio_neto": 0
+    },
+    {
+      "id": 10,
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2021-10-28",
+      "ocupacion": 0,
+      "ingresos": 0,
+      "gastos": 0,
+      "costes": 0,
+      "beneficio_neto": 0
+    },
+    {
+      "id": 11,
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2021-11-28",
+      "ocupacion": 0,
+      "ingresos": 0,
+      "gastos": 0,
+      "costes": 0,
+      "beneficio_neto": 0
+    },
+    {
+      "id": 12,
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2021-12-28",
+      "ocupacion": 0,
+      "ingresos": 0,
+      "gastos": 0,
+      "costes": 0,
+      "beneficio_neto": 0
+    }
+  ],
+  "gastos": [
+    {
+      "id": 1,
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2021-01-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 2,
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2021-02-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 3,
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2021-03-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 4,
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2021-04-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 5,
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2021-05-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 6,
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2021-06-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 7,
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2021-07-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 8,
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2021-08-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 9,
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2021-09-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 10,
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2021-10-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 11,
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2021-11-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 12,
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2021-12-01",
+      "monto": 0,
+      "descripcion": ""
+    }
+  ],
+  "ingresos": [
+    {
+      "id": 1,
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2021-01-01",
+      "monto": 0
+    },
+    {
+      "id": 2,
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2021-02-01",
+      "monto": 0
+    },
+    {
+      "id": 3,
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2021-03-01",
+      "monto": 0
+    },
+    {
+      "id": 4,
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2021-04-01",
+      "monto": 0
+    },
+    {
+      "id": 5,
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2021-05-01",
+      "monto": 0
+    },
+    {
+      "id": 6,
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2021-06-01",
+      "monto": 0
+    },
+    {
+      "id": 7,
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2021-07-01",
+      "monto": 0
+    },
+    {
+      "id": 8,
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2021-08-01",
+      "monto": 0
+    },
+    {
+      "id": 9,
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2021-09-01",
+      "monto": 0
+    },
+    {
+      "id": 10,
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2021-10-01",
+      "monto": 0
+    },
+    {
+      "id": 11,
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2021-11-01",
+      "monto": 0
+    },
+    {
+      "id": 12,
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2021-12-01",
+      "monto": 0
+    }
+  ],
+  "costes": [
+    {
+      "id": 1,
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2021-01-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 2,
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2021-02-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 3,
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2021-03-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 4,
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2021-04-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 5,
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2021-05-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 6,
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2021-06-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 7,
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2021-07-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 8,
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2021-08-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 9,
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2021-09-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 10,
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2021-10-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 11,
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2021-11-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": 12,
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2021-12-01",
+      "monto": 0,
+      "descripcion": ""
+    }
+  ],
+  "empleado_propiedad": [
+    {
+      "propiedad_id": 1,
+      "empleado_id": 1
+    },
+    {
+      "propiedad_id": 1,
+      "empleado_id": 2
+    },
+    {
+      "propiedad_id": 2,
+      "empleado_id": 1
+    },
+    {
+      "propiedad_id": 2,
+      "empleado_id": 2
+    },
+    {
+      "propiedad_id": 3,
+      "empleado_id": 3
+    },
+    {
+      "propiedad_id": 3,
+      "empleado_id": 4
+    }
+  ]
 }
