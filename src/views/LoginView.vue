@@ -44,7 +44,9 @@ const passwordFieldType = computed(() => (passwordVisible.value ? 'text' : 'pass
                 </div>
             </div>
             <div class="options">
-                <h3 class="underline">¿Olvidaste tu contraseña?</h3>
+                <h3 class="underline">
+                    <RouterLink class="link" to="/Recover-password">¿Olvidaste tu contraseña?</RouterLink>
+                </h3>
                 <span class="text__row">
                     <h4>¿No tienes una cuenta?
                         <RouterLink class="link" to="Register">Registrarse</RouterLink>
