@@ -3,6 +3,7 @@ import HomeView from '@/views/HomeView.vue'
 import GraficosView from '@/views/GraficosView.vue'
 import PropiedadesView from '@/views/PropiedadesView.vue'
 import VerPropiedadView from '@/views/VerPropiedadView.vue'
+import MapaView from '@/views/MapaView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,6 +26,24 @@ const router = createRouter({
     path: '/propiedades/:id',
     name: 'Propiedad',
     component: VerPropiedadView
+  },
+  {
+    path: '/mapa',
+    name: 'Mapa',
+    component: MapaView
+  },
+  { path: '/login',
+    name: 'Login',
+    component: LoginView
+  },
+  { path: '/register',
+    name: 'Register',
+    component: RegisterView
+  },
+  {
+    path: '/recover-password',
+    name: 'Recover',
+    component: RecoverPasswordView,
   }
   ]  
 })
