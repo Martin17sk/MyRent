@@ -1,7 +1,9 @@
 <template>
     <div class="button">
         <img v-if="imageName" :src="getImage(imageName)" alt="">
-        <slot></slot>
+        <div class="hide">
+            <slot></slot>
+        </div>
     </div>
 </template>
 
@@ -37,6 +39,10 @@
         font-family: $font;
         font-size: 14px;
         font-weight: 500;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
 
         &:hover {
             background-color: $button-hover-color;
@@ -44,6 +50,26 @@
 
         &:active {
             background-color: $button-active-color;
+        }
+    }
+
+    .hide {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s linear;
+    }
+
+    @media (max-width: 800px) {
+        .hide {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+        }
+        .button {
+            justify-content: center;
+            padding: 5px;
+            width: fit-content;
+            height: fit-content;
         }
     }
 </style>

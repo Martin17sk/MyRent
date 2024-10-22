@@ -3,6 +3,9 @@ import HomeView from '@/views/HomeView.vue'
 import GraficosView from '@/views/GraficosView.vue'
 import PropiedadesView from '@/views/PropiedadesView.vue'
 import VerPropiedadView from '@/views/VerPropiedadView.vue'
+import LoginView from '@/views/LoginView.vue'
+import RegisterView from '@/views/RegisterView.vue'
+import RecoverPasswordView from '@/views/RecoverPasswordView.vue'
 import MapaView from '@/views/MapaView.vue'
 
 const router = createRouter({

@@ -3,9 +3,7 @@
         <DefaultHeader @openSideBar="isSideBarOpen=true" />
         <SideBar :isOpen=isSideBarOpen @close="isSideBarOpen=false"/>
     </div>
-    <div class="content">
-        <slot></slot>
-    </div>
+    <slot></slot>
 </template>
 
 <script setup>
