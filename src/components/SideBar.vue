@@ -9,7 +9,7 @@
                     <RouterLink :to="{ name: 'Home' }">
                         <SideBarButton imageName="informes_icono.svg">Informes</SideBarButton>
                     </RouterLink>
-                    <RouterLink :to="{ name: 'Home' }">
+                    <RouterLink :to="{ name: 'Comparar' }">
                         <SideBarButton imageName="comparar_icono.svg">Comparar</SideBarButton>
                     </RouterLink>
                     <RouterLink :to="{ name: 'Graficos' }">

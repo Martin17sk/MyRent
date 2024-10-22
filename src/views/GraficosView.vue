@@ -82,7 +82,7 @@ const dataMaph = computed(() => {
         'Ingresos': desempenios.value.map(desempenio => desempenio.ingresos),
         'Gastos': desempenios.value.map(desempenio => desempenio.gastos),
         'Costes': desempenios.value.map(desempenio => desempenio.costes),
-        'Beneficios': desempenios.value.map(desempenio => desempenio.beneficios),
+        'Beneficios': desempenios.value.map(desempenio => desempenio.beneficio_neto),
     }
 });
 
