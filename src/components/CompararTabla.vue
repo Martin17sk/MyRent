@@ -1,56 +1,57 @@
 <template>
-    <table>
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Dirección</th>
-                <th>Capacidad</th>
-                <th>Dormitorios</th>
-                <th>Banos</th>
-                <th>Disponibilidad</th>
-                <th>Precio</th>
-                <th>Ingresos</th>
-                <th>Gastos</th>
-                <th>Costes</th>
-                <th>Beneficio</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-if="propiedad1 && desempenio1">
-                <td>{{ propiedad1.nombre }}</td>
-                <td>{{ propiedad1.direccion }}</td>
-                <td>{{ propiedad1.capacidad }}</td>
-                <td>{{ propiedad1.dormitorios }}</td>
-                <td>{{ propiedad1.banos }}</td>
-                <td>{{ propiedad1.disponibilidad }}</td> 
-                <td>{{ propiedad1.precio }}</td>
-                <td>{{ desempenio1.ingresos }}</td>
-                <td>{{ desempenio1.gastos }}</td> 
-                <td>{{ desempenio1.costes }}</td> 
-                <td>{{ desempenio1.beneficio_neto }}</td>
-            </tr>
-            <tr v-else>
-                <td v-for="n in 11">-</td>
-            </tr>
-            <tr v-if="propiedad2 && desempenio2">
-                <td>{{ propiedad2.nombre }}</td>
-                <td>{{ propiedad2.direccion }}</td>
-                <td>{{ propiedad2.capacidad }}</td>
-                <td>{{ propiedad2.dormitorios }}</td>
-                <td>{{ propiedad2.banos }}</td>
-                <td>{{ propiedad2.disponibilidad }}</td> 
-                <td>{{ propiedad2.precio }}</td>
-                <td>{{ desempenio2.ingresos }}</td>
-                <td>{{ desempenio2.gastos }}</td> 
-                <td>{{ desempenio2.costes }}</td> 
-                <td>{{ desempenio2.beneficio_neto }}</td>
-            </tr>
-            <tr v-else>
-                <td v-for="n in 11">-</td>
-            </tr>
-        </tbody>
-    </table>
-
+    <div class="content">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Capacidad</th>
+                    <th>Dormitorios</th>
+                    <th>Banos</th>
+                    <th>Disponibilidad</th>
+                    <th>Precio</th>
+                    <th>Ingresos</th>
+                    <th>Gastos</th>
+                    <th>Costes</th>
+                    <th>Beneficio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-if="propiedad1 && desempenio1">
+                    <td>{{ propiedad1.nombre }}</td>
+                    <td>{{ propiedad1.direccion }}</td>
+                    <td>{{ propiedad1.capacidad }}</td>
+                    <td>{{ propiedad1.dormitorios }}</td>
+                    <td>{{ propiedad1.banos }}</td>
+                    <td>{{ propiedad1.disponibilidad }}</td> 
+                    <td>$ {{ propiedad1.precio }}</td>
+                    <td>$ {{ desempenio1.ingresos }}</td>
+                    <td>$ {{ desempenio1.gastos }}</td> 
+                    <td>$ {{ desempenio1.costes }}</td> 
+                    <td>$ {{ desempenio1.beneficio_neto }}</td>
+                </tr>
+                <tr v-else>
+                    <td v-for="n in 11">-</td>
+                </tr>
+                <tr v-if="propiedad2 && desempenio2">
+                    <td>{{ propiedad2.nombre }}</td>
+                    <td>{{ propiedad2.direccion }}</td>
+                    <td>{{ propiedad2.capacidad }}</td>
+                    <td>{{ propiedad2.dormitorios }}</td>
+                    <td>{{ propiedad2.banos }}</td>
+                    <td>{{ propiedad2.disponibilidad }}</td> 
+                    <td>$ {{ propiedad2.precio }}</td>
+                    <td>$ {{ desempenio2.ingresos }}</td>
+                    <td>$ {{ desempenio2.gastos }}</td> 
+                    <td>$ {{ desempenio2.costes }}</td> 
+                    <td>$ {{ desempenio2.beneficio_neto }}</td>
+                </tr>
+                <tr v-else>
+                    <td v-for="n in 11">-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </template>
 
 <script setup>
@@ -70,7 +71,10 @@
             type: Number,
             required: true
         },
-        mes2: Number
+        mes2: {
+            type: Number,
+            required: true
+        }
     })
 
     const financialService = new FinancialService();
@@ -82,12 +86,16 @@
         desempenio2.value = await financialService.getDesempenioByPropiedadIdAndMes(props.propiedad2.id, props.mes2);
     }
 
-    watch(() => props, () => {        
+    watch(() => props, () => {               
         getDesempeniosByPropiedadIdAndMes();
     }, { deep: true });
 </script>
 
 <style lang="scss" scoped>
+    .content {
+        width: fit-content;
+    }
+
     table {
         border-radius: 7px;
         border-collapse: separate;
@@ -122,4 +130,5 @@
             border-bottom-right-radius: 7px;
         }
     }
+    
 </style>
