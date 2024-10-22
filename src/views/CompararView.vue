@@ -13,17 +13,23 @@
                     <DefaultSelect :options="ultimos12Meses" v-model="currentMonth2Nombre" label="Selecciona un mes" />
                 </div>
             </div>
-            <CompararTabla :propiedad1="currentPropiedad1" :propiedad2="currentPropiedad2" :mes1="currentMonth1" :mes2="currentMonth2" class="tabla"/>
+            <div class="tablas">
+                <CompararTabla :propiedad1="currentPropiedad1" :propiedad2="currentPropiedad2" :mes1="currentMonth1" :mes2="currentMonth2" class="tabla"/>
+                <TablaAllPropiedades/>
+            </div>
         </div>
-        <div>{{ ultimos12Meses }}</div>
+        <ProfileButton widthProp="100px" heightProp="100px"/>
+
     </MainLayout>
 </template>
 
 <script setup>
     import MainLayout from '@/layouts/MainLayout.vue';
     import CompararTabla from '@/components/CompararTabla.vue';
+    import TablaAllPropiedades from '@/components/TablaAllPropiedades.vue';
     import PropiedadesService from '@/services/PropiedadesService';
     import DefaultSelect from '@/components/DefaultSelect.vue';
+    import ProfileButton from '@/components/ProfileButton.vue';
     import { computed, onMounted, ref } from 'vue';
 
     const propiedadesService = new PropiedadesService();
@@ -52,12 +58,12 @@
     const currentMonth1Nombre = ref();
     const currentMonth2Nombre = ref();
 
-    const currentMonth1 = computed(() => {
-        return currentMonth1Nombre.value ? reverseMonthMap[currentMonth1Nombre.value] : null;
+    const currentMonth1 = computed(() => {        
+        return parseInt(reverseMonthMap[currentMonth1Nombre.value]);
     })
 
     const currentMonth2 = computed(() => {
-        return currentMonth2Nombre.value ? reverseMonthMap[currentMonth2Nombre.value] : null;
+        return parseInt(reverseMonthMap[currentMonth2Nombre.value]);
     })
 
     const currentPropiedad1 = computed(() => {
@@ -84,8 +90,13 @@
     .content {
         display: flex;
         flex-direction: column;
+        margin-top: 100px;
 
-        
+        .tablas {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
 
         .opciones {
             display: flex;
