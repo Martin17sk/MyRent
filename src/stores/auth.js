@@ -10,19 +10,16 @@ export const useAuthStore = defineStore('auth', {
   actions: {
     async login(email, password) {
       try {
-        const response = await axios.get('http://localhost:3000/users', {
-          params: {
-            email: email,
-            password: password,
-          },
-        });
+        const response = await axios.get(`http://localhost:3000/users?correo=${email}&contraseña=${password}`);
 
         const user = response.data[0];  // Encontrar al usuario con las credenciales
+        console.log(response.data)
 
         if (user) {
+          console.log(user)
           this.user = user;
           this.isAuthenticated = true;
-          localStorage.setItem('user', JSON.stringify(user)); // Guardar en localStorage para mantener la sesión
+          // localStorage.setItem('user', JSON.stringify(user));
         } else {
           this.error = 'Usuario o contraseña incorrectos';
           this.isAuthenticated = false;
