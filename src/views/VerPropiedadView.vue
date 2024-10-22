@@ -39,7 +39,7 @@ import TablesVerPropiedad from '@/components/TablesVerPropiedad.vue';
 import MainLayout from '@/layouts/MainLayout.vue';
 import PropiedadesService from '@/services/PropiedadesService';
 import { useRoute } from 'vue-router';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 
 const route = useRoute();
 const servicio = new PropiedadesService();
@@ -53,6 +53,11 @@ const getPropiedad = async () => {
 }
 
 onMounted(() => {
+    getPropiedad();
+})
+
+watch(() => route.params.id, () => {
+    propiedadId.value = route.params.id;
     getPropiedad();
 })
 
