@@ -3,16 +3,16 @@
     {
       "id": 1,
       "nombre": "John Doe",
-      "correo": "",
-      "contraseña": "",
+      "correo": "john@doe.cl",
+      "contraseña": "skibidi123",
       "fecha_registro": "2021-01-01",
       "fecha_acceso": "2021-01-01"
     },
     {
       "id": 2,
       "nombre": "Jane Doe",
-      "correo": "",
-      "contraseña": "",
+      "correo": "jane@doe.cl",
+      "contraseña": "pomni123",
       "fecha_registro": "2021-01-01",
       "fecha_acceso": "2021-01-01"
     }
