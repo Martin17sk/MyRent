@@ -18,6 +18,7 @@
     let propiedades = [];
 
     let marks = [];
+    let currentMarker = null;
 
     let map;
     mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
@@ -82,6 +83,28 @@
         });
     }
 
+    function addMarker(e) {
+        if (currentMarker) {
+            currentMarker.remove();
+        }
+        const coords = e.lngLat;
+
+        const popupHTML = `
+            <div class="popup">
+                Agregar propiedad aquí
+            </div>
+        `;
+        
+
+        let popup = new mapboxgl.Popup({closeButton: false}).setHTML(popupHTML);
+        currentMarker = new mapboxgl.Marker({
+            draggable: true 
+            }).setLngLat([coords.lng, coords.lat])
+            .setPopup(popup)
+            .addTo(map);
+        
+        popup.addTo(map);
+    }
 
     watch(() => props.filtros, async () => {
         update();
@@ -93,10 +116,11 @@
         map.on('load', () => {
             update();
         });
+        map.on('dblclick', addMarker);
     });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
     @use "../scss/_variables" as *;
 
     .map-container {
@@ -105,5 +129,29 @@
         border-radius: 10px;
         overflow: hidden;
         border: 1px solid $divider-color;
+    }
+    .popup {
+        color: white;
+        background-color: $button-color;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid $divider-color;
+        &:hover {
+            cursor: pointer;
+            background-color: $button-hover-color;
+        }
+
+        &:active {
+            background-color: $button-active-color;
+        }
+    }
+
+    .mapboxgl-popup-content {
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .mapboxgl-popup-tip {
+        display: none;
     }
 </style>
