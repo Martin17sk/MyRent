@@ -18,8 +18,6 @@
                 <TablaAllPropiedades/>
             </div>
         </div>
-        <ProfileButton widthProp="100px" heightProp="100px"/>
-
     </MainLayout>
 </template>
 
@@ -29,7 +27,6 @@
     import TablaAllPropiedades from '@/components/TablaAllPropiedades.vue';
     import PropiedadesService from '@/services/PropiedadesService';
     import DefaultSelect from '@/components/DefaultSelect.vue';
-    import ProfileButton from '@/components/ProfileButton.vue';
     import { computed, onMounted, ref } from 'vue';
 
     const propiedadesService = new PropiedadesService();
