@@ -125,7 +125,7 @@
 
     .map-container {
         width: 80%;
-        height: 700px;
+        height: 80vh;
         border-radius: 10px;
         overflow: hidden;
         border: 1px solid $divider-color;
