@@ -6,6 +6,12 @@ class FinancialService {
         return desempenios;
     }
 
+    async getDesempeniosUltimoMes() {
+        const response = await axios.get('http://localhost:3000/desempenios');
+        const mes = new Date().getMonth() - 1;
+        return response.data.filter(desempenio => new Date(desempenio.fecha).getMonth() === mes);
+    }
+
     async getDesempenioById(id) {
         const response = await axios.get(`http://localhost:3000/desempenios?id=${id}`);
         return response.data;
