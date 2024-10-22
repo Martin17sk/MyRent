@@ -175,10 +175,11 @@ watch([graphLabel, currentPerfilNombre], () => {
 <style lang="scss">
 .content {
     display: flex;
-    margin: 40px auto;
+    width: fit-content;
+    margin: 150px auto;
     flex-direction: row;
     align-items: center;
-    gap: 16px;
+    gap: 60px;
 
     .opciones {
         display: flex;
