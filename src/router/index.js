@@ -13,60 +13,55 @@ import CompararView from '@/views/CompararView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [{
-    path: '/',
-    name: 'Home',
-    redirect: {name: 'Login'}
-  },
-  {
-    path: '/graficos',
-    name: 'Graficos',
-    component: GraficosView
-  },
-  {
-    path: '/propiedades',
-    name: 'Propiedades',
-    component: PropiedadesView
-  },
-  {
-    path: '/propiedades/:id',
-    name: 'Propiedad',
-    component: VerPropiedadView
-  },
-  {
-    path: '/agregar-propiedad',
-    name: 'AgregarPropiedad',
-    component: AgregarPropiedadView
-  },
-  {
-    path: '/mapa',
-    name: 'Mapa',
-    component: MapaView
-  },
-  { path: '/login',
-    name: 'Login',
-    component: LoginView
-  },
-  { path: '/register',
-    name: 'Register',
-    component: RegisterView
-  },
-  {
-    path: '/recover-password',
-    name: 'Recover',
-    component: RecoverPasswordView,
-  },
-  {
-    path: '/perfiles',
-    name: 'Perfiles',
-    component: PerfilesView,
-  },
-  {
-    path: '/comparar',
-    name: 'Comparar',
-    component: CompararView
-  }
-  ]  
+  routes: [
+    {
+      path: '/',
+      name: 'Home',
+      redirect: { name: 'Login' },
+    },
+    {
+      path: '/graficos',
+      name: 'Graficos',
+      component: GraficosView,
+    },
+    {
+      path: '/propiedades',
+      name: 'Propiedades',
+      component: PropiedadesView,
+    },
+    {
+      path: '/propiedades/:id',
+      name: 'Propiedad',
+      component: VerPropiedadView,
+    },
+    {
+      path: '/agregar-propiedad',
+      name: 'AgregarPropiedad',
+      component: AgregarPropiedadView,
+    },
+    {
+      path: '/mapa',
+      name: 'Mapa',
+      component: MapaView,
+    },
+    { path: '/login', name: 'Login', component: LoginView },
+    { path: '/register', name: 'Register', component: RegisterView },
+    {
+      path: '/recover-password',
+      name: 'Recover',
+      component: RecoverPasswordView,
+    },
+    {
+      path: '/perfiles',
+      name: 'Perfiles',
+      component: PerfilesView,
+    },
+    {
+      path: '/comparar',
+      name: 'Comparar',
+      component: CompararView,
+    },
+  ],
 })
 
 export default router

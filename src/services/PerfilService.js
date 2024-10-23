@@ -1,21 +1,23 @@
-import axios from 'axios';
+import axios from 'axios'
 class PerfilService {
-    async getAllPerfiles() {
-        const response = await axios.get('http://localhost:3000/perfiles');
-        const perfiles = response.data;
-        console.log(perfiles);
-        return perfiles;
-    }
+  async getAllPerfiles() {
+    const response = await axios.get('http://localhost:3000/perfiles')
+    const perfiles = response.data
+    console.log(perfiles)
+    return perfiles
+  }
 
-    async getPerfilById(id) {
-        const response = await axios.get(`http://localhost:3000/perfiles?id=${id}`);
-        return response.data;
-    }
+  async getPerfilById(id) {
+    const response = await axios.get(`http://localhost:3000/perfiles?id=${id}`)
+    return response.data
+  }
 
-    async getPerfilesByUserId(id) {
-        const response = await axios.get(`http://localhost:3000/perfiles?usuario_id=${id}}`);
-        return response.data;
-    }
+  async getPerfilesByUserId(id) {
+    const response = await axios.get(
+      `http://localhost:3000/perfiles?usuario_id=${id}}`,
+    )
+    return response.data
+  }
 }
 
-export default PerfilService;
+export default PerfilService
