@@ -64,9 +64,6 @@ const submit = async () => {
 };
 
 
-if (response === 200) {
-  alert('Usuario registrado correctamente')
-}
 </script>
 
 <template>
