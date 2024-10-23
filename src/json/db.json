@@ -1,0 +1,1041 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "correo": "john@doe.cl",
+      "contraseña": "skibidi123",
+      "fecha_registro": "2024-01-01",
+      "fecha_acceso": "2024-01-01"
+    },
+    {
+      "id": "2",
+      "correo": "jane@doe.cl",
+      "contraseña": "pomni123",
+      "fecha_registro": "2024-01-01",
+      "fecha_acceso": "2024-01-01"
+    },
+    {
+      "id": "e931",
+      "correo": "test@gmail.com",
+      "contraseña": "123456",
+      "fecha_registro": "2024-10-23",
+      "ultimo_acceso": "2024-10-23"
+    },
+    {
+      "id": "68ac",
+      "correo": "test1@gmail.com",
+      "contraseña": "123456",
+      "fecha_registro": "2024-10-23",
+      "ultimo_acceso": "2024-10-23"
+    },
+    {
+      "id": "3c4b",
+      "correo": "test@gmail.com",
+      "contraseña": "1",
+      "fecha_registro": "2024-10-23",
+      "ultimo_acceso": "2024-10-23"
+    }
+  ],
+  "perfiles": [
+    {
+      "id": "1",
+      "usuario_id": 1,
+      "nombre": "JohnPerfil 1",
+      "fecha_creacion": "2024-01-01"
+    },
+    {
+      "id": "2",
+      "usuario_id": 1,
+      "nombre": "JohnPerfil 2",
+      "fecha_creacion": "2024-01-02"
+    },
+    {
+      "id": "3",
+      "usuario_id": 2,
+      "nombre": "JanePerfil 1",
+      "fecha_creacion": "2024-01-03"
+    },
+    {
+      "id": "4",
+      "usuario_id": 2,
+      "nombre": "JanePerfil 2",
+      "fecha_creacion": "2024-01-04"
+    },
+    {
+      "id": "3a99",
+      "usuario_id": "1",
+      "nombre": "Jeremias",
+      "fecha_actual": "2024-10-23"
+    }
+  ],
+  "propiedades": [
+    {
+      "id": "1",
+      "perfil_id": 1,
+      "nombre": "U1P1Propiedad 1",
+      "direccion": "Calle 1",
+      "capacidad": 3,
+      "dormitorios": 2,
+      "banos": 1,
+      "latitud": -38.7562443,
+      "longitud": -72.7489707,
+      "servicios": {
+        "internet": false,
+        "tv_cable": false,
+        "microondas": false,
+        "servicio_de_comida": false,
+        "permitir_mascotas": false,
+        "refrigerador": false,
+        "lavadora": false,
+        "secadora": false,
+        "servicio_de_limpieza": false
+      },
+      "largo": 0,
+      "ancho": 0,
+      "alto": 0,
+      "medida": "m",
+      "precio": 0,
+      "disponibilidad": false,
+      "fecha_vencimiento": "2024-01-15",
+      "fecha_creacion": "2024-01-01"
+    },
+    {
+      "id": "2",
+      "perfil_id": 1,
+      "nombre": "U1P1Propiedad 2",
+      "direccion": "Calle 2",
+      "capacidad": 4,
+      "dormitorios": 3,
+      "banos": 2,
+      "latitud": -38.7489032,
+      "longitud": -72.6172695,
+      "servicios": {
+        "internet": false,
+        "tv_cable": false,
+        "microondas": false,
+        "servicio_de_comida": false,
+        "permitir_mascotas": false,
+        "refrigerador": false,
+        "lavadora": false,
+        "secadora": false,
+        "servicio_de_limpieza": false
+      },
+      "largo": 0,
+      "ancho": 0,
+      "alto": 0,
+      "medida": "m",
+      "precio": 0,
+      "disponibilidad": true,
+      "fecha_vencimiento": "2024-01-15",
+      "fecha_creacion": "2024-01-02"
+    },
+    {
+      "id": "3",
+      "perfil_id": 2,
+      "nombre": "U1P2Propiedad 1",
+      "direccion": "Calle 3",
+      "capacidad": 0,
+      "dormitorios": 0,
+      "banos": 0,
+      "latitud": -38.732346,
+      "longitud": -72.6226806,
+      "servicios": {
+        "internet": false,
+        "tv_cable": false,
+        "microondas": false,
+        "servicio_de_comida": false,
+        "permitir_mascotas": false,
+        "refrigerador": false,
+        "lavadora": false,
+        "secadora": false,
+        "servicio_de_limpieza": false
+      },
+      "largo": 0,
+      "ancho": 0,
+      "alto": 0,
+      "medida": "m",
+      "precio": 0,
+      "disponibilidad": true,
+      "fecha_vencimiento": "2024-01-15",
+      "fecha_creacion": "2024-01-03"
+    }
+  ],
+  "desempenios": [
+    {
+      "id": "164",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-10-28",
+      "ocupacion": 69,
+      "ingresos": 4162,
+      "gastos": 440,
+      "costes": 199,
+      "beneficio_neto": 3241
+    },
+    {
+      "id": "611",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-09-28",
+      "ocupacion": 99,
+      "ingresos": 1231,
+      "gastos": 765,
+      "costes": 231,
+      "beneficio_neto": 1574
+    },
+    {
+      "id": "200",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-08-28",
+      "ocupacion": 49,
+      "ingresos": 1733,
+      "gastos": 728,
+      "costes": 110,
+      "beneficio_neto": 2457
+    },
+    {
+      "id": "254",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-07-28",
+      "ocupacion": 41,
+      "ingresos": 4980,
+      "gastos": 352,
+      "costes": 407,
+      "beneficio_neto": 2393
+    },
+    {
+      "id": "852",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-06-28",
+      "ocupacion": 4,
+      "ingresos": 3033,
+      "gastos": 796,
+      "costes": 416,
+      "beneficio_neto": 2399
+    },
+    {
+      "id": "654",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-05-28",
+      "ocupacion": 78,
+      "ingresos": 3044,
+      "gastos": 477,
+      "costes": 207,
+      "beneficio_neto": 298
+    },
+    {
+      "id": "573",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-04-28",
+      "ocupacion": 83,
+      "ingresos": 3878,
+      "gastos": 512,
+      "costes": 330,
+      "beneficio_neto": 481
+    },
+    {
+      "id": "710",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-03-28",
+      "ocupacion": 40,
+      "ingresos": 2017,
+      "gastos": 955,
+      "costes": 301,
+      "beneficio_neto": 1116
+    },
+    {
+      "id": "770",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-02-28",
+      "ocupacion": 32,
+      "ingresos": 1712,
+      "gastos": 849,
+      "costes": 363,
+      "beneficio_neto": 973
+    },
+    {
+      "id": "889",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-01-28",
+      "ocupacion": 3,
+      "ingresos": 3209,
+      "gastos": 309,
+      "costes": 170,
+      "beneficio_neto": 1875
+    },
+    {
+      "id": "664",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2023-12-28",
+      "ocupacion": 49,
+      "ingresos": 4695,
+      "gastos": 107,
+      "costes": 437,
+      "beneficio_neto": 2115
+    },
+    {
+      "id": "256",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2023-11-28",
+      "ocupacion": 23,
+      "ingresos": 1239,
+      "gastos": 740,
+      "costes": 171,
+      "beneficio_neto": 1712
+    },
+    {
+      "id": "407",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-10-28",
+      "ocupacion": 44,
+      "ingresos": 4655,
+      "gastos": 311,
+      "costes": 69,
+      "beneficio_neto": 3758
+    },
+    {
+      "id": "891",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-09-28",
+      "ocupacion": 2,
+      "ingresos": 881,
+      "gastos": 648,
+      "costes": 470,
+      "beneficio_neto": 430
+    },
+    {
+      "id": "392",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-08-28",
+      "ocupacion": 77,
+      "ingresos": 3456,
+      "gastos": 233,
+      "costes": 71,
+      "beneficio_neto": 1972
+    },
+    {
+      "id": "698",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-07-28",
+      "ocupacion": 63,
+      "ingresos": 3780,
+      "gastos": 926,
+      "costes": 375,
+      "beneficio_neto": 3782
+    },
+    {
+      "id": "115",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-06-28",
+      "ocupacion": 7,
+      "ingresos": 1136,
+      "gastos": 159,
+      "costes": 361,
+      "beneficio_neto": 1320
+    },
+    {
+      "id": "831",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-05-28",
+      "ocupacion": 15,
+      "ingresos": 3559,
+      "gastos": 226,
+      "costes": 135,
+      "beneficio_neto": 3770
+    },
+    {
+      "id": "942",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-04-28",
+      "ocupacion": 15,
+      "ingresos": 3495,
+      "gastos": 397,
+      "costes": 441,
+      "beneficio_neto": 2862
+    },
+    {
+      "id": "34",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-03-28",
+      "ocupacion": 37,
+      "ingresos": 3758,
+      "gastos": 464,
+      "costes": 131,
+      "beneficio_neto": 1770
+    },
+    {
+      "id": "295",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-02-28",
+      "ocupacion": 87,
+      "ingresos": 2718,
+      "gastos": 788,
+      "costes": 315,
+      "beneficio_neto": 763
+    },
+    {
+      "id": "445",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-01-28",
+      "ocupacion": 2,
+      "ingresos": 4832,
+      "gastos": 876,
+      "costes": 262,
+      "beneficio_neto": 3503
+    },
+    {
+      "id": "532",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2023-12-28",
+      "ocupacion": 50,
+      "ingresos": 2525,
+      "gastos": 973,
+      "costes": 266,
+      "beneficio_neto": 1133
+    },
+    {
+      "id": "153",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2023-11-28",
+      "ocupacion": 13,
+      "ingresos": 4892,
+      "gastos": 715,
+      "costes": 345,
+      "beneficio_neto": 2149
+    },
+    {
+      "id": "546",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-10-28",
+      "ocupacion": 39,
+      "ingresos": 4168,
+      "gastos": 746,
+      "costes": 118,
+      "beneficio_neto": 1589
+    },
+    {
+      "id": "536",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-09-28",
+      "ocupacion": 21,
+      "ingresos": 3009,
+      "gastos": 798,
+      "costes": 391,
+      "beneficio_neto": 2499
+    },
+    {
+      "id": "391",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-08-28",
+      "ocupacion": 12,
+      "ingresos": 2631,
+      "gastos": 354,
+      "costes": 331,
+      "beneficio_neto": 3160
+    },
+    {
+      "id": "960",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-07-28",
+      "ocupacion": 66,
+      "ingresos": 4581,
+      "gastos": 448,
+      "costes": 275,
+      "beneficio_neto": 1396
+    },
+    {
+      "id": "860",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-06-28",
+      "ocupacion": 90,
+      "ingresos": 4094,
+      "gastos": 522,
+      "costes": 306,
+      "beneficio_neto": 2904
+    },
+    {
+      "id": "350",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-05-28",
+      "ocupacion": 11,
+      "ingresos": 3206,
+      "gastos": 481,
+      "costes": 170,
+      "beneficio_neto": 2879
+    },
+    {
+      "id": "588",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-04-28",
+      "ocupacion": 68,
+      "ingresos": 1717,
+      "gastos": 401,
+      "costes": 65,
+      "beneficio_neto": 845
+    },
+    {
+      "id": "5",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-03-28",
+      "ocupacion": 45,
+      "ingresos": 2376,
+      "gastos": 885,
+      "costes": 314,
+      "beneficio_neto": 3549
+    },
+    {
+      "id": "384",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-02-28",
+      "ocupacion": 71,
+      "ingresos": 646,
+      "gastos": 189,
+      "costes": 323,
+      "beneficio_neto": 3119
+    },
+    {
+      "id": "337",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-01-28",
+      "ocupacion": 19,
+      "ingresos": 4895,
+      "gastos": 926,
+      "costes": 474,
+      "beneficio_neto": 2873
+    },
+    {
+      "id": "75",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2023-12-28",
+      "ocupacion": 33,
+      "ingresos": 3104,
+      "gastos": 386,
+      "costes": 389,
+      "beneficio_neto": 2952
+    },
+    {
+      "id": "312",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2023-11-28",
+      "ocupacion": 29,
+      "ingresos": 3942,
+      "gastos": 100,
+      "costes": 355,
+      "beneficio_neto": 1867
+    }
+  ],
+  "gastos": [
+    {
+      "id": "1",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-01-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "2",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-02-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "3",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-03-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "4",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-04-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "5",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-05-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "6",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-06-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "7",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-07-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "8",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-08-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "9",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-09-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "10",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-10-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "11",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-11-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "12",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-12-01",
+      "monto": 0,
+      "descripcion": ""
+    }
+  ],
+  "ingresos": [
+    {
+      "id": "1",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-01-01",
+      "monto": 0
+    },
+    {
+      "id": "2",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-02-01",
+      "monto": 0
+    },
+    {
+      "id": "3",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-03-01",
+      "monto": 0
+    },
+    {
+      "id": "4",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-04-01",
+      "monto": 0
+    },
+    {
+      "id": "5",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-05-01",
+      "monto": 0
+    },
+    {
+      "id": "6",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-06-01",
+      "monto": 0
+    },
+    {
+      "id": "7",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-07-01",
+      "monto": 0
+    },
+    {
+      "id": "8",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-08-01",
+      "monto": 0
+    },
+    {
+      "id": "9",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-09-01",
+      "monto": 0
+    },
+    {
+      "id": "10",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-10-01",
+      "monto": 0
+    },
+    {
+      "id": "11",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-11-01",
+      "monto": 0
+    },
+    {
+      "id": "12",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-12-01",
+      "monto": 0
+    }
+  ],
+  "costes": [
+    {
+      "id": "1",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-01-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "2",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-02-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "3",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-03-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "4",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-04-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "5",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-05-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "6",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-06-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "7",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-07-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "8",
+      "propiedad_id": 1,
+      "perfil_id": 1,
+      "fecha": "2024-08-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "9",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-09-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "10",
+      "propiedad_id": 2,
+      "perfil_id": 1,
+      "fecha": "2024-10-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "11",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-11-01",
+      "monto": 0,
+      "descripcion": ""
+    },
+    {
+      "id": "12",
+      "propiedad_id": 3,
+      "perfil_id": 2,
+      "fecha": "2024-12-01",
+      "monto": 0,
+      "descripcion": ""
+    }
+  ],
+  "empleado_propiedad": [
+    {
+      "propiedad_id": 1,
+      "empleado_id": 1,
+      "id": "8f35"
+    },
+    {
+      "propiedad_id": 1,
+      "empleado_id": 2,
+      "id": "6062"
+    },
+    {
+      "propiedad_id": 2,
+      "empleado_id": 1,
+      "id": "6b1f"
+    },
+    {
+      "propiedad_id": 2,
+      "empleado_id": 2,
+      "id": "9f9f"
+    },
+    {
+      "propiedad_id": 2,
+      "empleado_id": 3,
+      "id": "5247"
+    },
+    {
+      "propiedad_id": 3,
+      "empleado_id": 4,
+      "id": "6b8e"
+    },
+    {
+      "id": "da5d",
+      "empleado_id": 1,
+      "propiedad_id": "dcf5",
+      "nombre_empleado": "Sebas"
+    },
+    {
+      "id": "c9cc",
+      "empleado_id": "1",
+      "propiedad_id": "c12e",
+      "nombre_empleado": "Sebas"
+    }
+  ],
+  "empleados": [
+    {
+      "id": "1",
+      "perfil_id": 1,
+      "nombre": "Sebas"
+    },
+    {
+      "id": "2",
+      "perfil_id": 1,
+      "nombre": "Empleado 2"
+    },
+    {
+      "id": "3",
+      "perfil_id": 3,
+      "nombre": "Empleado 3"
+    },
+    {
+      "id": "4",
+      "perfil_id": 3,
+      "nombre": "Empleado 4"
+    },
+    {
+      "id": "4e43",
+      "perfil_id": "3a99",
+      "nombre": "Pimpollo"
+    },
+    {
+      "id": "2ca5",
+      "perfil_id": "3a99",
+      "nombre": "Pimpollo2"
+    }
+  ],
+  "objetos": [
+    {
+      "id": "1",
+      "nombre": "Objeto 1"
+    },
+    {
+      "id": "2",
+      "nombre": "Objeto 2"
+    },
+    {
+      "id": "32f8",
+      "nombre": "phonk"
+    },
+    {
+      "id": "84d5",
+      "nombre": "phonk"
+    },
+    {
+      "id": "8634",
+      "nombre": "sas"
+    },
+    {
+      "id": "278d",
+      "nombre": "sas"
+    },
+    {
+      "id": "e8f6",
+      "nombre": "lol"
+    },
+    {
+      "id": "748b",
+      "nombre": "gato"
+    },
+    {
+      "id": "ce7c",
+      "nombre": "sadge"
+    },
+    {
+      "id": "f708",
+      "nombre": "harry"
+    }
+  ],
+  "inventarios": [
+    {
+      "id": "1",
+      "objeto_id": 1,
+      "objeto_nombre": "Objeto 1",
+      "propiedad_id": 1,
+      "cantidad": 0
+    },
+    {
+      "id": "2",
+      "objeto_id": 1,
+      "objeto_nombre": "Objeto 1",
+      "propiedad_id": 2,
+      "cantidad": 0
+    },
+    {
+      "id": "3",
+      "objeto_id": 2,
+      "objeto_nombre": "Objeto 1",
+      "propiedad_id": 1,
+      "cantidad": 0
+    },
+    {
+      "id": "4",
+      "objeto_id": 2,
+      "objeto_nombre": "Objeto 1",
+      "propiedad_id": 2,
+      "cantidad": 0
+    },
+    {
+      "id": "1975",
+      "cantidad": "4"
+    },
+    {
+      "id": "40ef",
+      "cantidad": "4"
+    },
+    {
+      "id": "f39a",
+      "cantidad": "4"
+    },
+    {
+      "id": "b9bf",
+      "cantidad": "4"
+    },
+    {
+      "id": "59c0",
+      "cantidad": "4"
+    },
+    {
+      "id": "fcf9",
+      "cantidad": "4"
+    },
+    {
+      "id": "a774",
+      "cantidad": "3"
+    },
+    {
+      "id": "6081",
+      "cantidad": "6"
+    },
+    {
+      "id": "bd57",
+      "propiedad_id": "dcf5",
+      "objeto_id": "748b",
+      "cantidad": "3"
+    },
+    {
+      "id": "9a11",
+      "propiedad_id": "c12e",
+      "objeto_id": "ce7c",
+      "cantidad": "1"
+    },
+    {
+      "id": "861e",
+      "propiedad_id": "c12e",
+      "objeto_id": "f708",
+      "cantidad": "2"
+    }
+  ]
+}
