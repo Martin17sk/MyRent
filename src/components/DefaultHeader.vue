@@ -3,7 +3,7 @@
         <div class="header-container">
             <IconButton image="Menu.svg" @click="openSideBar"/>
             <h1>MyRent</h1>
-            <ProfileButton image="perfil_icono.svg"/>
+            <ProfileButton image="perfil_icono.svg" @click="openPerfiles"/>
         </div>
         <hr>
     </header>
@@ -12,9 +12,13 @@
 <script setup>
     import IconButton from './IconButton.vue';
     import ProfileButton from './ProfileButton.vue';
-    const emit = defineEmits(['openSideBar']);
+    const emit = defineEmits(['openSideBar', 'openPerfiles']);
     const openSideBar = () => {
         emit('openSideBar');
+    }
+
+    const openPerfiles = () => {
+        emit('openPerfiles');
     }
 </script>
 

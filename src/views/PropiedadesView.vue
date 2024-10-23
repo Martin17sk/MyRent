@@ -48,8 +48,9 @@ import PropiedadesService from '@/services/PropiedadesService';
 import DefaultContador from '@/components/DefaultContador.vue';
 import ToggleIconButton from '@/components/ToggleIconButton.vue';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
+import ProfilePicker from '@/components/ProfilePicker.vue';
 import { useUserStore } from '@/stores/user';
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 import { RouterLink } from 'vue-router';
 
 const openPopup = ref(false);
@@ -86,6 +87,10 @@ const deleteProperty = async () => {
 onMounted(() => {
     getPropiedades();
     console.log(propiedades);
+});
+
+watch(store, () => {
+    getPropiedades();
 });
 </script>
 
