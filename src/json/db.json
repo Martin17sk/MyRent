@@ -21,25 +21,25 @@
     {
       "id": 1,
       "usuario_id": 1,
-      "nombre": "Perfil 1",
+      "nombre": "JohnPerfil 1",
       "fecha_creacion": "2021-01-01"
     },
     {
       "id": 2,
       "usuario_id": 1,
-      "nombre": "Perfil 2",
+      "nombre": "JohnPerfil 2",
       "fecha_creacion": "2021-01-02"
     },
     {
       "id": 3,
       "usuario_id": 2,
-      "nombre": "Perfil 1",
+      "nombre": "JanePerfil 1",
       "fecha_creacion": "2021-01-03"
     },
     {
       "id": 4,
       "usuario_id": 2,
-      "nombre": "Perfil 2",
+      "nombre": "JanePerfil 2",
       "fecha_creacion": "2021-01-04"
     }
   ],
