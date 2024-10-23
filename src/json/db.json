@@ -839,6 +839,17 @@
     {
       "propiedad_id": 3,
       "empleado_id": 4
+    },
+    {
+      "id": "f7f1",
+      "empleado_id": 1,
+      "nombre_empleado": "Sebas"
+    },
+    {
+      "id": "da5d",
+      "empleado_id": 1,
+      "propiedad_id": "dcf5",
+      "nombre_empleado": "Sebas"
     }
   ],
   "empleados": [
@@ -861,6 +872,108 @@
       "id": 4,
       "perfil_id": 3,
       "nombre": "Empleado 4"
+    }
+  ],
+  "objetos": [
+    {
+      "id": 1,
+      "nombre": "Objeto 1"
+    },
+    {
+      "id": 2,
+      "nombre": "Objeto 2"
+    },
+    {
+      "id": "32f8",
+      "nombre": "phonk"
+    },
+    {
+      "id": "84d5",
+      "nombre": "phonk"
+    },
+    {
+      "id": "8634",
+      "nombre": "sas"
+    },
+    {
+      "id": "278d",
+      "nombre": "sas"
+    },
+    {
+      "id": "e8f6",
+      "nombre": "lol"
+    },
+    {
+      "id": "748b",
+      "nombre": "gato"
+    }
+  ],
+  "inventarios": [
+    {
+      "id": 1,
+      "objeto_id": 1,
+      "objeto_nombre": "Objeto 1",
+      "propiedad_id": 1,
+      "cantidad": 0
+    },
+    {
+      "id": 2,
+      "objeto_id": 1,
+      "objeto_nombre": "Objeto 1",
+      "propiedad_id": 2,
+      "cantidad": 0
+    },
+    {
+      "id": 3,
+      "objeto_id": 2,
+      "objeto_nombre": "Objeto 1",
+      "propiedad_id": 1,
+      "cantidad": 0
+    },
+    {
+      "id": 4,
+      "objeto_id": 2,
+      "objeto_nombre": "Objeto 1",
+      "propiedad_id": 2,
+      "cantidad": 0
+    },
+    {
+      "id": "1975",
+      "cantidad": "4"
+    },
+    {
+      "id": "40ef",
+      "cantidad": "4"
+    },
+    {
+      "id": "f39a",
+      "cantidad": "4"
+    },
+    {
+      "id": "b9bf",
+      "cantidad": "4"
+    },
+    {
+      "id": "59c0",
+      "cantidad": "4"
+    },
+    {
+      "id": "fcf9",
+      "cantidad": "4"
+    },
+    {
+      "id": "a774",
+      "cantidad": "3"
+    },
+    {
+      "id": "6081",
+      "cantidad": "6"
+    },
+    {
+      "id": "bd57",
+      "propiedad_id": "dcf5",
+      "objeto_id": "748b",
+      "cantidad": "3"
     }
   ]
 }

@@ -10,8 +10,18 @@ class EmpleadoService{
         return response.data;
     }
 
+    async getEmpleadosByProfileId(profileId){
+        const response = await axios.get(`http://localhost:3000/empleados?perfil_id=${profileId}`);
+        return response.data;
+    }
+
     async getEmpleadosByPropiedadId(propiedadId){
         const response = await axios.get(`http://localhost:3000/empleado_propiedad?propiedad_id=${propiedadId}`);
+        return response.data;
+    }
+
+    async addEmpleadoPropiedad(empleadoPropiedad){
+        const response = await axios.post('http://localhost:3000/empleado_propiedad', empleadoPropiedad);
         return response.data;
     }
 
