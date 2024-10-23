@@ -7,6 +7,7 @@ import LoginView from '@/views/LoginView.vue'
 import RegisterView from '@/views/RegisterView.vue'
 import RecoverPasswordView from '@/views/RecoverPasswordView.vue'
 import MapaView from '@/views/MapaView.vue'
+import PerfilesView from '@/views/PerfilesView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -47,6 +48,11 @@ const router = createRouter({
     path: '/recover-password',
     name: 'Recover',
     component: RecoverPasswordView,
+  },
+  {
+    path: '/perfiles',
+    name: 'Perfiles',
+    component: PerfilesView,
   }
   ]  
 })
