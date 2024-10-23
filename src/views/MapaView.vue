@@ -16,8 +16,10 @@ import MapaInteractivo from '@/components/MapaInteractivo.vue';
 import PerfilService from '@/services/PerfilService';
 import DefaultSelect from '@/components/DefaultSelect.vue';
 import { useUserStore } from '@/stores/user';
+import { useAuthStore } from '@/stores/auth';
 import { computed, onMounted, ref } from 'vue';
 
+const authStore = useAuthStore();
 const userStore = useUserStore();
 const userId = userStore.userId;
 const perfilService = new PerfilService();
@@ -49,6 +51,7 @@ const filtros = computed(() => {
 
 
 onMounted(() => {
+    authStore.loadUserFromLocalStorage();
     getPerfiles();
 });
 </script>

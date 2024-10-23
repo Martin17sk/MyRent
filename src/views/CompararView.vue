@@ -27,8 +27,10 @@
     import TablaAllPropiedades from '@/components/TablaAllPropiedades.vue';
     import PropiedadesService from '@/services/PropiedadesService';
     import DefaultSelect from '@/components/DefaultSelect.vue';
+    import { useAuthStore } from '@/stores/auth';
     import { computed, onMounted, ref } from 'vue';
 
+    const authStore = useAuthStore();
     const propiedadesService = new PropiedadesService();
     const propiedades = ref(null);
     const currentMonth = new Date().getMonth();
@@ -79,6 +81,7 @@
     })
 
     onMounted(() => {
+        authStore.loadUserFromLocalStorage();
         getPropiedades()
     })
 </script>

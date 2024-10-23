@@ -6,6 +6,7 @@
     import PropiedadesService from "@/services/PropiedadesService";
     import mapboxgl from "mapbox-gl";
     import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+    import { useRouter } from "vue-router";
     import { onMounted, watch } from "vue";
     import 'mapbox-gl/dist/mapbox-gl.css';
     import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
@@ -13,6 +14,8 @@
     const props = defineProps({
         filtros: Object
     });
+
+    const router = useRouter();
 
     const propiedadService = new PropiedadesService();
     let propiedades = [];
@@ -78,9 +81,19 @@
                 .addTo(map);
             marks.push(mark);
 
+            mark.getElement().style.cursor = 'pointer';
             
+            mark.getElement().addEventListener('click', () => {
+                router.push(`/propiedades/${propiedad.id}`);
+            });
+
             mark.getElement().addEventListener('mouseenter', () => {
                 popup.setLngLat(mark.getLngLat()).addTo(map);
+                popup.getElement().addEventListener('click', () => {
+                    console.log("click");
+                    
+                    router.push(`/propiedades/${propiedad.id}`);
+                });
             });
 
             mark.getElement().addEventListener('mouseleave', () => {
@@ -122,6 +135,12 @@
             .addTo(map);
         
         popup.addTo(map);
+
+        popup.getElement().addEventListener('click', () => {
+            console.log("click");
+            
+            router.push('/agregar-propiedad');
+        });
     }
 
     watch(() => props.filtros, async () => {

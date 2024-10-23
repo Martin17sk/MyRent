@@ -150,6 +150,7 @@ import UploadImage from '@/components/UploadImage.vue';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import EmpleadoService from '@/services/EmpleadoService';
 import PropiedadesService from '@/services/PropiedadesService';
+import { useAuthStore } from '@/stores/auth';
 import { useUserStore } from '@/stores/user';
 import ObjetoService from '@/services/ObjetoService';
 import { useRouter, RouterLink } from 'vue-router';
@@ -161,6 +162,7 @@ const props = defineProps({
 });
 
 const store = useUserStore();
+const authStore = useAuthStore();
 const router = useRouter();
 const empleadoService = new EmpleadoService();
 const propiedadesService = new PropiedadesService();
@@ -369,6 +371,7 @@ const submitForm = () => {
 
 
 onMounted(() => {
+    authStore.loadUserFromLocalStorage();
     getEmployees()
 });
 </script>

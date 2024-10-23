@@ -49,6 +49,7 @@ import DefaultContador from '@/components/DefaultContador.vue';
 import ToggleIconButton from '@/components/ToggleIconButton.vue';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import { useUserStore } from '@/stores/user';
+import { useAuthStore } from '@/stores/auth';
 import { computed, onMounted, ref, watch } from 'vue';
 import { RouterLink } from 'vue-router';
 
@@ -58,6 +59,7 @@ const propiedades = ref([]);
 const currentDeleteId = ref();
 
 const store = useUserStore();
+const authStore = useAuthStore();
 
 const servicio = new PropiedadesService();
 
@@ -84,8 +86,8 @@ const deleteProperty = async () => {
 };
 
 onMounted(() => {
+    authStore.loadUserFromLocalStorage();
     getPropiedades();
-    console.log(propiedades);
 });
 
 watch(store, () => {

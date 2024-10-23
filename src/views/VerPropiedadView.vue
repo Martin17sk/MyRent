@@ -38,9 +38,11 @@
 import TablesVerPropiedad from '@/components/TablesVerPropiedad.vue';
 import MainLayout from '@/layouts/MainLayout.vue';
 import PropiedadesService from '@/services/PropiedadesService';
+import { useAuthStore } from '@/stores/auth';
 import { useRoute } from 'vue-router';
 import { onMounted, ref, watch } from 'vue';
 
+const authStore = useAuthStore();
 const route = useRoute();
 const servicio = new PropiedadesService();
 const propiedadId = ref(route.params.id)
@@ -53,6 +55,7 @@ const getPropiedad = async () => {
 }
 
 onMounted(() => {
+    authStore.loadUserFromLocalStorage();
     getPropiedad();
 })
 

@@ -118,9 +118,6 @@ const getNombresPerfiles = () => {
 
 const loadDesempenios = async () => {
     const data = isChecked.value && currentPropiedad.value ? await service.getAllDesempeniosByPropiedadId(currentPropiedad.value.id) : await service.getDesempeniosByPerfilId(currentPerfilId.value);
-    console.log(currentPerfilId.value);
-    console.log(data);
-    
     const sortedDesempenios = data.sort((a, b) => {
         return new Date(a.fecha) - new Date(b.fecha);
     });
@@ -185,8 +182,6 @@ onMounted(() => {
 
 
 watch([graphLabel, isChecked, currentPerfilNombre, currentPropiedadNombre], () => {
-    console.log(isChecked.value);
-    
     getPropiedades();
     loadDesempenios();
 }, { deep: true });

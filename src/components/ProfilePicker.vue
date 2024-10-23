@@ -1,9 +1,11 @@
 <template>
     <transition name="fade">
         <aside ref="menu" class="picker" v-if="perfiles && visible">
-            <SideBarButton v-for="perfil in perfiles" :key="perfil.id" imageName="perfil_icono.svg" @click="selectPerfil(perfil)">
-                {{ perfil.nombre }}
-            </SideBarButton>
+            <RouterLink to="/propiedades">
+                <SideBarButton v-for="perfil in perfiles" :key="perfil.id" imageName="perfil_icono.svg" @click="selectPerfil(perfil)">
+                    {{ perfil.nombre }}
+                </SideBarButton>
+            </RouterLink>
             <SideBarButton imageName="config_icono.svg">Editar</SideBarButton>
         </aside>
     </transition>
@@ -12,6 +14,7 @@
 <script setup>
     import PerfilService from '@/services/PerfilService';
     import SideBarButton from './SideBarButton.vue';
+    import { RouterLink } from 'vue-router';
     import { useUserStore } from '@/stores/user';
     import { onMounted, ref, watch } from 'vue';
 
