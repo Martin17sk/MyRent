@@ -16,7 +16,7 @@ const authStore = useAuthStore();
 const login = async () => {
   await authStore.login(user.value, password.value).then(() => {
     if (authStore.isAuthenticated) {
-    router.push('/Recover-password');  // Redirigir al dashboard si está autenticado
+    router.push('/perfiles');  // Redirigir al dashboard si está autenticado
   }
   }).catch((err) => {
     console.log(err);
