@@ -1,5 +1,5 @@
 <template>
-    <div class="checkbox-container">
+    <div class="checkbox-container" @click="toggleChecked">
         <input type="checkbox" id="default-checkbox">
         
         <label for="default-checkbox">
@@ -11,15 +11,17 @@
 
 <script setup>
 defineProps({
-    checked: {
-        type: Boolean,
-        default: false
-    },
     labelText: {
         type: String,
         default: ''
     }
 });
+
+const checked = defineModel(false);
+
+const toggleChecked = () => {
+    checked.value = !checked.value;
+}
 </script>
 
 <style scoped lang="scss">
@@ -40,7 +42,7 @@ defineProps({
         width: 18px;
         height: 18px;
         background-color: transparent;
-        border: 1px solid #000000;
+        border: 1px solid $input-border-color;
         border-radius: 2px;
         transition: border-color 0.1s linear;
 

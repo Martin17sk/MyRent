@@ -59,10 +59,6 @@ const inventoryData = ref([
     { name: "Plato", quantity: 3 },
 ]);
 
-const workersData = ref([
-    { name: "Sebastian", service: "Limpieza", salary: 100 },
-]);
-
 const inventoryColumns = ref([
     { label: 'Nombre', key: 'name' },
     { label: 'Cantidad', key: 'quantity' },

@@ -14,8 +14,10 @@
             <div class="propiedades-botones-container">
                 <div class="propiedades-botones-wrapper">
                     <div class="propiedad-boton" v-for="propiedad in propiedades" :key="propiedad.id">
-                        <ProfileButton widthProp="200px" heightProp="200px" image="propiedad-icono.svg"
-                            :class="{ 'disable': !isDefault }" />
+                        <RouterLink :to="'/propiedades/' + propiedad.id">
+                            <ProfileButton widthProp="200px" heightProp="200px" image="propiedad-icono.svg"
+                                :class="{ 'disable': !isDefault }" />
+                        </RouterLink>
                         <div class="delete-propiedad" v-if="!isDefault" @click="clickDeleteButton(propiedad.id)">
                             <ProfileButton widthProp="45px" heightProp="45px" image="basura_icono.svg"
                                 borderProp="1px solid rgba(255, 255, 255, 0.5)" />
@@ -23,7 +25,9 @@
                         <h3>{{ propiedad.nombre }}</h3>
                     </div>
                     <div :class="['propiedad-boton', 'aniadir-boton', { 'disable': !isDefault }]" v-if="canAddProperty">
-                        <ProfileButton widthProp="200px" heightProp="200px" image="añadir-icono.svg" />
+                        <RouterLink to="/agregar-propiedad">
+                            <ProfileButton widthProp="200px" heightProp="200px" image="añadir-icono.svg" />
+                        </RouterLink>
                         <h3>Añadir propiedad</h3>
                     </div>
                 </div>
@@ -46,6 +50,7 @@ import ToggleIconButton from '@/components/ToggleIconButton.vue';
 import ConfirmPopup from '@/components/ConfirmPopup.vue';
 import { useUserStore } from '@/stores/user';
 import { computed, onMounted, ref } from 'vue';
+import { RouterLink } from 'vue-router';
 
 const openPopup = ref(false);
 const isDefault = ref(true);

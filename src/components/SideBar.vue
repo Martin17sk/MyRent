@@ -9,7 +9,7 @@
                     <RouterLink :to="{ name: 'Home' }">
                         <SideBarButton imageName="informes_icono.svg">Informes</SideBarButton>
                     </RouterLink>
-                    <RouterLink :to="{ name: 'Home' }">
+                    <RouterLink :to="{ name: 'Comparar' }">
                         <SideBarButton imageName="comparar_icono.svg">Comparar</SideBarButton>
                     </RouterLink>
                     <RouterLink :to="{ name: 'Graficos' }">
@@ -114,22 +114,7 @@
         transform: translateX(-100%);
     }
 
-    a {
-        color: inherit; /* Usa el color de texto que tengas por defecto */
-        text-decoration: none; /* Elimina el subrayado */
-    }
-
-    a:visited {
-        color: inherit; /* Para que los enlaces visitados tengan el mismo color */
-    }
-
-    a:hover {
-        color: inherit; /* Aplica un color más claro cuando se hace hover (opcional) */
-    }
-
-    a:active {
-        color: inherit; /* Aplica el color de cuando el enlace está activo */
-    }
+    
 
 
 

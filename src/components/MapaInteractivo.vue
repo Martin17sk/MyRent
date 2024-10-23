@@ -47,33 +47,51 @@
 
     function removeMarks() {
         if (!marks) return;
-        console.log("remove init length", marks.length);
         
         marks.forEach((mark) => {
             mark.remove()
-            console.log('mark removed');
         });
         marks = [];
     }
 
+    function getPreviewPropiedad(propiedad) {
+        return `
+            <div class="popup">
+                <h3>${propiedad.nombre}</h3>
+                <p>${propiedad.direccion}</p>
+            </div>
+        `;
+    }
+
     function loadMarks() {
         if (!propiedades) return;
-        console.log("loadMarks", propiedades);
         
         propiedades.forEach((propiedad) => {
+            const popup = new mapboxgl.Popup({
+                closeButton: false,
+            }).setHTML(getPreviewPropiedad(propiedad));
+
+
             const mark = new mapboxgl.Marker()
                 .setLngLat([propiedad.longitud, propiedad.latitud])
+                .setPopup(popup)
                 .addTo(map);
             marks.push(mark);
+
+            
+            mark.getElement().addEventListener('mouseenter', () => {
+                popup.setLngLat(mark.getLngLat()).addTo(map);
+            });
+
+            mark.getElement().addEventListener('mouseleave', () => {
+                popup.remove();
+            });
         });
-        console.log("marks", marks);
     }
 
     const getPropiedades = async () => {
         propiedades = await propiedadService.getPropiedadesByProfile(props.filtros.perfilId);
         propiedades = propiedades.filter(propiedad => propiedad.disponibilidad === props.filtros.disponibilidad);
-        console.log(propiedades);
-        console.log(props.filtros);
     };
 
     function update() {
