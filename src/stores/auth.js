@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import axios from 'axios';
-
+import { useUserStore } from './user';
 export const useAuthStore = defineStore('auth', {
   state: () => ({
     user: null,    // Aquí almacenaremos los datos del usuario autenticado
@@ -19,6 +19,7 @@ export const useAuthStore = defineStore('auth', {
           console.log(user)
           this.user = user;
           this.isAuthenticated = true;
+          useUserStore().setUserId(user.id);  //Ojo acá por que me puedo equivocar
           localStorage.setItem('user', JSON.stringify(user));
         } else {
           this.error = 'Usuario o contraseña incorrectos';
@@ -41,6 +42,7 @@ export const useAuthStore = defineStore('auth', {
       const userData = localStorage.getItem('user');
       if (userData) {
         this.user = JSON.parse(userData);
+        useUserStore().setUserId(this.user.id); //Puede que esto genere problemas ojo para mañana
         this.isAuthenticated = true;
       }
     },
