@@ -31,7 +31,9 @@
                 </div>
             </div>
             <div class="sidebar-logout">
-                <SideBarButton imageName="log_out_icono.svg">Cerrar Sesion</SideBarButton>
+                <RouterLink :to="{name:'Login'}">
+                    <SideBarButton @click="authStore.logout" imageName="log_out_icono.svg">Cerrar Sesion</SideBarButton>
+                </RouterLink>
             </div>     
         </aside>
     </transition>
@@ -44,7 +46,9 @@
     import { useUserStore } from '@/stores/user';
     import { RouterLink } from 'vue-router';
     import { watch, ref, onMounted } from 'vue';
-    
+    import { useAuthStore } from '@/stores/auth';
+
+    const authStore = useAuthStore();
     const perfilId = useUserStore().profileId;
     const propiedadesService = new PropiedadesService();
     const propiedades = ref([]);
