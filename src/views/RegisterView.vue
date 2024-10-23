@@ -58,16 +58,14 @@ const submit = async () => {
     ultimo_acceso: obtenerFechaActual(),
   }
 
-    usuarioService.addUsuario(user).then((response) => {
-        router.push({ name: 'Login' });
-    });
+  usuarioService.addUsuario(user).then((response) => {
+    router.push({ name: 'Login' });
+  });
 };
 
 
-    if (response === 200) {
-      alert('Usuario registrado correctamente')
-    }
-  })
+if (response === 200) {
+  alert('Usuario registrado correctamente')
 }
 </script>
 
@@ -84,73 +82,39 @@ const submit = async () => {
       <div class="form_info">
         <div class="nombre">
           <label for="nombre">Correo Electrónico</label>
-          <input
-            class="input-text"
-            type="text"
-            id="nombre"
-            name="nombre"
-            placeholder="Ingresa tu correo electrónico"
-            v-model="email"
-          />
+          <input class="input-text" type="text" id="nombre" name="nombre" placeholder="Ingresa tu correo electrónico"
+            v-model="email" />
         </div>
         <div class="email">
           <label for="email">Confirmar Correo Electrónico</label>
-          <input
-            class="input-text"
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Confirma tu correo electrónico"
-            v-model="confirmEmail"
-          />
+          <input class="input-text" type="email" id="email" name="email" placeholder="Confirma tu correo electrónico"
+            v-model="confirmEmail" />
         </div>
         <div class="contraseña">
           <div class="contraseña-label">
             <label for="contraseña">Contraseña</label>
             <div @click="togglePasswordVisibility" class="hide">
-              <img
-                class="emphasis"
-                :src="
-                  passwordVisible
-                    ? 'src/assets/images/hide-icono.svg'
-                    : 'src/assets/images/show-icono.svg'
-                "
-                alt="hide"
-              />
+              <img class="emphasis" :src="passwordVisible
+                  ? 'src/assets/images/hide-icono.svg'
+                  : 'src/assets/images/show-icono.svg'
+                " alt="hide" />
             </div>
           </div>
-          <input
-            class="input-text"
-            :type="passwordFieldType"
-            v-model="password"
-            id="contraseña"
-            name="contraseña"
-            placeholder="Ingresa tu contraseña"
-          />
+          <input class="input-text" :type="passwordFieldType" v-model="password" id="contraseña" name="contraseña"
+            placeholder="Ingresa tu contraseña" />
         </div>
         <div class="confirm-contraseña">
           <div class="contraseña-label">
             <label for="confirm-contraseña">Confirmar Contraseña</label>
             <div @click="togglePasswordConfVisibility" class="hide">
-              <img
-                class="emphasis"
-                :src="
-                  passwordConfVisible
-                    ? 'src/assets/images/hide-icono.svg'
-                    : 'src/assets/images/show-icono.svg'
-                "
-                alt="hide"
-              />
+              <img class="emphasis" :src="passwordConfVisible
+                  ? 'src/assets/images/hide-icono.svg'
+                  : 'src/assets/images/show-icono.svg'
+                " alt="hide" />
             </div>
           </div>
-          <input
-            class="input-text"
-            :type="passwordConfFieldType"
-            v-model="confirmPassword"
-            id="confirm-contraseña"
-            name="confirm-contraseña"
-            placeholder="Confirma tu contraseña"
-          />
+          <input class="input-text" :type="passwordConfFieldType" v-model="confirmPassword" id="confirm-contraseña"
+            name="confirm-contraseña" placeholder="Confirma tu contraseña" />
         </div>
       </div>
       <div class="register-button">
