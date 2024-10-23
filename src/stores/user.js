@@ -6,15 +6,15 @@ export const useUserStore = defineStore('counter', () => {
   const profileId = ref(null)
 
   function setUserId(id) {
-    console.log('setUserId', id);
+    console.log('setUserId', id)
     userId.value = id
   }
 
   function setProfileId(id) {
-    console.log('setProfileId', id);
-    
+    console.log('setProfileId', id)
+
     profileId.value = id
   }
 
-  return {userId, profileId, setUserId, setProfileId}
+  return { userId, profileId, setUserId, setProfileId }
 })

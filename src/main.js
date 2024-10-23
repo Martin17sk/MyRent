@@ -1,6 +1,6 @@
 import './assets/main.css'
-import VCalendar from 'v-calendar';
-import 'v-calendar/style.css';
+import VCalendar from 'v-calendar'
+import 'v-calendar/style.css'
 
 // Use plugin with optional defaults
 

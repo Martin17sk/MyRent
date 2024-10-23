@@ -1,23 +1,29 @@
 <template>
   <div class="select-container">
     <label v-if="label" for="select" class="select-label">{{ label }}</label>
-    <select v-model="selected" :disabled="disabled" id="select" class="custom-select">
-      <option v-for="option in options" :key="option.value">{{ option }}</option>
+    <select
+      v-model="selected"
+      :disabled="disabled"
+      id="select"
+      class="custom-select"
+    >
+      <option v-for="option in options" :key="option.value">
+        {{ option }}
+      </option>
     </select>
   </div>
 </template>
 
 <script setup>
-const selected = defineModel();
+const selected = defineModel()
 defineProps({
   label: {
     type: String,
-    default: 'Selecciona una opción'
+    default: 'Selecciona una opción',
   },
   options: Array,
-  disabled: Boolean
-});
-
+  disabled: Boolean,
+})
 </script>
 
 <style lang="scss" scoped>
@@ -54,7 +60,6 @@ defineProps({
   background-position: right 10px center;
   background-size: 16px;
 }
-
 
 .custom-select:focus {
   border-color: $input-border-focus-color;
