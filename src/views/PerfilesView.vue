@@ -17,7 +17,7 @@
                 <span>{{ perfil.nombre }}</span>
             </div>
         </div>
-        <VCalendar class="calendar" />
+        <VCalendar v-if="showCalendar" class="calendar" />
     </div>
 </template>
 
@@ -26,18 +26,22 @@ import DefaultContador from '@/components/DefaultContador.vue';
 import ProfileButton from '@/components/ProfileButton.vue';
 import PerfilService from '@/services/PerfilService';
 import {useUserStore} from '@/stores/user';
+import { useAuthStore } from '@/stores/auth';
+
 const store = useUserStore();
+const authStore = useAuthStore();
 import { onMounted, ref } from 'vue';
 
 const service = new PerfilService();
 const perfs = ref();
-
+const showCalendar = ref(false);
 const getPerfiles = async ()=>{
-    perfs.value = await service.getPerfilesByUserId(store.userId); 
+    perfs.value = await service.getPerfilesByUserId(authStore.user.id); 
 
 }
 
 onMounted( async ()=>{
+await authStore.loadUserFromLocalStorage();
    await getPerfiles();
 })
 </script>

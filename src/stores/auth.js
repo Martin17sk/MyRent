@@ -19,7 +19,7 @@ export const useAuthStore = defineStore('auth', {
           console.log(user)
           this.user = user;
           this.isAuthenticated = true;
-          // localStorage.setItem('user', JSON.stringify(user));
+          localStorage.setItem('user', JSON.stringify(user));
         } else {
           this.error = 'Usuario o contraseña incorrectos';
           this.isAuthenticated = false;
