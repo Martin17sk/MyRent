@@ -7,7 +7,7 @@ class ObjetoService{
     }
 
     async getObjetosByName(name){
-        const response = await axios.get(`http://localhost:3000/objetos?name=${name}`);
+        const response = await axios.get(`http://localhost:3000/objetos?nombre=${name}`);
         return response.data;
     }
 
@@ -19,7 +19,7 @@ class ObjetoService{
     async addObjeto(objeto){
         const objetoExists = await this.getObjetosByName(objeto.nombre);
         if(objetoExists.length > 0){
-            console.log(objeto.nombre + "already exists");
+            console.log(objeto.nombre + " already exists");
         } else {
             const response = await axios.post('http://localhost:3000/objetos', objeto);
             return response.data;
@@ -27,9 +27,9 @@ class ObjetoService{
         return {};
     }
 
-    async checkIfObjetoExists(objeto){
-        const response = await axios.get(`http://localhost:3000/objetos?name=${objeto.nombre}`);
-        return response.data.length > 0;
+    async addInventario(inventario){
+        const response = await axios.post('http://localhost:3000/inventarios', inventario);
+        return response.data;
     }
 
     async updateObjeto(objeto){
