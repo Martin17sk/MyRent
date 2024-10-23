@@ -1,7 +1,9 @@
 <script setup>
+import { useRouter } from 'vue-router';
 import { ref, computed } from 'vue';
 import UsuarioService from '@/services/UsuarioService';
 
+const router = useRouter();
 const usuarioService = new UsuarioService();
 const email = ref("");
 const confirmEmail = ref("");
@@ -56,11 +58,7 @@ const submit = async () => {
 
 
     usuarioService.addUsuario(user).then((response) => {
-        console.log(response);
-        
-        if (response === 200) {
-            alert('Usuario registrado correctamente');
-        }
+        router.push({ name: 'Login' });
     });
 };
 

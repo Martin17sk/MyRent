@@ -79,6 +79,10 @@ const login = async () => {
 
 </template>
 <style lang="scss" scoped>
+
+.page {
+    padding-top: 70px;
+}
 .link {
     text-decoration: underline;
     color: inherit;
