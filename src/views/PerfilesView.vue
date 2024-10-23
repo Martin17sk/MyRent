@@ -14,14 +14,14 @@
         <div class="contenedor-img-perfiles">
             <div style="display: flex; flex-direction: column; align-items: center;" v-for="(perfil,index) in perfs" :key="index">
                 <ProfileButton widthProp="140px" heightProp="140px" border-radius-prop="200px" > </ProfileButton>
-                <span>{{ perfil.nombre }}</span>
+                <span style="padding: 10px 0;">{{ perfil.nombre }}</span>
                 <Transition name="fade">
                     <button v-if="editMode" class="eliminar-button">Eliminar</button>
                 </Transition>
             </div>
-            <div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
                 <ProfileButton widthProp="140px" heightProp="140px" image="añadir-icono.svg"></ProfileButton>
-                <span>Añadir perfil</span>
+                <span style="padding: 10px 0;" >Añadir perfil</span>
             </div>
         </div>
         <VCalendar v-if="showCalendar" class="calendar" />
@@ -73,7 +73,8 @@ await authStore.loadUserFromLocalStorage();
 .eliminar-button{
     border: none;
     background-color: #303036;
-    color: rgb(20, 174, 92);
+    color:white;
+
     width: 8vw !important;
     height: 4vh !important;
     border-radius: 10px !important;
@@ -104,8 +105,10 @@ await authStore.loadUserFromLocalStorage();
     flex-direction: row;
     gap: 2vh;
     justify-content: right;
-    margin-top: 4.5vh;
-    margin-right: 6vh;
+    margin-top:0;
+    margin-right: 0;
+    padding-top: 4.5vh;
+    padding-right: 6vh;
 }
 
 .info-contenedor__contador-perfiles {
