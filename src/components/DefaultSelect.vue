@@ -1,6 +1,6 @@
 <template>
   <div class="select-container">
-    <label for="select" class="select-label">{{ label }}</label>
+    <label v-if="label" for="select" class="select-label">{{ label }}</label>
     <select v-model="selected" :disabled="disabled" id="select" class="custom-select">
       <option v-for="option in options" :key="option.value">{{ option }}</option>
     </select>

@@ -3,6 +3,7 @@ import HomeView from '@/views/HomeView.vue'
 import GraficosView from '@/views/GraficosView.vue'
 import PropiedadesView from '@/views/PropiedadesView.vue'
 import VerPropiedadView from '@/views/VerPropiedadView.vue'
+import AgregarPropiedadView from '@/views/AgregarPropiedadView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,6 +26,11 @@ const router = createRouter({
     path: '/propiedades/:id',
     name: 'Propiedad',
     component: VerPropiedadView
+  },
+  {
+    path: '/agregar-propiedad',
+    name: 'AgregarPropiedad',
+    component: AgregarPropiedadView
   }
   ]  
 })
