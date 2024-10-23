@@ -6,7 +6,8 @@
 
             </slot>
             <div class="botones-container">
-                <DefaultButton widthProp="110px" heightProp="40px" fontSizeProp="16px" @click="confirm">Confirmar
+                <DefaultButton widthProp="110px" heightProp="40px" fontSizeProp="16px" class="confirm-button"
+                    @click="confirm">Confirmar
                 </DefaultButton>
                 <DefaultButton widthProp="110px" heightProp="40px" fontSizeProp="16px" class="cancel-button"
                     @click="closePopup">Cancelar
@@ -73,6 +74,18 @@ const closePopup = () => {
             display: flex;
             justify-content: right;
             gap: 10px;
+
+            .confirm-button {
+                background-color: #4caf50;
+
+                &:hover {
+                    filter: brightness(1.2);
+                }
+
+                &:active {
+                    filter: brightness(0.8);
+                }
+            }
 
             .cancel-button {
                 background-color: #ca3434;
