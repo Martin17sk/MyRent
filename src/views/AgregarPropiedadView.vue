@@ -117,9 +117,11 @@
                         type="submit">
                         Confirmar
                     </DefaultButton>
-                    <DefaultButton widthProp="110px" heightProp="40px" fontSizeProp="16px" class="cancel-button">
-                        Cancelar
-                    </DefaultButton>
+                    <RouterLink to="/propiedades">
+                        <DefaultButton widthProp="110px" heightProp="40px" fontSizeProp="16px" class="cancel-button">
+                            Cancelar
+                        </DefaultButton>
+                    </RouterLink>
                 </div>
             </div>
             <ConfirmPopup :visible="openInventoryPopup" title="Agregar objeto" @close="openInventoryPopup = false"
@@ -150,7 +152,8 @@ import EmpleadoService from '@/services/EmpleadoService';
 import PropiedadesService from '@/services/PropiedadesService';
 import { useUserStore } from '@/stores/user';
 import ObjetoService from '@/services/ObjetoService';
-import { useRouter } from 'vue-router';
+import { useRouter, RouterLink } from 'vue-router';
+
 
 
 const props = defineProps({
@@ -319,8 +322,7 @@ const allowToSubmit = computed(() => {
 const submitForm = () => {
     if (allowToSubmit.value) {
         propiedadesService.createPropiedad(createProperty()).then(propiedadCreada => {
-            
-            // Creamos un array de promesas para manejar las operaciones asíncronas
+
             const promesas = [];
 
             listInventoryObjects.value.forEach((object) => {
@@ -354,10 +356,8 @@ const submitForm = () => {
                 promesas.push(promesaEmpleado);
             });
 
-            // Esperamos a que todas las promesas se resuelvan
             Promise.all(promesas).then(() => {
-                // Redirigir a la página principal después de que todo se haya completado
-                router.push({ name: 'Propiedades' }); // Asume que 'HomePage' es la ruta a la que deseas redirigir
+                router.push({ name: 'Propiedades' });
             }).catch((error) => {
                 console.error('Error al procesar el formulario:', error);
             });
@@ -379,9 +379,10 @@ onMounted(() => {
 .form {
     display: flex;
     flex-direction: row;
-    height: 600px;
+    height: 612px;
+    width: fit-content;
     gap: 50px;
-    margin: auto;
+    margin: 100px auto;
 
     .add-button {
         padding-right: 17px;
