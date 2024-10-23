@@ -4,6 +4,11 @@ import GraficosView from '@/views/GraficosView.vue'
 import PropiedadesView from '@/views/PropiedadesView.vue'
 import VerPropiedadView from '@/views/VerPropiedadView.vue'
 import AgregarPropiedadView from '@/views/AgregarPropiedadView.vue'
+import LoginView from '@/views/LoginView.vue'
+import RegisterView from '@/views/RegisterView.vue'
+import RecoverPasswordView from '@/views/RecoverPasswordView.vue'
+import MapaView from '@/views/MapaView.vue'
+import CompararView from '@/views/CompararView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,6 +36,29 @@ const router = createRouter({
     path: '/agregar-propiedad',
     name: 'AgregarPropiedad',
     component: AgregarPropiedadView
+  },
+  {
+    path: '/mapa',
+    name: 'Mapa',
+    component: MapaView
+  },
+  { path: '/login',
+    name: 'Login',
+    component: LoginView
+  },
+  { path: '/register',
+    name: 'Register',
+    component: RegisterView
+  },
+  {
+    path: '/recover-password',
+    name: 'Recover',
+    component: RecoverPasswordView,
+  },
+  {
+    path: '/comparar',
+    name: 'Comparar',
+    component: CompararView
   }
   ]  
 })

@@ -82,7 +82,7 @@ const dataMaph = computed(() => {
         'Ingresos': desempenios.value.map(desempenio => desempenio.ingresos),
         'Gastos': desempenios.value.map(desempenio => desempenio.gastos),
         'Costes': desempenios.value.map(desempenio => desempenio.costes),
-        'Beneficios': desempenios.value.map(desempenio => desempenio.beneficios),
+        'Beneficios': desempenios.value.map(desempenio => desempenio.beneficio_neto),
     }
 });
 
@@ -175,10 +175,11 @@ watch([graphLabel, currentPerfilNombre], () => {
 <style lang="scss">
 .content {
     display: flex;
-    margin: 40px auto;
+    width: fit-content;
+    margin: 150px auto;
     flex-direction: row;
     align-items: center;
-    gap: 16px;
+    gap: 60px;
 
     .opciones {
         display: flex;

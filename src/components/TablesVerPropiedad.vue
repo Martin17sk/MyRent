@@ -72,6 +72,10 @@ const workersColumns = ref([
     { label: 'Nombre', key: 'nombre' },
     { label: 'ID', key: 'id' },
 ]);
+
+watch(() => props.propiedadId, () => {
+    getEmpleadoPropiedad();
+});
 </script>
 
 <style scoped>

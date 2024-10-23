@@ -6,6 +6,12 @@ class FinancialService {
         return desempenios;
     }
 
+    async getDesempeniosUltimoMes() {
+        const response = await axios.get('http://localhost:3000/desempenios');
+        const mes = new Date().getMonth() - 1;
+        return response.data.filter(desempenio => new Date(desempenio.fecha).getMonth() === mes);
+    }
+
     async getDesempenioById(id) {
         const response = await axios.get(`http://localhost:3000/desempenios?id=${id}`);
         return response.data;
@@ -19,6 +25,22 @@ class FinancialService {
     async getAllDesempeniosByPropiedadId(id) {
         const response = await axios.get(`http://localhost:3000/desempenios?propiedad_id=${id}`);
         return response.data;
+    }
+
+    async getDesempenioByPropiedadIdAndMes(id, mes) {
+        const response = await axios.get(`http://localhost:3000/desempenios?propiedad_id=${id}`);
+        const fechaActual = new Date();
+        const fechaLimite = new Date();
+        fechaLimite.setFullYear(fechaActual.getFullYear() - 1);
+        const desempenios = response.data.filter(desempenio => {
+            const fechaDesempenio = new Date(desempenio.fecha);
+            return fechaDesempenio > fechaLimite;
+        });
+        const desempenio = desempenios.find(desempenio => {
+            const fechaDesempenio = new Date(desempenio.fecha);
+            return fechaDesempenio.getMonth() === mes;
+        });
+        return desempenio;
     }
 
     async getAllGastos() {
