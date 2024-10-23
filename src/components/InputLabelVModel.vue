@@ -1,6 +1,9 @@
 <template>
     <div class="text-input">
-        <label :for="inputId">{{ label }}</label>
+        <div class="label">
+            <label :for="inputId" >{{ label }}</label>
+            <label :for="inputId" class="red" v-if="isObligatory"> * </label>
+        </div>
         <input :id="inputId" type="text" :placeholder="placeholder" :width="widthProp" :height="heightProp" @input="onInput" />
     </div>
 </template>
@@ -25,6 +28,10 @@ const props = defineProps({
     heightProp: {
         type: String,
         default: '50px'
+    },
+    isObligatory: {
+        type: Boolean,
+        default: false
     }
 });
 
@@ -46,7 +53,17 @@ const onInput = (event) => {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+
+    .label {
+        display: flex;
+        gap: 0.5rem;
+        .red {
+            color: red;
+        }
+    }
+
     input {
+        color: white;
         background-color: $input-color;
         border-color: $input-border-color;
         padding: 0.5rem;
