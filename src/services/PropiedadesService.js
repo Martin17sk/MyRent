@@ -16,7 +16,7 @@ class PropiedadesService {
     }
 
     async createPropiedad(propiedad) {
-        const response = await axios.post('http://localhost:3000/propiedades', propiedad);
+        const response = await axios.post('http://localhost:3000/propiedades', propiedad);        
         return response.data;
     }
 
