@@ -18,9 +18,6 @@
                     <RouterLink :to="{ name: 'Mapa' }">
                         <SideBarButton imageName="mapa_sidebar_icono.svg">Mapa</SideBarButton>
                     </RouterLink>
-                    <RouterLink :to="{ name: 'Home' }">
-                        <SideBarButton imageName="calendario_sidebar_icono.svg">Calendario</SideBarButton>
-                    </RouterLink>
                 </div>
                 <div class="divider"></div>
                 <div class="sidebar-opciones">
