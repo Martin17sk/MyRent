@@ -11,7 +11,7 @@
                     <DefaultSelect :options="options" v-model="currentComponent" label="Selecciona un gráfico" />
                     <DefaultSelect :options="getNombresPerfiles()" v-model="currentPerfilNombre"
                         label="Selecciona un perfil" />
-                    <DefaultSelect :options="getNombresPerfiles()" :disabled="!isChecked" v-model="currentPerfilNombre"
+                    <DefaultSelect :options="propiedadesOptions" :disabled="!isChecked" v-model="currentPropiedadNombre"
                         label="Selecciona una propiedad" />
                     <DefaultSelect :options="monthOptions" v-model="currentMonthOption" label="Ultimos" />
                     <DefaultSelect :options="dataOptions" v-model="currentDataOption" label="Datos de" />
@@ -29,21 +29,35 @@ import DynamicChart from '@/components/DynamicChart.vue';
 import DefaultSwitch from '@/components/DefaultSwitch.vue';
 import FinancialService from '@/services/FinancialService';
 import PerfilService from '@/services/PerfilService';
+import PropiedadesService from '@/services/PropiedadesService';
 import { computed, onMounted, ref, watch } from 'vue';
 
 const service = new FinancialService();
 const perfilService = new PerfilService();
+const propiedadesService = new PropiedadesService();
 const isChecked = ref(false);
 const perfiles = ref([]);
 const desempenios = ref([]);
 const currentComponent = ref('Bar');
-const currentPerfilNombre = ref(null);
+const currentPerfilNombre = ref();
+const currentPropiedadNombre = ref();
 const currentMonth = new Date().getMonth();
 const monthOptions = ['3 Meses', '6 Meses', '1 Año'];
 const currentMonthOption = ref('3 Meses');
 const options = ref(['Bar', 'Line', 'Pie']);
 const dataOptions = ref(['Ingresos', 'Gastos', 'Costes', 'Beneficios']);
 const currentDataOption = ref('Ingresos');
+
+const propiedades = ref([]);
+
+const propiedadesOptions = computed(() => {
+    return propiedades.value.map(propiedad => propiedad.nombre);
+});
+
+const currentPropiedad = computed(() => {
+    if (!currentPropiedadNombre.value) return null;
+    return propiedades.value.find(propiedad => propiedad.nombre === currentPropiedadNombre.value);
+});
 
 const monthMap = {
     0: 'Enero',
@@ -101,8 +115,12 @@ const getNombresPerfiles = () => {
     return perfiles.value.map(perfil => perfil.nombre);
 }
 
+
 const loadDesempenios = async () => {
-    const data = await service.getDesempeniosByPerfilId(currentPerfilId.value);
+    const data = isChecked.value && currentPropiedad.value ? await service.getAllDesempeniosByPropiedadId(currentPropiedad.value.id) : await service.getDesempeniosByPerfilId(currentPerfilId.value);
+    console.log(currentPerfilId.value);
+    console.log(data);
+    
     const sortedDesempenios = data.sort((a, b) => {
         return new Date(a.fecha) - new Date(b.fecha);
     });
@@ -125,6 +143,11 @@ const loadDesempenios = async () => {
 const getPerfiles = async () => {
     perfiles.value = await perfilService.getPerfilesByUserId(1);
 }
+
+const getPropiedades = async () => {
+    propiedades.value = await propiedadesService.getPropiedadesByProfile(currentPerfilId.value);
+}
+
 const graphData = computed(() => {
     return {
         labels: graphLabel.value,
@@ -154,19 +177,17 @@ const graphData = computed(() => {
     }
 });
 
-function resetComponent() {
-    const value = currentComponent.value;
-    currentComponent.value = null;
-    setTimeout(() => {
-        currentComponent.value = value;
-    }, 0);
-}
 
 onMounted(() => {
     getPerfiles();
 });
 
-watch([graphLabel, currentPerfilNombre], () => {
+
+
+watch([graphLabel, isChecked, currentPerfilNombre, currentPropiedadNombre], () => {
+    console.log(isChecked.value);
+    
+    getPropiedades();
     loadDesempenios();
 }, { deep: true });
 
