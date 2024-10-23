@@ -2,7 +2,6 @@
   "users": [
     {
       "id": "1",
-      "nombre": "John Doe",
       "correo": "john@doe.cl",
       "contraseña": "skibidi123",
       "fecha_registro": "2024-01-01",
@@ -10,11 +9,31 @@
     },
     {
       "id": "2",
-      "nombre": "Jane Doe",
       "correo": "jane@doe.cl",
       "contraseña": "pomni123",
       "fecha_registro": "2024-01-01",
       "fecha_acceso": "2024-01-01"
+    },
+    {
+      "id": "e931",
+      "correo": "test@gmail.com",
+      "contraseña": "123456",
+      "fecha_registro": "2024-10-23",
+      "ultimo_acceso": "2024-10-23"
+    },
+    {
+      "id": "68ac",
+      "correo": "test1@gmail.com",
+      "contraseña": "123456",
+      "fecha_registro": "2024-10-23",
+      "ultimo_acceso": "2024-10-23"
+    },
+    {
+      "id": "3c4b",
+      "correo": "test@gmail.com",
+      "contraseña": "1",
+      "fecha_registro": "2024-10-23",
+      "ultimo_acceso": "2024-10-23"
     }
   ],
   "perfiles": [

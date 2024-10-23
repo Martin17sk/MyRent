@@ -1,8 +1,12 @@
 <script setup>
 import { ref, computed } from 'vue';
+import UsuarioService from '@/services/UsuarioService';
 
-const password = ref('');
-const confirmPassword = ref('');
+const usuarioService = new UsuarioService();
+const email = ref("");
+const confirmEmail = ref("");
+const password = ref("");
+const confirmPassword = ref("");
 const passwordVisible = ref(false);
 const togglePasswordVisibility = () => {
     passwordVisible.value = !passwordVisible.value;
@@ -14,11 +18,57 @@ const togglePasswordConfVisibility = () => {
 const passwordFieldType = computed(() => (passwordVisible.value ? 'text' : 'password'));
 const passwordConfFieldType = computed(() => (passwordConfVisible.value ? 'text' : 'password'));
 
+const obtenerFechaActual = () => {
+    const hoy = new Date();
+    const año = hoy.getFullYear();
+    const mes = String(hoy.getMonth() + 1).padStart(2, '0');
+    const dia = String(hoy.getDate()).padStart(2, '0');
+    return `${año}-${mes}-${dia}`;
+};
+
+
+const submit = async () => {
+    
+    if ((password.value !== confirmPassword.value || password.value === '')) {
+        alert('Las contraseñas no coinciden');
+        return;
+    }
+    if ((email.value !== confirmEmail.value || email.value === '')) {
+        alert('Los correos electrónicos no coinciden');
+        return;
+    }
+
+    usuarioService.getUsuarioByEmail(email.value).then((response) => {
+        console.log(response);
+        if (response.length > 0) {
+            alert('El correo electrónico ya está registrado');
+            return;
+        }
+    });
+
+    const user = {
+        correo: email.value,
+        contraseña: password.value,
+        fecha_registro: obtenerFechaActual(),
+        ultimo_acceso: obtenerFechaActual(),
+    };
+
+
+
+    usuarioService.addUsuario(user).then((response) => {
+        console.log(response);
+        
+        if (response === 200) {
+            alert('Usuario registrado correctamente');
+        }
+    });
+};
+
 </script>
 
 <template>
     <div class="content">
-        <div class="form">
+        <form class="form" @submit.prevent="submit">
             <div class="header-row">
                 <h1 class="center-text">Registro</h1>
 
@@ -31,12 +81,12 @@ const passwordConfFieldType = computed(() => (passwordConfVisible.value ? 'text'
                 <div class="nombre">
                     <label for="nombre">Correo Electrónico</label>
                     <input class="input-text" type="text" id="nombre" name="nombre"
-                        placeholder="Ingresa tu nombre completo">
+                        placeholder="Ingresa tu correo electrónico" v-model="email">
                 </div>
                 <div class="email">
                     <label for="email">Confirmar Correo Electrónico</label>
                     <input class="input-text" type="email" id="email" name="email"
-                        placeholder="Ingresa tu correo electrónico">
+                        placeholder="Confirma tu correo electrónico" v-model="confirmEmail">
                 </div>
                 <div class="contraseña">
                     <div class="contraseña-label">
@@ -66,14 +116,12 @@ const passwordConfFieldType = computed(() => (passwordConfVisible.value ? 'text'
             <div class="register-button">
                 <button type="submit">Registrarse</button>
             </div>
-        </div>
+        </form>
     </div>
 </template>
 
 <style scoped>
-.clean {
-    text-decoration: none;
-}
+
 
 .clickable {
     cursor: pointer;
