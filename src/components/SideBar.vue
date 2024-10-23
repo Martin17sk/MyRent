@@ -27,7 +27,9 @@
                 </div>
                 <div class="divider"></div>
                 <div class="sidebar-opciones">
-                    <SideBarButton imageName="config_icono.svg">Configuracion</SideBarButton>
+                    <RouterLink :to="{name:'Config'}">
+                        <SideBarButton imageName="config_icono.svg">Configuracion</SideBarButton>
+                    </RouterLink>
                 </div>
             </div>
             <div class="sidebar-logout">

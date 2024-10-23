@@ -6,7 +6,7 @@ class UsuarioService {
     }
 
     async getUsuarioById(id) {
-        const response = await axios.get(`http://localhost:3000/users?id=${id}`);
+        const response = await axios.get(`http://localhost:3000/users/${id}`);
         return response.data;
     }
 

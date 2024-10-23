@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
+import ConfigView from '@/views/ConfigView.vue'
 import GraficosView from '@/views/GraficosView.vue'
 import PropiedadesView from '@/views/PropiedadesView.vue'
 import VerPropiedadView from '@/views/VerPropiedadView.vue'
@@ -10,6 +11,7 @@ import RecoverPasswordView from '@/views/RecoverPasswordView.vue'
 import MapaView from '@/views/MapaView.vue'
 import PerfilesView from '@/views/PerfilesView.vue'
 import CompararView from '@/views/CompararView.vue'
+import ConfigCuentaView from '@/views/ConfigCuentaView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -65,6 +67,16 @@ const router = createRouter({
     path: '/comparar',
     name: 'Comparar',
     component: CompararView
+  },
+  {
+    path: '/config',
+    name: 'Config',
+    component: ConfigView
+  },
+  {
+    path: '/config-cuenta',
+    name: 'ConfigCuenta',
+    component: ConfigCuentaView
   }
   ]  
 })
