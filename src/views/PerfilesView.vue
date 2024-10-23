@@ -112,6 +112,8 @@ const showModal = ref(false)
 const inputValue = ref('')
 const empleados = ref([])
 
+
+
 const addEmpleado = () => {
   empleados.value.push('');
 };
@@ -119,11 +121,29 @@ const addEmpleado = () => {
 const removeEmpleado = (index) => {
   empleados.value.splice(index, 1);
 };
+const obtenerFechaActual = () => {
+  const hoy = new Date()
+  const año = hoy.getFullYear()
+  const mes = String(hoy.getMonth() + 1).padStart(2, '0')
+  const dia = String(hoy.getDate()).padStart(2, '0')
+  return `${año}-${mes}-${dia}`
+}
 
 const printContent = () => {
   console.log(inputValue.value)
   console.log(empleados.value)
+  let perfil = {usuario_id: authStore.user.id,nombre: inputValue.value ,fecha_actual: obtenerFechaActual() };
+  service.addPerfil(perfil).then((result) => {
+    const perfilId = result.id;
+    empleados.value.forEach(empleado => {
+      let objetoEmpleado = {perfil_id:perfilId, nombre: empleado}
+      empleadoServ.createEmpleado(objetoEmpleado);
+    });    
+  }).catch((err) => {
+    
+  });
 
+  
 }
 
 const toggleEditMode = () => {
@@ -139,8 +159,11 @@ const authStore = useAuthStore()
 import { onMounted, ref } from 'vue'
 import ConfirmPopup from '@/components/ConfirmPopup.vue'
 import InputComponent from '@/components/InputComponent.vue'
+import axios from 'axios'
+import EmpleadoService from '@/services/EmpleadoService'
 
 const service = new PerfilService()
+const empleadoServ = new EmpleadoService();
 const perfs = ref()
 const showCalendar = ref(false)
 const getPerfiles = async () => {

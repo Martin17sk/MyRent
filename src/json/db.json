@@ -60,6 +60,12 @@
       "usuario_id": 2,
       "nombre": "JanePerfil 2",
       "fecha_creacion": "2024-01-04"
+    },
+    {
+      "id": "3a99",
+      "usuario_id": "1",
+      "nombre": "Jeremias",
+      "fecha_actual": "2024-10-23"
     }
   ],
   "propiedades": [
@@ -898,6 +904,16 @@
       "id": "4",
       "perfil_id": 3,
       "nombre": "Empleado 4"
+    },
+    {
+      "id": "4e43",
+      "perfil_id": "3a99",
+      "nombre": "Pimpollo"
+    },
+    {
+      "id": "2ca5",
+      "perfil_id": "3a99",
+      "nombre": "Pimpollo2"
     }
   ],
   "objetos": [

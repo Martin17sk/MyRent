@@ -14,7 +14,13 @@ class PerfilService {
 
   async getPerfilesByUserId(id) {
     const response = await axios.get(
-      `http://localhost:3000/perfiles?usuario_id=${id}}`,
+      `http://localhost:3000/perfiles?usuario_id=${id}`,
+    )
+    return response.data
+  }
+  async addPerfil(object) {
+    const response = await axios.post(
+      `http://localhost:3000/perfiles`, object
     )
     return response.data
   }
