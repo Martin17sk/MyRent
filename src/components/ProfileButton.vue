@@ -1,11 +1,13 @@
 <template>
-    <div class="button" :style="{ width: widthProp, height: heightProp, border: borderProp }">
-        <img :src="getImage(image)" :style="{ width: widthProp * 0.6, height: heightProp * 0.6 }">
+    <div class="button" :style="{ width: widthProp, height: heightProp, border: borderProp, borderRadius: borderRadiusProp}">
+        <img :src="getImage(image)" 
+        :style="{ width: widthNumber * 0.6 + 'px', height: heightNumber * 0.6 + 'px' }">
     </div>
 </template>
 
 <script setup>
-defineProps({
+
+const prop = defineProps({
     widthProp: {
         type: String,
         default: '50px'
@@ -16,13 +18,19 @@ defineProps({
     },
     image: {
         type: String,
-        default: ''
+        default: 'perfil_icono.svg'
     },
     borderProp: {
         type: String,
         default: 'none'
+    },
+    borderRadiusProp: {
+        type: String,
+        default: '30px'
     }
 });
+const widthNumber = parseFloat(prop.widthProp);
+const heightNumber = parseFloat(prop.heightProp);
 
 const getImage = (imageName) => {
     try {
@@ -37,9 +45,10 @@ const getImage = (imageName) => {
 <style lang="scss" scoped>
 @use '../scss/_variables' as *;
 
+
+
 .button {
     display: flex;
-    border-radius: 30px;
     background-color: $button-color;
     align-items: center;
     justify-content: center;

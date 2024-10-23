@@ -1,6 +1,8 @@
 <script setup>
 import { computed, ref } from 'vue';
-
+import { useAuthStore } from '@/stores/auth';
+import router from '../router';
+const user = ref();
 const password = ref('')
 const passwordVisible = ref(false);
 const togglePasswordVisibility = () => {
@@ -8,6 +10,18 @@ const togglePasswordVisibility = () => {
     passwordVisible.value = !passwordVisible.value;
 };
 const passwordFieldType = computed(() => (passwordVisible.value ? 'text' : 'password'));
+
+const authStore = useAuthStore();
+
+const login = async () => {
+  await authStore.login(user.value, password.value).then(() => {
+    if (authStore.isAuthenticated) {
+    router.push('/Recover-password');  // Redirigir al dashboard si está autenticado
+  }
+  }).catch((err) => {
+    console.log(err);
+  });  // Llamar a la acción de login
+};
 </script>
 <template>
     <div class="page">
@@ -17,7 +31,7 @@ const passwordFieldType = computed(() => (passwordVisible.value ? 'text' : 'pass
                 <div class="form_info">
                     <div class="email">
                         <label for="email">Correo Electrónico o nombre de usuario</label>
-                        <input class="input-text" type="email" id="email" name="email"
+                        <input v-model="user" class="input-text" type="email" id="email" name="email"
                             placeholder="Ingresa tu correo electrónico o nombre de usuario">
                     </div>
                     <div class="contraseña">
@@ -39,7 +53,7 @@ const passwordFieldType = computed(() => (passwordVisible.value ? 'text' : 'pass
                         </div>
                     </div>
                     <div class="iniciar-sesion">
-                        <button class="green-focus" type="button">Iniciar sesión</button>
+                        <button @click="login" class="green-focus" type="button">Iniciar sesión</button>
                     </div>
                 </div>
             </div>

@@ -3,16 +3,16 @@
     {
       "id": "1",
       "nombre": "John Doe",
-      "correo": "",
-      "contraseña": "",
+      "correo": "john@doe.cl",
+      "contraseña": "skibidi123",
       "fecha_registro": "2024-01-01",
       "fecha_acceso": "2024-01-01"
     },
     {
       "id": "2",
       "nombre": "Jane Doe",
-      "correo": "",
-      "contraseña": "",
+      "correo": "jane@doe.cl",
+      "contraseña": "pomni123",
       "fecha_registro": "2024-01-01",
       "fecha_acceso": "2024-01-01"
     }
@@ -21,25 +21,25 @@
     {
       "id": "1",
       "usuario_id": 1,
-      "nombre": "U1Perfil 1",
+      "nombre": "JohnPerfil 1",
       "fecha_creacion": "2024-01-01"
     },
     {
       "id": "2",
       "usuario_id": 1,
-      "nombre": "U1Perfil 2",
+      "nombre": "JohnPerfil 2",
       "fecha_creacion": "2024-01-02"
     },
     {
       "id": "3",
       "usuario_id": 2,
-      "nombre": "U2Perfil 1",
+      "nombre": "JanePerfil 1",
       "fecha_creacion": "2024-01-03"
     },
     {
       "id": "4",
       "usuario_id": 2,
-      "nombre": "U2Perfil 2",
+      "nombre": "JanePerfil 2",
       "fecha_creacion": "2024-01-04"
     }
   ],
