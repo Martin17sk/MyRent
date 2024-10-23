@@ -13,10 +13,8 @@ export const useAuthStore = defineStore('auth', {
         const response = await axios.get(`http://localhost:3000/users?correo=${email}&contraseña=${password}`);
 
         const user = response.data[0];  // Encontrar al usuario con las credenciales
-        console.log(response.data)
 
         if (user) {
-          console.log(user)
           this.user = user;
           this.isAuthenticated = true;
           useUserStore().setUserId(user.id);  //Ojo acá por que me puedo equivocar

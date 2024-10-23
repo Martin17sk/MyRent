@@ -13,7 +13,9 @@
         </div>
         <div class="contenedor-img-perfiles">
             <div style="display: flex; flex-direction: column; align-items: center;" v-for="(perfil,index) in perfs" :key="index">
-                <ProfileButton widthProp="140px" heightProp="140px" border-radius-prop="200px" > </ProfileButton>
+                <RouterLink :to="{name: 'Propiedades'}">
+                    <ProfileButton widthProp="140px" heightProp="140px" border-radius-prop="200px" @click="store.setProfileId(perfil.id)"> </ProfileButton>
+                </RouterLink>
                 <span style="padding: 10px 0;">{{ perfil.nombre }}</span>
                 <Transition name="fade">
                     <button v-if="editMode" class="eliminar-button">Eliminar</button>
@@ -33,7 +35,8 @@
 import DefaultContador from '@/components/DefaultContador.vue';
 import ProfileButton from '@/components/ProfileButton.vue';
 import PerfilService from '@/services/PerfilService';
-import {useUserStore} from '@/stores/user';
+import { RouterLink } from 'vue-router';
+import { useUserStore } from '@/stores/user';
 import { useAuthStore } from '@/stores/auth';
 const editMode = ref(false);
 const toggleEditMode = ()=>{
@@ -53,7 +56,7 @@ const getPerfiles = async ()=>{
 }
 
 onMounted( async ()=>{
-await authStore.loadUserFromLocalStorage();
+    await authStore.loadUserFromLocalStorage();
    await getPerfiles();
 })
 </script>

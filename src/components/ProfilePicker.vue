@@ -28,7 +28,7 @@
     const menu = ref(null);
 
     const getPerfiles = async () => {
-        perfiles.value = await service.getPerfilesByUserId(userStore.profileId);
+        perfiles.value = await service.getPerfilesByUserId(userStore.userId);
     }
 
     const selectPerfil = (perfil) => {
