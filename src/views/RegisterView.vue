@@ -1,13 +1,16 @@
 <script setup>
-import { ref, computed } from 'vue'
-import UsuarioService from '@/services/UsuarioService'
+import { useRouter } from 'vue-router';
+import { ref, computed } from 'vue';
+import UsuarioService from '@/services/UsuarioService';
 
-const usuarioService = new UsuarioService()
-const email = ref('')
-const confirmEmail = ref('')
-const password = ref('')
-const confirmPassword = ref('')
-const passwordVisible = ref(false)
+const router = useRouter();
+const usuarioService = new UsuarioService();
+const email = ref("");
+const confirmEmail = ref("");
+const password = ref("");
+const confirmPassword = ref("");
+const passwordVisible = ref(false);
+
 const togglePasswordVisibility = () => {
   passwordVisible.value = !passwordVisible.value
 }
@@ -55,8 +58,11 @@ const submit = async () => {
     ultimo_acceso: obtenerFechaActual(),
   }
 
-  usuarioService.addUsuario(user).then(response => {
-    console.log(response)
+    usuarioService.addUsuario(user).then((response) => {
+        router.push({ name: 'Login' });
+    });
+};
+
 
     if (response === 200) {
       alert('Usuario registrado correctamente')

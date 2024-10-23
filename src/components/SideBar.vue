@@ -1,62 +1,45 @@
 <template>
-  <transition name="slide">
-    <aside ref="sidebar" v-if="isOpen" class="sidebar-container">
-      <div class="sidebar-contenido">
-        <div class="sidebar-opciones">
-          <RouterLink :to="{ name: 'Propiedades' }">
-            <SideBarButton imageName="casa_simple_icono.svg"
-              >Inicio</SideBarButton
-            >
-          </RouterLink>
-          <RouterLink :to="{ name: 'Home' }">
-            <SideBarButton imageName="informes_icono.svg"
-              >Informes</SideBarButton
-            >
-          </RouterLink>
-          <RouterLink :to="{ name: 'Comparar' }">
-            <SideBarButton imageName="comparar_icono.svg"
-              >Comparar</SideBarButton
-            >
-          </RouterLink>
-          <RouterLink :to="{ name: 'Graficos' }">
-            <SideBarButton imageName="graficos_icono.svg"
-              >Graficos</SideBarButton
-            >
-          </RouterLink>
-          <RouterLink :to="{ name: 'Mapa' }">
-            <SideBarButton imageName="mapa_sidebar_icono.svg"
-              >Mapa</SideBarButton
-            >
-          </RouterLink>
-        </div>
-        <div class="divider"></div>
-        <div class="sidebar-opciones">
-          <RouterLink
-            v-for="propiedad in propiedades"
-            :key="propiedad.id"
-            :to="{ name: 'Propiedad', params: { id: propiedad.id } }"
-          >
-            <SideBarButton imageName="casa_simple_icono.svg">{{
-              propiedad.nombre
-            }}</SideBarButton>
-          </RouterLink>
-        </div>
-        <div class="divider"></div>
-        <div class="sidebar-opciones">
-          <SideBarButton imageName="config_icono.svg"
-            >Configuracion</SideBarButton
-          >
-        </div>
-      </div>
-      <div class="sidebar-logout">
-        <RouterLink :to="{ name: 'Login' }">
-          <SideBarButton @click="authStore.logout" imageName="log_out_icono.svg"
-            >Cerrar Sesion</SideBarButton
-          >
-        </RouterLink>
-      </div>
-    </aside>
-  </transition>
+<transition name="slide">
+        <aside ref="sidebar" v-if="isOpen" class="sidebar-container">
+            <div class="sidebar-contenido">
+                <div class="sidebar-opciones">
+                    <RouterLink :to="{ name: 'Propiedades' }">
+                        <SideBarButton imageName="casa_simple_icono.svg" >Inicio</SideBarButton>
+                    </RouterLink>
+                    <RouterLink :to="{ name: 'Home' }">
+                        <SideBarButton imageName="informes_icono.svg">Informes</SideBarButton>
+                    </RouterLink>
+                    <RouterLink :to="{ name: 'Comparar' }">
+                        <SideBarButton imageName="comparar_icono.svg">Comparar</SideBarButton>
+                    </RouterLink>
+                    <RouterLink :to="{ name: 'Graficos' }">
+                        <SideBarButton imageName="graficos_icono.svg">Graficos</SideBarButton>
+                    </RouterLink>
+                    <RouterLink :to="{ name: 'Mapa' }">
+                        <SideBarButton imageName="mapa_sidebar_icono.svg">Mapa</SideBarButton>
+                    </RouterLink>
+                </div>
+                <div class="divider"></div>
+                <div class="sidebar-opciones">
+                    <RouterLink v-for="propiedad in propiedades" :key="propiedad.id" :to="{ name: 'Propiedad', params: { id: propiedad.id }}">
+                        <SideBarButton imageName="casa_simple_icono.svg">{{propiedad.nombre}}</SideBarButton>
+                    </RouterLink>
+                </div>
+                <div class="divider"></div>
+                <div class="sidebar-opciones">
+                    <RouterLink :to="{name:'Config'}">
+                        <SideBarButton imageName="config_icono.svg">Configuracion</SideBarButton>
+                    </RouterLink>
+                </div>
+            </div>
+            <div class="sidebar-logout">
+                <RouterLink :to="{name:'Login'}">
+                    <SideBarButton @click="authStore.logout" imageName="log_out_icono.svg">Cerrar Sesion</SideBarButton>
+                </RouterLink>
+            </div>     
+        </aside>
+    </transition>
+
 </template>
 
 <script setup>

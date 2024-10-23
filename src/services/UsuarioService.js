@@ -4,11 +4,12 @@ class UsuarioService {
     const response = await axios.get('http://localhost:3000/users')
     return response.data
   }
+  
+   async getUsuarioById(id) {
+        const response = await axios.get(`http://localhost:3000/users/${id}`);
+        return response.data;
+   }
 
-  async getUsuarioById(id) {
-    const response = await axios.get(`http://localhost:3000/users?id=${id}`)
-    return response.data
-  }
 
   async getUsuarioByEmail(email) {
     const response = await axios.get(
