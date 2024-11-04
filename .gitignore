@@ -31,3 +31,5 @@ coverage
 .vscode
 .env
 /backend/target
+
+/backend/target/
