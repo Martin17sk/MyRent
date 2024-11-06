@@ -12,11 +12,19 @@ public class UsuarioService {
     public UsuarioService(UsuarioRepository usuarioRepository){
         this.usuarioRepository = usuarioRepository;
     }
+
+    public Optional<Usuario> encontrarUsuarioPorId(int id){
+        return usuarioRepository.findByIdUsuario(id);
+    }
     public Usuario insertarUsuario(String correo, String contrasenia){
         usuarioRepository.insertarUsuario(correo, contrasenia);
         Usuario usuario = new Usuario();
         usuario.setCorreo(correo);
         usuario.setContrasenia(contrasenia);
         return usuario;
+    }
+
+    public Usuario guardarUsuario(Usuario usuario){
+        return usuarioRepository.save(usuario);
     }
 }

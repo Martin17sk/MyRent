@@ -11,16 +11,14 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/usuarios")
 public class UsuarioController {
-    private final UsuarioRepository usuarioRepository;
     private final UsuarioService usuarioService;
     public UsuarioController(UsuarioRepository usuarioRepository, UsuarioService usuarioService){
-        this.usuarioRepository = usuarioRepository;
         this.usuarioService = usuarioService;
     }
 
     @GetMapping("/{id_usuario}")
-    public ResponseEntity<Usuario> getUsuarioByUsuario_id(@PathVariable Long id_usuario) {
-        Optional<Usuario> usuario = usuarioRepository.findById(id_usuario);
+    public ResponseEntity<Usuario> getUsuarioByUsuario_id(@PathVariable int id_usuario) {
+        Optional<Usuario> usuario = usuarioService.encontrarUsuarioPorId(id_usuario);
         return usuario.map(ResponseEntity::ok).
                 orElseGet(()->ResponseEntity.notFound().build());
     }
@@ -36,7 +34,7 @@ public class UsuarioController {
             usuario.setContrasenia(contrasenia);
 
             // Guardar el usuario en la base de datos
-            Usuario usuarioGuardado = usuarioRepository.save(usuario);
+            Usuario usuarioGuardado = usuarioService.guardarUsuario(usuario);
 
             // Devolver el usuario guardado con el estado 201 Created
             return ResponseEntity.status(HttpStatus.CREATED).body(usuarioGuardado);
