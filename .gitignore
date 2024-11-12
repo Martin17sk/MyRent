@@ -33,3 +33,6 @@ coverage
 /backend/target
 
 /backend/target/
+/backend/.env
+/backend/MyRent.iml
+/frontend/.env
