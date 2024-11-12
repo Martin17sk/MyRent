@@ -3,17 +3,20 @@ package io.github.MyRent.myrent.model;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
-@Table(name = "usuario")
 @Data
 public class Usuario {
     @Id
-    @Column (name = "id_usuario")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idUsuario;
+    private Long id;
     private String correo;
     private String contrasenia;
-    private Timestamp fecha_registro;
-    private Timestamp fecha_acceso;
+    @Column(name = "fecha_registro")
+    private Timestamp fechaRegistro;
+    @Column(name = "fecha_acceso")
+    private Timestamp fechaAcceso;
+    @OneToMany(mappedBy = "usuario")
+    private List<Perfil> perfiles;
 }
