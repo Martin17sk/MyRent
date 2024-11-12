@@ -1,12 +1,15 @@
 package io.github.MyRent.myrent.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.sql.Timestamp;
-import java.util.List;
-
-@Data
+import java.util.Set;
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "perfil")
 @Entity
 public class Perfil {
     @Id
@@ -18,7 +21,7 @@ public class Perfil {
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
     @OneToMany(mappedBy = "perfil")
-    private List<Empleado> empleados;
+    private Set<Empleado> empleados;
     @OneToMany(mappedBy = "perfil")
-    private List<Propiedad> propiedades;
+    private Set<Propiedad> propiedades;
 }

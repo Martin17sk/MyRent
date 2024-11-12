@@ -1,14 +1,16 @@
 package io.github.MyRent.myrent.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Setter;
+import lombok.*;
 
-import java.util.List;
+import java.util.Set;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "empleado")
 @Entity
-
 public class Empleado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,6 +20,6 @@ public class Empleado {
     @JoinColumn(name = "perfil_id")
     private Perfil perfil;
     @ManyToMany
-    private List<Propiedad> propiedades;
+    private Set<Propiedad> propiedades;
 
 }

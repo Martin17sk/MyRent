@@ -1,11 +1,15 @@
 package io.github.MyRent.myrent.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.sql.Date;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Table( name = "transaccion_financiera")
 @Entity
 public class TransaccionFinanciera {
     @Id

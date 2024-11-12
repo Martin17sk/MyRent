@@ -1,11 +1,15 @@
 package io.github.MyRent.myrent.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
-import java.util.List;
+import java.util.Set;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "servicio")
 @Entity
 public class Servicio {
 
@@ -13,6 +17,6 @@ public class Servicio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-    @ManyToMany
-    private List<Propiedad> propiedades;
+    @ManyToMany(mappedBy = "servicios")
+    private Set<Propiedad> propiedades;
 }

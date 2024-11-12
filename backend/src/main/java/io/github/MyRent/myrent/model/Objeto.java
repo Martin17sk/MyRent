@@ -1,17 +1,20 @@
 package io.github.MyRent.myrent.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
-import java.util.List;
-
-@Data
+import java.util.Set;
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "objeto")
 @Entity
 public class Objeto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-    @ManyToMany
-    private List<Propiedad> propiedades;
+    @OneToMany(mappedBy = "objeto")
+    private Set<PropiedadObjeto> propiedadesObjetos;
 }

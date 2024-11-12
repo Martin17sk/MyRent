@@ -1,12 +1,17 @@
 package io.github.MyRent.myrent.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import java.sql.Timestamp;
-import java.util.List;
+import lombok.*;
 
+import java.sql.Timestamp;
+import java.util.Set;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "usuario")
 @Entity
-@Data
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,5 +23,5 @@ public class Usuario {
     @Column(name = "fecha_acceso")
     private Timestamp fechaAcceso;
     @OneToMany(mappedBy = "usuario")
-    private List<Perfil> perfiles;
+    private Set<Perfil> perfiles;
 }

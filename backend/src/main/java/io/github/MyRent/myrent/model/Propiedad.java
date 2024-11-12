@@ -1,12 +1,16 @@
 package io.github.MyRent.myrent.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.sql.Date;
-import java.util.List;
+import java.util.Set;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "propiedad")
 @Entity
 public class Propiedad {
     @Id
@@ -27,17 +31,33 @@ public class Propiedad {
     private float precio;
     private boolean disponibilidad;
     private Date fechaCreacion;
+
     @OneToMany(mappedBy = "propiedad")
-    private List<Desempenio> desempenios;
+    private Set<Desempenio> desempenios;
     @OneToMany(mappedBy = "propiedad")
-    private List<TransaccionFinanciera> transacciones;
+    private Set<TransaccionFinanciera> transacciones;
+    @OneToMany(mappedBy = "propiedad")
+    private Set<PropiedadObjeto> propiedadesObjetos;
+
+
     @ManyToOne
     @JoinColumn(name = "perfil_id")
     private Perfil perfil;
+
+
     @ManyToMany
-    private List<Servicio> servicios;
+    @JoinTable(
+            name = "propiedad_servicio",
+            joinColumns = @JoinColumn(name = "propiedad_id"),
+            inverseJoinColumns = @JoinColumn(name = "servicio_id")
+    )
+    private Set<Servicio> servicios;
     @ManyToMany
-    private List<Empleado> empleados;
-    @ManyToMany
-    private List<Objeto> objetos;
+    @JoinTable(
+            name = "propiedad_empleado",
+            joinColumns = @JoinColumn(name = "propiedad_id"),
+            inverseJoinColumns = @JoinColumn(name = "empleado_id")
+    )
+    private Set<Empleado> empleados;
+
 }
