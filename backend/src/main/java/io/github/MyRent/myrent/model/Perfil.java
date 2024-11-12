@@ -1,10 +1,27 @@
 package io.github.MyRent.myrent.model;
 
-import java.sql.Timestamp;
+import jakarta.persistence.*;
+import lombok.*;
 
+import java.sql.Timestamp;
+import java.util.Set;
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "perfil")
+@Entity
 public class Perfil {
-    private int id_perfil;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nombre;
-    private Timestamp fecha_creacion;
-    private int usuario_id;
+    private Timestamp fechaCreacion;
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
+    @OneToMany(mappedBy = "perfil")
+    private Set<Empleado> empleados;
+    @OneToMany(mappedBy = "perfil")
+    private Set<Propiedad> propiedades;
 }

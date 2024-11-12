@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
-    Optional<Usuario> findByIdUsuario(int id);
+
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO usuario(`correo`, `contrasenia`) values (:correo, :contrasenia)", nativeQuery = true)
