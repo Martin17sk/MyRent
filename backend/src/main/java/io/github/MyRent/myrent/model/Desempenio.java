@@ -4,21 +4,25 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.sql.Date;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "arriendo")
+@Table( name = "desempenio")
 @Entity
-public class Arriendo {
+public class Desempenio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Date fecha;
+    private float ocupacion;
+    private float ingresos;
+    private float gastos;
+    private float costes;
+    @Column(name = "beneficio_neto")
+    private float beneficios;
     @ManyToOne
     @JoinColumn(name = "propiedad_id")
     private Propiedad propiedad;
-    @Column(name = "fecha_inicio")
-    private Date fechaInicio;
-    @Column(name = "fecha_termino")
-    private Date fechaTermino;
 }

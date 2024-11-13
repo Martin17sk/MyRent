@@ -4,17 +4,19 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Set;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "objeto")
+@Table(name = "servicio")
 @Entity
-public class Objeto {
+public class Servicio {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-    @OneToMany(mappedBy = "objeto")
-    private Set<PropiedadObjeto> propiedadesObjetos;
+    @ManyToMany(mappedBy = "servicios")
+    private Set<Propiedad> propiedades;
 }
