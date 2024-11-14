@@ -6,6 +6,8 @@ import io.github.MyRent.myrent.service.UsuarioService;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -42,6 +44,58 @@ public class UsuarioController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
+    @DeleteMapping("/{id_usuario}")
+    public ResponseEntity<Map<String, String>> eliminarUsuario(@PathVariable long id_usuario){
+        try{
+            // Buscar el usuario por su id
+            Optional<Usuario> usuario = usuarioService.encontrarUsuarioPorId(id_usuario);
 
+            // Si el usuario no existe, devolver un error 404 Not Found
+            if(usuario.isEmpty()){
+                return ResponseEntity.notFound().build();
+            }
 
+            // Eliminar el usuario de la base de datos
+            usuarioService.eliminarUsuarioPorId(id_usuario);
+
+            // Crear un mapa para el mensaje de respuesta
+            Map<String, String> response = new HashMap<>();
+            response.put("message", "Usuario eliminado con éxito");
+
+            // Devolver el mensaje con el estado 200 OK
+            return ResponseEntity.ok(response);
+        }catch(Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+    // Actualizar un usuario
+    @PutMapping("/{id_usuario}")
+    public ResponseEntity<Usuario> actualizarUsuario(
+            @PathVariable long id_usuario,
+            @RequestParam("correo") String correo,
+            @RequestParam("contrasenia") String contrasenia
+    ){
+        try{
+            // Buscar el usuario por su id
+            Optional<Usuario> usuario = usuarioService.encontrarUsuarioPorId(id_usuario);
+
+            // Si el usuario no existe, devolver un error 404 Not Found
+            if(usuario.isEmpty()){
+                return ResponseEntity.notFound().build();
+            }
+
+            // Actualizar el usuario con los nuevos datos
+            Usuario usuarioActualizado = usuario.get();
+            usuarioActualizado.setCorreo(correo);
+            usuarioActualizado.setContrasenia(contrasenia);
+
+            // Guardar el usuario actualizado en la base de datos
+            Usuario usuarioGuardado = usuarioService.guardarUsuario(usuarioActualizado);
+
+            // Devolver el usuario guardado con el estado 200 OK
+            return ResponseEntity.ok(usuarioGuardado);
+        }catch(Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
 }
