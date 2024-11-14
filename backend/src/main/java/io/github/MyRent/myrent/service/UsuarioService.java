@@ -13,7 +13,7 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public Optional<Usuario> encontrarUsuarioPorId(int id){
+    public Optional<Usuario> encontrarUsuarioPorId(long id){
         return usuarioRepository.findByIdUsuario(id);
     }
     public Usuario insertarUsuario(String correo, String contrasenia){
@@ -26,5 +26,9 @@ public class UsuarioService {
 
     public Usuario guardarUsuario(Usuario usuario){
         return usuarioRepository.save(usuario);
+    }
+
+    public void eliminarUsuarioPorId(Long id){
+        usuarioRepository.deleteById(id); // Este método es proporcionado por JpaRepository
     }
 }
