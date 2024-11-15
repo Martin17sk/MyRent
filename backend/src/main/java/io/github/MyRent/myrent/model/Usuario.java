@@ -2,8 +2,11 @@ package io.github.MyRent.myrent.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
-import java.sql.Timestamp;
+
+import java.time.LocalDateTime;
 import java.util.Set;
 
 @Getter
@@ -18,10 +21,12 @@ public class Usuario {
     private Long id;
     private String correo;
     private String contrasenia;
-    @Column(name = "fecha_registro")
-    private Timestamp fechaRegistro;
-    @Column(name = "fecha_acceso")
-    private Timestamp fechaAcceso;
+    @Column(name = "fecha_registro", nullable = false)
+    @CreationTimestamp
+    private LocalDateTime fechaRegistro;
+    @Column(name = "fecha_acceso", nullable = false)
+    @UpdateTimestamp
+    private LocalDateTime fechaAcceso;
     @OneToMany(mappedBy = "usuario")
     private Set<Perfil> perfiles;
 }
