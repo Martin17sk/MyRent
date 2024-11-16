@@ -3,7 +3,8 @@ package io.github.MyRent.myrent.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.sql.Date;
+import java.util.Date;
+
 
 @Getter
 @Setter
@@ -11,7 +12,7 @@ import java.sql.Date;
 @NoArgsConstructor
 @Table( name = "transaccion_financiera")
 @Entity
-public class TransaccionFinanciera {
+public class Transaccion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
