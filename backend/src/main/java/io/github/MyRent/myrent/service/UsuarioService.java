@@ -8,5 +8,6 @@ public interface UsuarioService {
     UsuarioDTO obtenerUsuarioPorId(Long id);
     List<UsuarioDTO> obtenerTodosLosUsuarios();
     UsuarioDTO crearUsuario(UsuarioDTO usuarioDTO);
+    UsuarioDTO actualizarUsuario(UsuarioDTO usuarioDTO);
     void eliminarUsuario(Long id);
 }
