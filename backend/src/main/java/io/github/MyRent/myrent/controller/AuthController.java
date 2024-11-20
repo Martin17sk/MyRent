@@ -6,10 +6,7 @@ import io.github.MyRent.myrent.service.impl.JwtUtilImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
@@ -29,7 +26,27 @@ public class AuthController {
         String token = jwtUtil.generarToken(authRequest.getCorreo());
         return ResponseEntity.ok(new AuthResponseDTO(token));
     }
+    @GetMapping("/validate")
+    public ResponseEntity<String> validateToken(@RequestHeader("Authorization") String token,@RequestHeader("correo") String correo) {
+        token = token.replace("Bearer ", "");
 
+        if (jwtUtil.validarToken(token, correo)) {
+            return ResponseEntity.ok("Token is valid");
+        } else {
+            return ResponseEntity.status(403).body("Token is invalid or expired");
+        }
+    }
+    @PostMapping("/refresh")
+    public ResponseEntity<String> refreshToken(@RequestHeader("Authorization") String token,@RequestHeader("correo") String correo) {
+        token = token.replace("Bearer ", "");
+
+        if (jwtUtil.validarToken(token, correo)) {
+            String nuevoToken = jwtUtil.generarToken(correo);
+            return ResponseEntity.ok(nuevoToken);
+        } else {
+            return ResponseEntity.status(403).body("Invalid or expired refresh token");
+        }
+    }
 
     // endregion
 }
