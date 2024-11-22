@@ -1,6 +1,7 @@
 package io.github.MyRent.myrent.controller;
 
 import io.github.MyRent.myrent.model.UsuarioDTO;
+import io.github.MyRent.myrent.model.UsuarioUpdateDTO;
 import io.github.MyRent.myrent.repository.UsuarioRepository;
 import io.github.MyRent.myrent.service.impl.UsuarioServiceImpl;
 import org.springframework.http.ResponseEntity;
@@ -50,16 +51,38 @@ public class UsuarioController {
     }
     @DeleteMapping("/{id_usuario}")
     public ResponseEntity<Map<String, String>> eliminarUsuario(@PathVariable long id_usuario){
-        return null;
+        try{
+            usuarioService.eliminarUsuario(id_usuario);
+            return ResponseEntity.ok(Map.of("mensaje", "Usuario eliminado"));
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
     }
     // Actualizar un usuario
     @PutMapping("/{id_usuario}")
     public ResponseEntity<UsuarioDTO> actualizarUsuario(
             @PathVariable long id_usuario,
-            @RequestParam("correo") String correo,
-            @RequestParam("contrasenia") String contrasenia
+            @RequestBody UsuarioUpdateDTO usuarioUpdateDto
     ){
-        return null;
+        try{
+            UsuarioDTO usuarioExistente  = usuarioService.obtenerUsuarioPorId(id_usuario);
+            if (usuarioUpdateDto.getCorreo() != null) {
+                usuarioExistente.setCorreo(usuarioUpdateDto.getCorreo());
+            }
+            if (usuarioUpdateDto.getContrasenia() != null) {
+                usuarioExistente.setContrasenia(usuarioUpdateDto.getContrasenia());
+            }
+            // Actualizar la fecha de acceso
+            usuarioExistente.setFecha_acceso(LocalDateTime.now());
+
+            // Guardar los cambios
+            usuarioService.actualizarUsuario(usuarioExistente);
+
+            return ResponseEntity.ok(usuarioExistente);
+
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     // endregion

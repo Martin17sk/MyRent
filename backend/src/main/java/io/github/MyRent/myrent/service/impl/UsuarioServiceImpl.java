@@ -66,7 +66,8 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public UsuarioDTO actualizarUsuario(UsuarioDTO usuarioDTO) {
-        usuarioRepository.actualizarUsuarioPorId(usuarioDTO.getCorreo(), usuarioDTO.getContrasenia(), usuarioDTO.getFecha_acceso(), usuarioDTO.getId());
+        String contrasenia = passwordEncoder.encode(usuarioDTO.getContrasenia());
+        usuarioRepository.actualizarUsuarioPorId(usuarioDTO.getCorreo(), contrasenia, usuarioDTO.getFecha_acceso(), usuarioDTO.getId());
         return usuarioDTO;
     }
 
