@@ -1,4 +1,6 @@
 package io.github.MyRent.myrent.service;
 
-public class AuthService {
+public interface AuthService {
+    boolean validarToken(String token);
+
 }
