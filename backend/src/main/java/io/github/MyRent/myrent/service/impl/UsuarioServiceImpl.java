@@ -75,5 +75,18 @@ public class UsuarioServiceImpl implements UsuarioService {
     public void eliminarUsuario(Long id) {
         usuarioRepository.deleteUsuarioById(id);
     }
+
+    @Override
+    public UsuarioDTO obtenerUsuarioPorCorreo(String correo) {
+        Usuario usuario = usuarioRepository.findUsuarioByCorreo(correo).orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+        UsuarioDTO usuarioDTO = new UsuarioDTO();
+        usuarioDTO.setId(usuario.getId());
+        usuarioDTO.setCorreo(usuario.getCorreo());
+        usuarioDTO.setContrasenia(usuario.getContrasenia());
+        usuarioDTO.setFecha_registro(usuario.getFechaRegistro());
+        usuarioDTO.setFecha_acceso(usuario.getFechaAcceso());
+
+        return usuarioDTO;
+    }
     // endregion
 }

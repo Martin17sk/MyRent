@@ -10,4 +10,5 @@ public interface UsuarioService {
     UsuarioDTO crearUsuario(UsuarioDTO usuarioDTO);
     UsuarioDTO actualizarUsuario(UsuarioDTO usuarioDTO);
     void eliminarUsuario(Long id);
+    UsuarioDTO obtenerUsuarioPorCorreo(String correo);
 }
