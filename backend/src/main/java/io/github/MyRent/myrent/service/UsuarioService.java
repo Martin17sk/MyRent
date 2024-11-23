@@ -1,22 +1,13 @@
 package io.github.MyRent.myrent.service;
 
-import io.github.MyRent.myrent.model.Usuario;
-import io.github.MyRent.myrent.repository.UsuarioRepository;
-import org.springframework.stereotype.Service;
+import io.github.MyRent.myrent.model.UsuarioDTO;
 
-import java.util.Optional;
+import java.util.List;
 
-@Service
-public class UsuarioService {
-    private final UsuarioRepository usuarioRepository;
-    public UsuarioService(UsuarioRepository usuarioRepository){
-        this.usuarioRepository = usuarioRepository;
-    }
-    public Usuario insertarUsuario(String correo, String contrasenia){
-        usuarioRepository.insertarUsuario(correo, contrasenia);
-        Usuario usuario = new Usuario();
-        usuario.setCorreo(correo);
-        usuario.setContrasenia(contrasenia);
-        return usuario;
-    }
+public interface UsuarioService {
+    UsuarioDTO obtenerUsuarioPorId(Long id);
+    List<UsuarioDTO> obtenerTodosLosUsuarios();
+    UsuarioDTO crearUsuario(UsuarioDTO usuarioDTO);
+    UsuarioDTO actualizarUsuario(UsuarioDTO usuarioDTO);
+    void eliminarUsuario(Long id);
 }
