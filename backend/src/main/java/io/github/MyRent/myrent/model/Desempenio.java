@@ -10,6 +10,7 @@ import java.sql.Date;
 
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Table( name = "desempenio")

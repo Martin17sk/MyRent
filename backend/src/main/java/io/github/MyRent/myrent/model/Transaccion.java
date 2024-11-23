@@ -6,7 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.sql.Date;
+import java.util.Date;
+
 
 @Getter
 @Setter
@@ -14,7 +15,7 @@ import java.sql.Date;
 @NoArgsConstructor
 @Table( name = "transaccion_financiera")
 @Entity
-public class TransaccionFinanciera {
+public class Transaccion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
