@@ -10,6 +10,9 @@ const sendRecoveryLink = () => {
     // Simular el envío del correo
     successMessage.value =
       'El enlace de recuperación ha sido enviado a tu correo electrónico.'
+    setTimeout(() => {
+      successMessage.value = ''
+    }, 5000)
     errorMessage.value = ''
   } else {
     errorMessage.value = 'Por favor, ingresa un correo electrónico válido.'
@@ -73,7 +76,7 @@ const validateEmail = email => {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #181818;
+  background-color: #212126;
 }
 
 .content {

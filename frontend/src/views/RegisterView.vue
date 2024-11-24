@@ -1,10 +1,9 @@
 <script setup>
 import { useRouter } from 'vue-router';
 import { ref, computed } from 'vue';
-import UsuarioService from '@/services/UsuarioService';
+import axios from 'axios';
 
 const router = useRouter();
-const usuarioService = new UsuarioService();
 const email = ref("");
 const confirmEmail = ref("");
 const password = ref("");
@@ -25,14 +24,6 @@ const passwordConfFieldType = computed(() =>
   passwordConfVisible.value ? 'text' : 'password',
 )
 
-const obtenerFechaActual = () => {
-  const hoy = new Date()
-  const año = hoy.getFullYear()
-  const mes = String(hoy.getMonth() + 1).padStart(2, '0')
-  const dia = String(hoy.getDate()).padStart(2, '0')
-  return `${año}-${mes}-${dia}`
-}
-
 const submit = async () => {
   if (password.value !== confirmPassword.value || password.value === '') {
     alert('Las contraseñas no coinciden')
@@ -43,22 +34,12 @@ const submit = async () => {
     return
   }
 
-  usuarioService.getUsuarioByEmail(email.value).then(response => {
-    console.log(response)
-    if (response.length > 0) {
-      alert('El correo electrónico ya está registrado')
-      return
-    }
-  })
-
   const user = {
     correo: email.value,
     contraseña: password.value,
-    fecha_registro: obtenerFechaActual(),
-    ultimo_acceso: obtenerFechaActual(),
   }
 
-  usuarioService.addUsuario(user).then((response) => {
+  axios.post(`http://localhost:8005/api/usuarios?correo=${user.correo}&contrasenia=${user.contraseña}`).then(() => {
     router.push({ name: 'Login' });
   });
 };

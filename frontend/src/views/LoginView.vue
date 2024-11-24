@@ -5,6 +5,7 @@ import router from '../router'
 const user = ref()
 const password = ref('')
 const passwordVisible = ref(false)
+const error = ref('')
 const togglePasswordVisibility = () => {
   console.log('tocado')
   passwordVisible.value = !passwordVisible.value
@@ -24,6 +25,7 @@ const login = async () => {
       }
     })
     .catch(err => {
+      error.value = err.message
       console.log(err)
     }) // Llamar a la acción de login
 }
@@ -121,7 +123,9 @@ const login = async () => {
     text-shadow: 0px 0px 10px rgba(20, 174, 92, 0.9);
   }
 }
-
+.error{
+  outline: 1px solid #e94646;
+}
 .emphasis {
   transition: all 0.2s ease-out;
 }
@@ -279,9 +283,12 @@ h4 {
   width: 32vw;
 }
 
+.green-focus {
+  box-sizing: border-box;
+}
 .green-focus:focus {
-  border: 1px solid rgb(20, 174, 92);
-  outline: none;
+  box-sizing: border-box;
+  outline: 1px solid rgb(20, 174, 92);
 }
 
 .options {

@@ -16,7 +16,6 @@ export const useAuthStore = defineStore('auth', {
             "contrasenia":password
           }
         )
-        console.log(response);
         if (response.status === 200) {
           this.user = response.data
           useUserStore().setUserId(this.user.id_usuario)
