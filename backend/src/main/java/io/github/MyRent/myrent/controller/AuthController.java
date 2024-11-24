@@ -2,6 +2,9 @@ package io.github.MyRent.myrent.controller;
 
 import io.github.MyRent.myrent.model.AuthRequestDTO;
 import io.github.MyRent.myrent.model.AuthResponseDTO;
+import io.github.MyRent.myrent.model.Usuario;
+import io.github.MyRent.myrent.model.UsuarioDTO;
+import io.github.MyRent.myrent.service.UsuarioService;
 import io.github.MyRent.myrent.service.impl.JwtUtilImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -13,8 +16,11 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
     private final JwtUtilImpl jwtUtil = new JwtUtilImpl();
     private final AuthenticationManager authenticationManager;
-    public AuthController(AuthenticationManager authenticationManager) {
+    private final UsuarioService usuarioService;
+
+    public AuthController(AuthenticationManager authenticationManager, UsuarioService usuarioService) {
         this.authenticationManager = authenticationManager;
+        this.usuarioService = usuarioService;
     }
     // region Endpoints
     @PostMapping("/login")
@@ -24,7 +30,10 @@ public class AuthController {
         );
 
         String token = jwtUtil.generarToken(authRequest.getCorreo());
-        return ResponseEntity.ok(new AuthResponseDTO(token));
+        UsuarioDTO usuarioDTO = usuarioService.obtenerUsuarioPorCorreo(authRequest.getCorreo());
+        AuthResponseDTO response = new AuthResponseDTO(token, usuarioDTO.getCorreo(), usuarioDTO.getId());
+
+        return ResponseEntity.ok(response);
     }
     @GetMapping("/validate")
     public ResponseEntity<String> validateToken(@RequestHeader("Authorization") String token,@RequestHeader("correo") String correo) {
