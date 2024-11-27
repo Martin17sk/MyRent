@@ -35,7 +35,7 @@ const login = async () => {
     <div class="content">
       <div class="form">
         <h1 class="center-text">Iniciar sesión</h1>
-        <div class="form_info">
+        <div class="form_info"> 
           <div class="email">
             <label for="email">Correo Electrónico o nombre de usuario</label>
             <input
@@ -68,6 +68,7 @@ const login = async () => {
               class="input-text"
               :type="passwordFieldType"
               v-model="password"
+              @keyup.enter="login"
               id="contraseña"
               name="contraseña"
               placeholder="Ingresa tu contraseña"

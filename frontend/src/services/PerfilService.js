@@ -14,7 +14,7 @@ class PerfilService {
 
   async getPerfilesByUserId(id) {
     const response = await axios.get(
-      `http://localhost:3000/perfiles?usuario_id=${id}`,
+      `http://localhost:8005/api/perfiles/${id}`,
     )
     return response.data
   }

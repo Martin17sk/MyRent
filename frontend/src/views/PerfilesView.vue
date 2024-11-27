@@ -62,10 +62,11 @@
       </div>
     </div>
     <ConfirmPopup
+      class="modalPerfil"
       title="Crear perfil"
       :visible="showModal"
       @close="toggleModal"
-      @confirm="printContent"
+      @confirm="null"
     >
       <label for="nombrePerf">Nombre de perfil</label>
       <input
@@ -103,16 +104,19 @@
 <script setup>
 import DefaultContador from '@/components/DefaultContador.vue'
 import ProfileButton from '@/components/ProfileButton.vue'
-import PerfilService from '@/services/PerfilService'
 import { RouterLink } from 'vue-router'
 import { useUserStore } from '@/stores/user'
 import { useAuthStore } from '@/stores/auth'
+import { onMounted, ref } from 'vue'
+import ConfirmPopup from '@/components/ConfirmPopup.vue'
+import PerfilService from '@/services/PerfilService'
+import router from '@/router'
 const editMode = ref(false)
 const showModal = ref(false)
 const inputValue = ref('')
 const empleados = ref([])
-
-
+const perfs = ref([])
+const perfilService = new PerfilService();
 
 const addEmpleado = () => {
   empleados.value.push('');
@@ -121,30 +125,7 @@ const addEmpleado = () => {
 const removeEmpleado = (index) => {
   empleados.value.splice(index, 1);
 };
-const obtenerFechaActual = () => {
-  const hoy = new Date()
-  const año = hoy.getFullYear()
-  const mes = String(hoy.getMonth() + 1).padStart(2, '0')
-  const dia = String(hoy.getDate()).padStart(2, '0')
-  return `${año}-${mes}-${dia}`
-}
 
-const printContent = () => {
-  console.log(inputValue.value)
-  console.log(empleados.value)
-  let perfil = {usuario_id: authStore.user.id,nombre: inputValue.value ,fecha_actual: obtenerFechaActual() };
-  service.addPerfil(perfil).then((result) => {
-    const perfilId = result.id;
-    empleados.value.forEach(empleado => {
-      let objetoEmpleado = {perfil_id:perfilId, nombre: empleado}
-      empleadoServ.createEmpleado(objetoEmpleado);
-    });    
-  }).catch((err) => {
-    
-  });
-
-  
-}
 
 const toggleEditMode = () => {
   editMode.value = !editMode.value
@@ -154,29 +135,33 @@ const toggleModal = () => {
   showModal.value = !showModal.value
 }
 
-const store = useUserStore()
-const authStore = useAuthStore()
-import { onMounted, ref } from 'vue'
-import ConfirmPopup from '@/components/ConfirmPopup.vue'
-import InputComponent from '@/components/InputComponent.vue'
-import axios from 'axios'
-import EmpleadoService from '@/services/EmpleadoService'
+const userStore = useUserStore()
+const authStore = useAuthStore() // Lo debería usar para comprobaciones de autenticación
 
-const service = new PerfilService()
-const empleadoServ = new EmpleadoService();
-const perfs = ref()
-const showCalendar = ref(false)
-const getPerfiles = async () => {
-  perfs.value = await service.getPerfilesByUserId(authStore.user.id)
+
+const cargarPerfiles = async ()=>{
+  perfs.value = await perfilService.getPerfilesByUserId(userStore.userId)
 }
 
 onMounted(async () => {
   await authStore.loadUserFromLocalStorage()
-  await getPerfiles()
+  await authStore.validateSession()
+  if (authStore.isAuthenticated) {
+    console.log('Usuario autenticado: ' + userStore.user + " cargando perfiles")
+    perfs.value = await perfilService.getPerfilesByUserId(userStore.userId)
+  } else {
+    router.push('/login')
+  }
 })
 </script>
 
 <style lang="scss">
+.modalPerfil{
+  top: auto;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
 .agregar{
     background-color: #303036;
     border-radius: 12px;
