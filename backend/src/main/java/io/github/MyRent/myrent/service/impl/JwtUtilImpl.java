@@ -50,6 +50,7 @@ public class JwtUtilImpl implements JwtUtil {
     @Override
     public String generarToken(String correo) {
         Map<String, Object> claims = new HashMap<>();
+
         return crearToken(claims, correo);
     }
 

@@ -66,7 +66,7 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(List.of("http://localhost:5173")); // Cambia esto según tu dominio
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
+        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type","correo"));
         configuration.setExposedHeaders(List.of("Authorization")); // Permite que el cliente lea ciertos encabezados
         configuration.setAllowCredentials(true);
 

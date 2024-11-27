@@ -1,9 +1,8 @@
 package io.github.MyRent.myrent.controller;
 
-import io.github.MyRent.myrent.model.AuthRequestDTO;
-import io.github.MyRent.myrent.model.AuthResponseDTO;
-import io.github.MyRent.myrent.model.Usuario;
-import io.github.MyRent.myrent.model.UsuarioDTO;
+import io.github.MyRent.myrent.dto.AuthRequestDTO;
+import io.github.MyRent.myrent.dto.AuthResponseDTO;
+import io.github.MyRent.myrent.dto.UsuarioDTO;
 import io.github.MyRent.myrent.service.UsuarioService;
 import io.github.MyRent.myrent.service.impl.JwtUtilImpl;
 import org.springframework.http.ResponseEntity;

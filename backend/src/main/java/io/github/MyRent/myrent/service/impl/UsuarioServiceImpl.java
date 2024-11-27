@@ -1,7 +1,7 @@
 package io.github.MyRent.myrent.service.impl;
 
 import io.github.MyRent.myrent.model.Usuario;
-import io.github.MyRent.myrent.model.UsuarioDTO;
+import io.github.MyRent.myrent.dto.UsuarioDTO;
 import io.github.MyRent.myrent.repository.UsuarioRepository;
 import io.github.MyRent.myrent.service.UsuarioService;
 import org.springframework.security.crypto.password.PasswordEncoder;

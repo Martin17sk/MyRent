@@ -1,11 +1,10 @@
 package io.github.MyRent.myrent.controller;
 
-import io.github.MyRent.myrent.model.UsuarioDTO;
-import io.github.MyRent.myrent.model.UsuarioUpdateDTO;
+import io.github.MyRent.myrent.dto.UsuarioDTO;
+import io.github.MyRent.myrent.dto.UsuarioUpdateDTO;
 import io.github.MyRent.myrent.repository.UsuarioRepository;
 import io.github.MyRent.myrent.service.impl.UsuarioServiceImpl;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;

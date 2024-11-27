@@ -1,6 +1,6 @@
 package io.github.MyRent.myrent.service;
 
-import io.github.MyRent.myrent.model.UsuarioDTO;
+import io.github.MyRent.myrent.dto.UsuarioDTO;
 
 import java.util.List;
 
