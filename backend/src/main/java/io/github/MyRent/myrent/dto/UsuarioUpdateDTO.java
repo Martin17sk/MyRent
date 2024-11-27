@@ -1,4 +1,4 @@
-package io.github.MyRent.myrent.model;
+package io.github.MyRent.myrent.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,8 +9,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AuthResponseDTO {
-    private String token;
+public class UsuarioUpdateDTO {
     private String correo;
-    private long id_usuario;
+    private String contrasenia;
 }

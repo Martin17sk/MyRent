@@ -25,4 +25,11 @@ public class Empleado {
     @ManyToMany
     private Set<Propiedad> propiedades;
 
+
+    public void addPropiedad(Propiedad propiedad){
+        propiedades.add(propiedad);
+    }
+    public void removePropiedad(Propiedad propiedad){
+        propiedades.remove(propiedad);
+    }
 }

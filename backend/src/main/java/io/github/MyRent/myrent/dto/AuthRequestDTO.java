@@ -1,4 +1,4 @@
-package io.github.MyRent.myrent.model;
+package io.github.MyRent.myrent.dto;
 
 public class AuthRequestDTO {
     private String correo;

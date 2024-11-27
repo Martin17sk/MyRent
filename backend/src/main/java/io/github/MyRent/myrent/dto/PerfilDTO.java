@@ -1,20 +1,20 @@
-package io.github.MyRent.myrent.model;
+package io.github.MyRent.myrent.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UsuarioDTO {
+public class PerfilDTO {
     private long id;
-    private String correo;
-    private String Contrasenia;
-    private LocalDateTime fecha_registro;
-    private LocalDateTime fecha_acceso;
+    private String nombre;
+    private LocalDateTime fechaCreacion;
+    private Long usuario_id;
+    private Set<EmpleadoDTO> empleados;
 }
